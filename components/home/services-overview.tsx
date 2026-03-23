@@ -5,6 +5,12 @@ import { surfaceCard } from "@/components/ui/surface-card";
 
 const services = [
   {
+    title: "Sleep & Feed Reset",
+    description:
+      "A focused package to untangle feeding and sleep patterns together, with a clear, compassionate path forward you can actually follow.",
+    learnMoreHref: "/services#sleep-feed-reset",
+  },
+  {
     title: "Postpartum Doula Care",
     description:
       "Hands-on help with recovery, newborn care, emotional check-ins, and light household rhythm so your early weeks feel more manageable.",
@@ -21,12 +27,6 @@ const services = [
     description:
       "Gentle, responsive approaches to nights and naps that respect your baby's needs and your family's values—without rigid rules.",
     learnMoreHref: "/services#sleep-support",
-  },
-  {
-    title: "Sleep & Feed Reset",
-    description:
-      "A focused package to untangle feeding and sleep patterns together, with a clear, compassionate path forward you can actually follow.",
-    learnMoreHref: "/services#sleep-feed-reset",
   },
 ] as const;
 

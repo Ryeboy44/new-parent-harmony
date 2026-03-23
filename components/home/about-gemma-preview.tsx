@@ -7,7 +7,7 @@ export function AboutGemmaPreview() {
   return (
     <SectionShell id="about" background="cream">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-cream-deep/40 shadow-soft ring-1 ring-border-soft/30 lg:mx-0 lg:max-w-none">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[1.35rem] bg-cream-deep/30 shadow-[0_20px_48px_-28px_rgb(44_52_44_/0.18)] sm:rounded-3xl lg:mx-0 lg:max-w-none">
           <Image
             src={nphSiteImages.gemmaPortrait}
             alt="Gemma, founder of New Parent Harmony"

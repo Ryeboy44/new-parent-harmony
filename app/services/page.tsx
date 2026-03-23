@@ -14,6 +14,11 @@ export const metadata: Metadata = {
 
 const serviceBlocks = [
   {
+    id: "sleep-feed-reset",
+    title: "Sleep & Feed Reset",
+    body: "A focused package to untangle feeding and sleep patterns together, with a clear, compassionate path forward you can actually follow between visits.",
+  },
+  {
     id: "postpartum-doula-care",
     title: "Postpartum Doula Care",
     body: "Hands-on help with recovery, newborn care, emotional check-ins, and light household rhythm so your early weeks feel more manageable—in the rhythm that works for your home.",
@@ -26,12 +31,7 @@ const serviceBlocks = [
   {
     id: "sleep-support",
     title: "Sleep Support",
-    body: "Gentle, responsive approaches to nights and naps that respect your baby’s needs and your family’s values—without rigid rules or pressure to move faster than feels right.",
-  },
-  {
-    id: "sleep-feed-reset",
-    title: "Sleep & Feed Reset",
-    body: "A focused package to untangle feeding and sleep patterns together, with a clear, compassionate path forward you can actually follow between visits.",
+    body: "Gentle, responsive approaches to nights and naps that respect your baby's needs and your family's values—without rigid rules or pressure to move faster than feels right.",
   },
 ] as const;
 

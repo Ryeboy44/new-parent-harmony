@@ -21,9 +21,9 @@ export function HeroSection() {
             sleep
           </h1>
           <p className="mt-6 max-w-xl text-[0.9375rem] leading-relaxed text-muted sm:text-base md:mt-7">
-            Montgomery County, MD and beyond—in-home and virtual postpartum
-            care, lactation guidance, and responsive sleep support shaped
-            around what matters to you.
+            Serving Montgomery County, MD and surrounding areas—in-home and
+            virtually—with calm postpartum care, lactation support, and
+            responsive sleep guidance that fits your family and your values.
           </p>
           <div className="mt-9 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-stretch sm:gap-4">
             <ButtonLink href="/discovery-call" className="w-full sm:w-auto">
@@ -40,7 +40,7 @@ export function HeroSection() {
         </div>
 
         <div className="relative flex justify-center lg:justify-end">
-          <div className="relative aspect-[760/362] w-full max-w-xl overflow-hidden rounded-2xl bg-cream-deep/40 shadow-soft ring-1 ring-border-soft/30">
+          <div className="relative aspect-[760/362] w-full max-w-xl overflow-hidden rounded-[1.35rem] bg-cream-deep/30 shadow-[0_20px_48px_-28px_rgb(44_52_44_/0.18)] sm:rounded-3xl">
             <Image
               src={nphSiteImages.heroKeyVisual}
               alt="New Parent Harmony — grounded support for growing families"

@@ -8,6 +8,11 @@ export function IntroTrustSection() {
           Hi, I&apos;m Gemma—founder of New Parent Harmony.
         </p>
         <p className="mt-5 text-[0.9375rem] leading-relaxed text-muted sm:mt-6 sm:text-base">
+          I&apos;m a certified postpartum doula, lactation counselor, and
+          pediatric sleep consultant with over 20 years of experience
+          supporting families.
+        </p>
+        <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:mt-5 sm:text-base">
           I walk beside families during the tender postpartum season with a
           steady, judgment-free presence. Whether you&apos;re healing, learning
           to feed your baby, or craving more sleep, my role is to help you feel

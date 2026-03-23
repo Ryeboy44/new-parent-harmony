@@ -24,7 +24,7 @@ export function SiteFooter() {
           <ul className="mt-4 flex flex-col gap-3 text-sm text-muted sm:flex-row sm:gap-8">
             <li>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/newparentharmonyllc"
                 className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -34,7 +34,7 @@ export function SiteFooter() {
             </li>
             <li>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/NewParentHarmony"
                 className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
                 target="_blank"
                 rel="noopener noreferrer"
