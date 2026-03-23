@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f9f7f2;
+  --foreground: #2c342c;
+  --cream: #f9f7f2;
+  --cream-deep: #f1ece2;
+  --surface: #fdfcfa;
+  --surface-muted: #f5f3ee;
+  --green: #738f73;
+  --green-deep: #5f765f;
+  --green-muted: #8a9d8a;
+  --green-wash: #ecf1ea;
+  --border-soft: #e3e9e0;
+  --text-muted: #5c6b5c;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-harmony-green: var(--green);
+  --color-harmony-green-deep: var(--green-deep);
+  --color-harmony-green-muted: var(--green-muted);
+  --color-green-wash: var(--green-wash);
+  --color-border-soft: var(--border-soft);
+  --color-muted: var(--text-muted);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --shadow-soft: 0 1px 2px rgb(44 52 44 / 0.04),
+    0 12px 40px -16px rgb(44 52 44 / 0.09);
+}
+
+body {
+  background: var(--cream);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+dialog::backdrop {
+  background: rgb(44 52 44 / 0.22);
+}
