@@ -7,7 +7,7 @@ export function AboutGemmaPreview() {
   return (
     <SectionShell id="about" background="cream">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-cream lg:mx-0 lg:max-w-none">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl lg:mx-0 lg:max-w-none">
           <Image
             src={nphSiteImages.gemmaPortrait}
             alt="Gemma, founder of New Parent Harmony; postpartum doula, lactation counselor, and pediatric sleep consultant in Montgomery County, MD and surrounding areas"

@@ -6,11 +6,6 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "www.newparentharmony.com",
-        pathname: "/image/**",
-      },
-      {
-        protocol: "https",
-        hostname: "www.newparentharmony.com",
         pathname: "/files/**",
       },
     ],
