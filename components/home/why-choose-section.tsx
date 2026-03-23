@@ -4,20 +4,20 @@ import { surfaceCard } from "@/components/ui/surface-card";
 
 const reasons = [
   {
-    title: "Calm, grounded support",
-    body: "A steady presence when everything feels loud—so you can breathe, ask questions, and make choices without pressure.",
+    title: "I show up calm and grounded",
+    body: "When everything feels loud, I aim to be a steady presence—so you can breathe, ask questions, and decide next steps without pressure.",
   },
   {
-    title: "Practical, personalized guidance",
-    body: "Plans that fit your baby, your home, and your goals—not generic scripts or one-size-fits-all sleep charts.",
+    title: "I tailor plans to your real life",
+    body: "We work from your baby, your home, and your goals—not generic scripts or one-size-fits-all charts that ignore what you already know.",
   },
   {
-    title: "In-home and virtual care",
-    body: "Flexible options across Montgomery County and beyond, whether you want someone beside you or support through the screen.",
+    title: "In-home or virtual—your call",
+    body: "I support families across Montgomery County and beyond, beside you in person or through the screen, depending on what fits.",
   },
   {
-    title: "Honors your parenting values",
-    body: "Respectful of how you want to feed, soothe, and bond—collaborative care that never asks you to leave yourself behind.",
+    title: "Your values lead",
+    body: "I'm respectful of how you want to feed, soothe, and bond—collaborative care that never asks you to leave yourself behind.",
   },
 ];
 
@@ -25,9 +25,9 @@ export function WhyChooseSection() {
   return (
     <SectionShell id="why-choose" background="subtle">
       <SectionHeading
-        eyebrow="Why families choose us"
-        title="Why families choose New Parent Harmony"
-        description="Parents come here when they want evidence-informed care that still feels human, flexible, and kind."
+        eyebrow="Why families work with me"
+        title="What you can expect when we work together"
+        description="Parents reach out when they want care that's evidence-informed and still human—flexible, respectful, and paced for real life."
         align="center"
       />
       <ul className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:gap-8">

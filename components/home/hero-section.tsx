@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { nphSiteImages } from "@/data/site-images";
 import { ButtonLink } from "@/components/ui/button-link";
 
 export function HeroSection() {
@@ -19,17 +21,16 @@ export function HeroSection() {
             sleep
           </h1>
           <p className="mt-6 max-w-xl text-[0.9375rem] leading-relaxed text-muted sm:text-base md:mt-7">
-            Serving families in Montgomery County, MD and beyond with in-home
-            and virtual care—thoughtful postpartum doula support, skilled
-            lactation guidance, and gentle, responsive sleep help that fits
-            your values.
+            Montgomery County, MD and beyond—in-home and virtual postpartum
+            care, lactation guidance, and responsive sleep support shaped
+            around what matters to you.
           </p>
           <div className="mt-9 flex w-full max-w-md flex-col gap-3 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-stretch sm:gap-4">
-            <ButtonLink href="/contact" className="w-full sm:w-auto">
+            <ButtonLink href="/discovery-call" className="w-full sm:w-auto">
               Book a Discovery Call
             </ButtonLink>
             <ButtonLink
-              href="#services"
+              href="/services"
               variant="secondary"
               className="w-full sm:w-auto"
             >
@@ -39,22 +40,16 @@ export function HeroSection() {
         </div>
 
         <div className="relative flex justify-center lg:justify-end">
-          <div
-            className="relative aspect-[4/5] w-full max-w-[20rem] overflow-hidden rounded-2xl bg-gradient-to-br from-cream-deep via-surface to-green-wash/50 shadow-soft sm:max-w-sm lg:max-w-none"
-            role="img"
-            aria-label="Warm, peaceful moment—placeholder for a family lifestyle photo"
-          >
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-8 text-center">
-              <span
-                className="text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-harmony-green-muted"
-                aria-hidden
-              >
-                Photo
-              </span>
-              <p className="max-w-[13rem] text-sm leading-relaxed text-muted">
-                A natural image of rest, feeding, or early days at home.
-              </p>
-            </div>
+          <div className="relative aspect-[760/362] w-full max-w-xl overflow-hidden rounded-2xl bg-cream-deep/40 shadow-soft ring-1 ring-border-soft/30">
+            <Image
+              src={nphSiteImages.heroKeyVisual}
+              alt="New Parent Harmony — grounded support for growing families"
+              width={760}
+              height={362}
+              className="h-full w-full object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 480px"
+              priority
+            />
           </div>
         </div>
       </div>

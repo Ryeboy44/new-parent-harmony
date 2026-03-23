@@ -21,7 +21,7 @@ export function FinalCTASection() {
           can help, with no pressure to commit.
         </p>
         <div className="mt-9 flex justify-center sm:mt-10">
-          <ButtonLink href="/contact">Book a Discovery Call</ButtonLink>
+          <ButtonLink href="/discovery-call">Book a Discovery Call</ButtonLink>
         </div>
       </div>
     </section>

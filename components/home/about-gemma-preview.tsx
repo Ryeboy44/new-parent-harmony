@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { nphSiteImages } from "@/data/site-images";
 import { SectionShell } from "@/components/ui/section-shell";
 import { ButtonLink } from "@/components/ui/button-link";
 
@@ -5,16 +7,14 @@ export function AboutGemmaPreview() {
   return (
     <SectionShell id="about" background="cream">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div
-          className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-gradient-to-b from-cream-deep via-green-wash/30 to-cream-deep shadow-soft lg:mx-0 lg:max-w-none"
-          role="img"
-          aria-label="Portrait placeholder for Gemma"
-        >
-          <div className="absolute inset-0 flex items-center justify-center p-8">
-            <p className="text-center text-xs font-medium uppercase tracking-[0.2em] text-harmony-green-muted">
-              Portrait
-            </p>
-          </div>
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-cream-deep/40 shadow-soft ring-1 ring-border-soft/30 lg:mx-0 lg:max-w-none">
+          <Image
+            src={nphSiteImages.gemmaPortrait}
+            alt="Gemma, founder of New Parent Harmony"
+            fill
+            className="object-cover object-[50%_20%]"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
         </div>
 
         <div className="min-w-0 lg:py-2">
@@ -37,7 +37,7 @@ export function AboutGemmaPreview() {
             perfection.
           </p>
           <div className="mt-9 sm:mt-10">
-            <ButtonLink href="#intro" variant="secondary">
+            <ButtonLink href="/services#about-gemma" variant="secondary">
               Learn More About Gemma
             </ButtonLink>
           </div>

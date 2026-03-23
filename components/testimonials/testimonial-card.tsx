@@ -30,6 +30,9 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
         <p className="text-sm font-medium tracking-tight text-foreground">
           {testimonial.name}
         </p>
+        <p className="mt-1 text-xs leading-relaxed text-muted sm:text-[0.8125rem]">
+          {testimonial.attribution}
+        </p>
       </footer>
     </article>
   );

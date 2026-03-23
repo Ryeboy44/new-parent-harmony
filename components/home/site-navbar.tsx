@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { useState } from "react";
@@ -6,7 +6,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#services", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -95,7 +95,7 @@ export function SiteNavbar() {
               </a>
             ))}
             <div className="mt-4 pt-2">
-              <ButtonLink href="/contact" variant="primary" className="w-full">
+              <ButtonLink href="/discovery-call" variant="primary" className="w-full">
                 Book a Discovery Call
               </ButtonLink>
             </div>

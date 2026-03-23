@@ -8,23 +8,27 @@ const services = [
     title: "Postpartum Doula Care",
     description:
       "Hands-on help with recovery, newborn care, emotional check-ins, and light household rhythm so your early weeks feel more manageable.",
+    learnMoreHref: "/services#postpartum-doula-care",
   },
   {
     title: "Lactation Support",
     description:
       "Private, practical guidance for latch, supply, pumping, bottle-feeding, and feeding plans—meeting you where you are with patience and skill.",
+    learnMoreHref: "/services#lactation-support",
   },
   {
     title: "Sleep Support",
     description:
       "Gentle, responsive approaches to nights and naps that respect your baby's needs and your family's values—without rigid rules.",
+    learnMoreHref: "/services#sleep-support",
   },
   {
     title: "Sleep & Feed Reset",
     description:
       "A focused package to untangle feeding and sleep patterns together, with a clear, compassionate path forward you can actually follow.",
+    learnMoreHref: "/services#sleep-feed-reset",
   },
-];
+] as const;
 
 export function ServicesOverview() {
   return (
@@ -45,7 +49,7 @@ export function ServicesOverview() {
                 {service.description}
               </p>
               <div className="mt-6">
-                <ButtonLink href="/contact" variant="ghost">
+                <ButtonLink href={service.learnMoreHref} variant="ghost">
                   Learn more
                 </ButtonLink>
               </div>
