@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ButtonLink } from "@/components/ui/button-link";
 
 const navLinks = [
-  { href: "#about", label: "About" },
+  { href: "/#about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
@@ -29,18 +29,18 @@ export function SiteNavbar() {
           aria-label="Primary"
         >
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm text-muted transition-colors hover:text-foreground"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden md:block">
-          <ButtonLink href="/contact" variant="primary">
+          <ButtonLink href="/discovery-call" variant="primary">
             Book a Discovery Call
           </ButtonLink>
         </div>
@@ -85,14 +85,14 @@ export function SiteNavbar() {
         >
           <nav className="flex flex-col gap-1" aria-label="Mobile primary">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="rounded-xl px-3 py-3 text-base text-foreground/90 transition-colors hover:bg-surface"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <div className="mt-4 pt-2">
               <ButtonLink href="/discovery-call" variant="primary" className="w-full">

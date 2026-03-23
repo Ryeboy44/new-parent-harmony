@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
 import { buttonBase, buttonVariantClass } from "@/components/ui/button-classes";
 
@@ -16,12 +19,16 @@ export function ButtonLink({
   className = "",
 }: ButtonLinkProps) {
   const classes = `${buttonBase} ${buttonVariantClass[variant]} ${className}`.trim();
+  const pathname = usePathname() || "/";
 
-  const isHash = href.startsWith("#");
+  const isHashOnly = href.startsWith("#");
   const isMailto = href.startsWith("mailto:");
-  const isExternal = href.startsWith("http://") || href.startsWith("https://");
+  const isExternal =
+    href.startsWith("http://") || href.startsWith("https://");
 
-  if (isHash || isMailto || isExternal) {
+  const internalHref = isHashOnly ? `${pathname}${href}` : href;
+
+  if (isMailto || isExternal) {
     return (
       <a
         href={href}
@@ -34,7 +41,7 @@ export function ButtonLink({
   }
 
   return (
-    <Link href={href} className={classes}>
+    <Link href={internalHref} className={classes}>
       {children}
     </Link>
   );

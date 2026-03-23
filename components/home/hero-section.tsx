@@ -40,10 +40,10 @@ export function HeroSection() {
         </div>
 
         <div className="relative flex justify-center lg:justify-end">
-          <div className="relative aspect-[760/362] w-full max-w-xl overflow-hidden rounded-[1.35rem] bg-cream-deep/30 shadow-[0_20px_48px_-28px_rgb(44_52_44_/0.18)] sm:rounded-3xl">
+          <div className="relative aspect-[760/362] w-full max-w-xl overflow-hidden rounded-2xl bg-cream">
             <Image
               src={nphSiteImages.heroKeyVisual}
-              alt="New Parent Harmony — grounded support for growing families"
+              alt="New Parent Harmony — calm postpartum, lactation, and infant sleep support for families in Montgomery County, MD and surrounding areas"
               width={760}
               height={362}
               className="h-full w-full object-cover object-center"

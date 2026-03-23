@@ -7,9 +7,14 @@ import { SectionShell } from "@/components/ui/section-shell";
 import { surfaceCard } from "@/components/ui/surface-card";
 
 export const metadata: Metadata = {
-  title: "Services | New Parent Harmony",
+  title: "Postpartum, lactation & sleep services",
   description:
-    "Postpartum doula care, lactation support, gentle infant sleep guidance, and sleep & feed reset packages for Montgomery County and beyond.",
+    "Sleep & Feed Reset, postpartum doula care, lactation counseling, and responsive infant sleep support—in person or virtual for families in Montgomery County, MD and surrounding areas.",
+  openGraph: {
+    title: "Postpartum, lactation & sleep services | New Parent Harmony",
+    description:
+      "Focused support for feeding, sleep, and the early weeks—serving Montgomery County, MD and surrounding areas.",
+  },
 };
 
 const serviceBlocks = [
@@ -38,12 +43,6 @@ const serviceBlocks = [
 export default function ServicesPage() {
   return (
     <>
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-foreground focus:shadow-md"
-      >
-        Skip to main content
-      </a>
       <SiteNavbar />
       <main id="main-content" className="flex flex-1 flex-col">
         <SectionShell background="cream" padding="tight">
@@ -97,9 +96,9 @@ export default function ServicesPage() {
               blends hands-on care, clear education, and emotional steadiness.
             </p>
             <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
-              Based in Montgomery County, I work with families locally and
-              virtually, always prioritizing safety, respect, and confidence over
-              perfection.
+              Based in Montgomery County, MD and surrounding areas, I work
+              with families locally and virtually, always prioritizing safety,
+              respect, and confidence over perfection.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
               <ButtonLink href="/discovery-call">Book a Discovery Call</ButtonLink>

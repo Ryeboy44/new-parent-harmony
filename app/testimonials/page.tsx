@@ -7,20 +7,19 @@ import { SectionShell } from "@/components/ui/section-shell";
 import { testimonials } from "@/data/testimonials";
 
 export const metadata: Metadata = {
-  title: "Testimonials | New Parent Harmony",
+  title: "What families say",
   description:
-    "Read what families share about postpartum, newborn, feeding, and sleep support with New Parent Harmony.",
+    "Reflections from families who worked with New Parent Harmony for postpartum support, newborn care, feeding, and sleep—based in Montgomery County, MD and serving surrounding areas.",
+  openGraph: {
+    title: "What families say | New Parent Harmony",
+    description:
+      "Real words from parents about postpartum doula care and sleep support in Montgomery County, MD and surrounding areas.",
+  },
 };
 
 export default function TestimonialsPage() {
   return (
     <>
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-foreground focus:shadow-md"
-      >
-        Skip to main content
-      </a>
       <SiteNavbar />
       <main id="main-content" className="flex-1 bg-cream">
         <SectionShell background="white" className="border-y border-border-soft/40">
@@ -29,6 +28,7 @@ export default function TestimonialsPage() {
             title="What families are saying"
             description="Supportive words from families who wanted calm, attentive, and practical care through the first weeks and months."
             align="center"
+            titleAs="h1"
           />
 
           <ul className="grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">

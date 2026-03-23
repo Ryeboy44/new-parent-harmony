@@ -36,7 +36,7 @@ export function ServicesOverview() {
       <SectionHeading
         eyebrow="Services"
         title="Support that meets you in real life"
-        description="From the first weeks home through feeding questions and sleepless nights, you can choose the care that fits your family—virtually or in person when available."
+        description="From the first weeks home through feeding questions and sleepless nights, you can choose the care that fits your family—in Montgomery County, MD and surrounding areas, virtually or in person when available."
       />
       <ul className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:gap-8">
         {services.map((service) => (

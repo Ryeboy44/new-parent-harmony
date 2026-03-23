@@ -4,20 +4,19 @@ import { SiteFooter } from "@/components/home/site-footer";
 import { SiteNavbar } from "@/components/home/site-navbar";
 
 export const metadata: Metadata = {
-  title: "Contact & discovery call | New Parent Harmony",
+  title: "Book a discovery call",
   description:
-    "Request a discovery call for postpartum, lactation, or sleep support in Montgomery County and beyond. Calm, confidential, no pressure.",
+    "Request a confidential discovery call for postpartum doula care, lactation support, or infant sleep help. Serving Montgomery County, MD and surrounding areas, with virtual options when that fits best.",
+  openGraph: {
+    title: "Book a discovery call | New Parent Harmony",
+    description:
+      "Reach out for calm, no-pressure postpartum, lactation, or sleep support—Montgomery County, MD and surrounding areas.",
+  },
 };
 
 export default function ContactPage() {
   return (
     <>
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-foreground focus:shadow-md"
-      >
-        Skip to main content
-      </a>
       <SiteNavbar />
       <main
         id="main-content"

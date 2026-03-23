@@ -6,7 +6,9 @@ export function SiteFooter() {
           <p className="font-display text-base font-normal text-foreground sm:text-lg">
             New Parent Harmony
           </p>
-          <p className="mt-2 text-sm text-muted">Montgomery County, MD</p>
+          <p className="mt-2 text-sm text-muted">
+            Montgomery County, MD and surrounding areas
+          </p>
           <p className="mt-5 text-sm">
             <a
               href="mailto:hello@newparentharmony.com"

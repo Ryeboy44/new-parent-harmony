@@ -13,7 +13,7 @@ const reasons = [
   },
   {
     title: "In-home or virtual—your call",
-    body: "I support families across Montgomery County and beyond, beside you in person or through the screen, depending on what fits.",
+    body: "I support families across Montgomery County, MD and surrounding areas—beside you in person or through the screen, depending on what fits.",
   },
   {
     title: "Your values lead",

@@ -7,10 +7,10 @@ export function AboutGemmaPreview() {
   return (
     <SectionShell id="about" background="cream">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[1.35rem] bg-cream-deep/30 shadow-[0_20px_48px_-28px_rgb(44_52_44_/0.18)] sm:rounded-3xl lg:mx-0 lg:max-w-none">
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl bg-cream lg:mx-0 lg:max-w-none">
           <Image
             src={nphSiteImages.gemmaPortrait}
-            alt="Gemma, founder of New Parent Harmony"
+            alt="Gemma, founder of New Parent Harmony; postpartum doula, lactation counselor, and pediatric sleep consultant in Montgomery County, MD and surrounding areas"
             fill
             className="object-cover object-[50%_20%]"
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -32,9 +32,9 @@ export function AboutGemmaPreview() {
             you never feel like you&apos;re facing the hard nights alone.
           </p>
           <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
-            Based in Montgomery County, I work with families locally and
-            virtually, always prioritizing safety, respect, and confidence over
-            perfection.
+            Based in Montgomery County, MD and surrounding areas, I work with
+            families locally and virtually, always prioritizing safety, respect,
+            and confidence over perfection.
           </p>
           <div className="mt-9 sm:mt-10">
             <ButtonLink href="/services#about-gemma" variant="secondary">
