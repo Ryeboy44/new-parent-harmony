@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { heroNewbornImage } from "@/data/site-images";
+import { heroBabyImage } from "@/data/site-images";
 import { ButtonLink } from "@/components/ui/button-link";
 
 export function HeroSection() {
@@ -39,14 +39,14 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="relative flex w-full justify-center px-1 sm:px-2 lg:justify-end lg:px-0 lg:pt-0">
-          <div className="relative aspect-[5/6] w-full max-w-[min(100%,19.5rem)] overflow-hidden rounded-2xl sm:max-w-[21rem] lg:max-w-full">
+        <div className="relative flex w-full justify-center px-2 py-1 sm:px-4 sm:py-2 lg:justify-end lg:px-0 lg:py-0">
+          <div className="relative aspect-[5/6] w-full max-w-[min(100%,20rem)] overflow-hidden rounded-2xl sm:max-w-[22rem] lg:max-w-full">
             <Image
-              src={heroNewbornImage}
-              alt="Swaddled newborn resting peacefully in a calm home environment on soft cream bedding, gently lit"
+              src={heroBabyImage}
+              alt="Swaddled newborn resting peacefully in a calm home environment"
               fill
-              className="object-cover object-[50%_48%] sm:object-[50%_46%]"
-              sizes="(max-width: 1024px) 90vw, 360px"
+              className="object-cover object-center"
+              sizes="(max-width: 640px) 92vw, (max-width: 1024px) 40vw, 360px"
               priority
             />
           </div>

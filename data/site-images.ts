@@ -1,8 +1,8 @@
 /**
- * Local hero: swaddled newborn at rest — soft natural light, neutral cream tones, home setting.
- * Photo: Alexander Mass via Unsplash (egeBuUJXK_0) — unsplash.com/license
+ * Homepage hero — user-provided lifestyle image.
+ * File in repo: `public/images/hero-baby.png`. If you add `hero-baby.jpg`, change the path below to `/images/hero-baby.jpg`.
  */
-export const heroNewbornImage = "/images/hero-newborn.jpg";
+export const heroBabyImage = "/images/hero-baby.png";
 
 const NPH_ORIGIN = "https://www.newparentharmony.com";
 
