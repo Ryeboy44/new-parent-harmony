@@ -1,19 +1,24 @@
 import Image from "next/image";
-import { nphSiteImages } from "@/data/site-images";
+import { gemmaPortraitImage } from "@/data/site-images";
 import { SectionShell } from "@/components/ui/section-shell";
 import { ButtonLink } from "@/components/ui/button-link";
+
+/** Matches optimized output / placeholder dimensions (4:5). */
+const GEMMA_PORTRAIT_WIDTH = 960;
+const GEMMA_PORTRAIT_HEIGHT = 1200;
 
 export function AboutGemmaPreview() {
   return (
     <SectionShell id="about" background="cream">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl lg:mx-0 lg:max-w-none">
+        <div className="mx-auto w-full min-w-0 max-w-sm lg:mx-0 lg:max-w-none">
           <Image
-            src={nphSiteImages.gemmaPortrait}
-            alt="Gemma, founder of New Parent Harmony — warm portrait of a postpartum doula, lactation counselor, and pediatric sleep consultant serving Montgomery County, MD and surrounding areas"
-            fill
-            className="object-cover object-[50%_20%]"
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            src={gemmaPortraitImage}
+            alt="Gemma, founder of New Parent Harmony, postpartum doula, lactation counselor, and pediatric sleep consultant"
+            width={GEMMA_PORTRAIT_WIDTH}
+            height={GEMMA_PORTRAIT_HEIGHT}
+            className="h-auto w-full rounded-2xl object-cover"
+            sizes="(max-width: 1024px) min(100vw - 2rem, 24rem), min(50vw - 4rem, 36rem)"
           />
         </div>
 

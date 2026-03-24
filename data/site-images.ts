@@ -4,9 +4,9 @@
  */
 export const heroBabyImage = "/images/hero-baby.png";
 
-const NPH_ORIGIN = "https://www.newparentharmony.com";
-
-export const nphSiteImages = {
-  /** Founder portrait (legacy site asset). */
-  gemmaPortrait: `${NPH_ORIGIN}/files/138733821.jpg`,
-} as const;
+/**
+ * About / Meet Gemma portrait — local file only (reliable on all devices; no remote fetch).
+ * Replace `public/images/gemma-portrait.jpg` with Gemma’s real headshot when ready.
+ * Current file may be a neutral cream placeholder if the repo shipped without a photo yet.
+ */
+export const gemmaPortraitImage = "/images/gemma-portrait.jpg";

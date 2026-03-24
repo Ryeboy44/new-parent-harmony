@@ -1,15 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "www.newparentharmony.com",
-        pathname: "/files/**",
-      },
-    ],
-  },
+  /* All marketing images are served from /public — no remote image domains required. */
 };
 
 export default nextConfig;
