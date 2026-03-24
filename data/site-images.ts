@@ -1,6 +1,6 @@
 /**
- * Local hero: sleeping newborn on soft neutral textiles — calm, natural light.
- * Photo: Selenay Balkan via Unsplash (luaaWbxfF8Y) — unsplash.com/license
+ * Local hero: swaddled newborn at rest — soft natural light, neutral cream tones, home setting.
+ * Photo: Alexander Mass via Unsplash (egeBuUJXK_0) — unsplash.com/license
  */
 export const heroNewbornImage = "/images/hero-newborn.jpg";
 

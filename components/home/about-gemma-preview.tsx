@@ -10,7 +10,7 @@ export function AboutGemmaPreview() {
         <div className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-2xl lg:mx-0 lg:max-w-none">
           <Image
             src={nphSiteImages.gemmaPortrait}
-            alt="Gemma, founder of New Parent Harmony; postpartum doula, lactation counselor, and pediatric sleep consultant in Montgomery County, MD and surrounding areas"
+            alt="Gemma, founder of New Parent Harmony — warm portrait of a postpartum doula, lactation counselor, and pediatric sleep consultant serving Montgomery County, MD and surrounding areas"
             fill
             className="object-cover object-[50%_20%]"
             sizes="(max-width: 1024px) 100vw, 50vw"

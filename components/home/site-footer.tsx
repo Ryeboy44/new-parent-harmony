@@ -1,3 +1,5 @@
+import { SITE_EMAIL, siteMailtoHref } from "@/data/site-contact";
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-border-soft/50 bg-cream-deep/50 py-14 md:py-16">
@@ -11,10 +13,10 @@ export function SiteFooter() {
           </p>
           <p className="mt-5 text-sm">
             <a
-              href="mailto:hello@newparentharmony.com"
+              href={siteMailtoHref}
               className="text-muted underline-offset-4 transition-colors hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
             >
-              hello@newparentharmony.com
+              {SITE_EMAIL}
             </a>
           </p>
         </div>

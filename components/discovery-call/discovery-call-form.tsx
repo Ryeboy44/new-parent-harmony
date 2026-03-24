@@ -9,6 +9,7 @@ import {
   discoveryCallSchema,
 } from "@/lib/discovery-call/schema";
 import { zodFieldErrors } from "@/lib/discovery-call/zod-field-errors";
+import { SITE_EMAIL, siteMailtoHref } from "@/data/site-contact";
 
 type ServiceId = (typeof SERVICE_OPTIONS)[number]["id"];
 
@@ -136,10 +137,10 @@ export function DiscoveryCallForm() {
             If you don&apos;t see a reply, please check spam or reach out
             directly at{" "}
             <a
-              href="mailto:hello@newparentharmony.com"
+              href={siteMailtoHref}
               className="font-medium text-harmony-green-deep underline decoration-harmony-green/30 underline-offset-[0.2em] transition-colors hover:decoration-harmony-green-deep"
             >
-              hello@newparentharmony.com
+              {SITE_EMAIL}
             </a>
             .
           </p>

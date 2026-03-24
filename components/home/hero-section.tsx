@@ -8,7 +8,7 @@ export function HeroSection() {
       className="border-b border-border-soft/40 bg-cream"
       aria-labelledby="hero-heading"
     >
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:gap-12 sm:px-6 sm:py-20 lg:grid-cols-[1fr_minmax(0,22rem)] lg:items-center lg:gap-14 lg:px-10 lg:py-28">
+      <div className="mx-auto grid max-w-6xl gap-12 px-4 py-16 sm:gap-14 sm:px-6 sm:py-20 lg:grid-cols-[1fr_minmax(0,24rem)] lg:items-center lg:gap-16 lg:px-10 lg:py-28">
         <div className="min-w-0">
           <p className="mb-5 text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-harmony-green-muted sm:text-xs">
             New Parent Harmony
@@ -39,14 +39,14 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="relative flex w-full justify-center lg:justify-end lg:pt-0">
-          <div className="relative aspect-[4/5] w-full max-w-[min(100%,20rem)] overflow-hidden rounded-2xl sm:max-w-xs lg:max-w-full">
+        <div className="relative flex w-full justify-center px-1 sm:px-2 lg:justify-end lg:px-0 lg:pt-0">
+          <div className="relative aspect-[5/6] w-full max-w-[min(100%,19.5rem)] overflow-hidden rounded-2xl sm:max-w-[21rem] lg:max-w-full">
             <Image
               src={heroNewbornImage}
-              alt="Peaceful newborn sleeping on soft white and cream blankets in gentle natural light"
+              alt="Swaddled newborn resting peacefully in a calm home environment on soft cream bedding, gently lit"
               fill
-              className="object-cover object-[50%_42%]"
-              sizes="(max-width: 1024px) 85vw, 320px"
+              className="object-cover object-[50%_48%] sm:object-[50%_46%]"
+              sizes="(max-width: 1024px) 90vw, 360px"
               priority
             />
           </div>
