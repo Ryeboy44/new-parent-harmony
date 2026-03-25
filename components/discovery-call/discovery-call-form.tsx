@@ -10,6 +10,7 @@ import {
 } from "@/lib/discovery-call/schema";
 import { zodFieldErrors } from "@/lib/discovery-call/zod-field-errors";
 import { SITE_EMAIL, siteMailtoHref } from "@/data/site-contact";
+import { PRIMARY_CTA_LABEL } from "@/data/site-cta";
 
 type ServiceId = (typeof SERVICE_OPTIONS)[number]["id"];
 
@@ -163,13 +164,13 @@ export function DiscoveryCallForm() {
       />
       <div className="border-b border-border-soft/50 px-6 pb-7 pt-8 sm:px-8 sm:pb-8 sm:pt-9">
         <p className="text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-harmony-green-muted">
-          Discovery call
+          Free chat
         </p>
         <h1
           id="discovery-call-title"
           className="mt-2 font-display text-[1.5rem] font-normal leading-tight tracking-[-0.02em] text-foreground sm:text-[1.625rem]"
         >
-          Book a discovery call
+          {PRIMARY_CTA_LABEL}
         </h1>
         <p className="mt-3 max-w-lg text-sm leading-[1.65] text-muted sm:mt-4 sm:text-[0.9375rem]">
           I&apos;d love to learn more about how I can support your family.

@@ -18,7 +18,7 @@ function buildHtml(data: DiscoveryCallInput): string {
         ? "Phone"
         : "Email or phone";
   return `
-    <h2>New discovery call request</h2>
+    <h2>New free 15-minute chat request</h2>
     <p><strong>Name:</strong> ${escapeHtml(data.fullName)}</p>
     <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
     <p><strong>Phone:</strong> ${data.phone ? escapeHtml(data.phone) : "—"}</p>
@@ -86,7 +86,7 @@ export async function sendDiscoverySubmission(
       from: config.from,
       to: config.to,
       replyTo: data.email,
-      subject: `Discovery call: ${data.fullName}`,
+      subject: `Free 15-min chat: ${data.fullName}`,
       html: buildHtml(data),
     });
 

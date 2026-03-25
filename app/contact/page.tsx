@@ -4,13 +4,13 @@ import { SiteFooter } from "@/components/home/site-footer";
 import { SiteNavbar } from "@/components/home/site-navbar";
 
 export const metadata: Metadata = {
-  title: "Book a discovery call",
+  title: "Book a free 15-minute chat",
   description:
-    "Request a confidential discovery call for postpartum doula care, lactation support, or infant sleep help. Serving Montgomery County, MD and surrounding areas, with virtual options when that fits best.",
+    "Schedule a confidential, no-pressure chat for postpartum support, breastfeeding help, or infant sleep support. Montgomery County, MD and surrounding areas; virtual visits welcome.",
   openGraph: {
-    title: "Book a discovery call | New Parent Harmony",
+    title: "Book a free 15-minute chat | New Parent Harmony",
     description:
-      "Reach out for calm, no-pressure postpartum, lactation, or sleep support—Montgomery County, MD and surrounding areas.",
+      "Reach out for calm postpartum, lactation, and sleep support—Montgomery County, MD and surrounding areas.",
   },
 };
 

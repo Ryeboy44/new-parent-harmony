@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { ButtonLink } from "@/components/ui/button-link";
+import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 
 const navLinks = [
   { href: "/#about", label: "About" },
@@ -40,8 +41,8 @@ export function SiteNavbar() {
         </nav>
 
         <div className="hidden md:block">
-          <ButtonLink href="/discovery-call" variant="primary">
-            Book a Discovery Call
+          <ButtonLink href={PRIMARY_CTA_HREF} variant="primary">
+            {PRIMARY_CTA_LABEL}
           </ButtonLink>
         </div>
 
@@ -95,8 +96,8 @@ export function SiteNavbar() {
               </Link>
             ))}
             <div className="mt-4 pt-2">
-              <ButtonLink href="/discovery-call" variant="primary" className="w-full">
-                Book a Discovery Call
+              <ButtonLink href={PRIMARY_CTA_HREF} variant="primary" className="w-full">
+                {PRIMARY_CTA_LABEL}
               </ButtonLink>
             </div>
           </nav>

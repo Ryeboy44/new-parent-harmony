@@ -5,11 +5,12 @@ import { SiteNavbar } from "@/components/home/site-navbar";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionShell } from "@/components/ui/section-shell";
 import { surfaceCard } from "@/components/ui/surface-card";
+import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 
 export const metadata: Metadata = {
   title: "Postpartum, lactation & sleep services",
   description:
-    "Sleep & Feed Reset, postpartum doula care, lactation counseling, and responsive infant sleep support—in person or virtual for families in Montgomery County, MD and surrounding areas.",
+    "Sleep & Feed Reset, postpartum doula care, lactation counseling, and help with newborn sleep—in person or virtual for families in Montgomery County, MD and surrounding areas.",
   openGraph: {
     title: "Postpartum, lactation & sleep services | New Parent Harmony",
     description:
@@ -71,8 +72,8 @@ export default function ServicesPage() {
                     {block.body}
                   </p>
                   <div className="mt-8">
-                    <ButtonLink href="/discovery-call" className="w-full sm:w-auto">
-                      Book a Discovery Call
+                    <ButtonLink href={PRIMARY_CTA_HREF} className="w-full sm:w-auto">
+                      {PRIMARY_CTA_LABEL}
                     </ButtonLink>
                   </div>
                 </article>
@@ -101,7 +102,7 @@ export default function ServicesPage() {
               respect, and confidence over perfection.
             </p>
             <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-              <ButtonLink href="/discovery-call">Book a Discovery Call</ButtonLink>
+              <ButtonLink href={PRIMARY_CTA_HREF}>{PRIMARY_CTA_LABEL}</ButtonLink>
               <ButtonLink href="/" variant="secondary">
                 Back to home
               </ButtonLink>

@@ -13,9 +13,10 @@ export function IntroTrustSection() {
           supporting families.
         </p>
         <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:mt-5 sm:text-base">
-          I walk beside families during the tender postpartum season with a
-          steady, judgment-free presence. Whether you&apos;re healing, learning
-          to feed your baby, or craving more sleep, my role is to help you feel
+          I walk beside families during the tender postpartum season—especially
+          when you&apos;re an overwhelmed new parent and everything feels
+          louder than you expected. Whether you&apos;re healing, learning to
+          feed your baby, or craving more sleep, my role is to help you feel
           grounded, informed, and genuinely supported—not rushed or corrected.
         </p>
       </div>
