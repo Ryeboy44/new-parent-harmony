@@ -5,8 +5,7 @@
 export const heroBabyImage = "/images/hero-baby.png";
 
 /**
- * About / Meet Gemma portrait — local file only (reliable on all devices; no remote fetch).
- * Replace `public/images/gemma-portrait.jpg` with Gemma’s real headshot when ready.
- * Current file may be a neutral cream placeholder if the repo shipped without a photo yet.
+ * About / Meet Gemma portrait — local file only (`public/images/gemma-portrait.jpg`).
+ * If you replace the file, update width/height in `about-gemma-preview.tsx` to match intrinsic dimensions.
  */
 export const gemmaPortraitImage = "/images/gemma-portrait.jpg";

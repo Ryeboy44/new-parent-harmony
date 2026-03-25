@@ -3,9 +3,9 @@ import { gemmaPortraitImage } from "@/data/site-images";
 import { SectionShell } from "@/components/ui/section-shell";
 import { ButtonLink } from "@/components/ui/button-link";
 
-/** Matches optimized output / placeholder dimensions (4:5). */
-const GEMMA_PORTRAIT_WIDTH = 960;
-const GEMMA_PORTRAIT_HEIGHT = 1200;
+/** Intrinsic size of `public/images/gemma-portrait.jpg` (updates if you replace the file). */
+const GEMMA_PORTRAIT_WIDTH = 2838;
+const GEMMA_PORTRAIT_HEIGHT = 4096;
 
 export function AboutGemmaPreview() {
   return (
