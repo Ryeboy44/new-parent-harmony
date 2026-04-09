@@ -6,9 +6,9 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 
 const navLinks = [
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/testimonials", label: "Testimonials" },
+  { href: "/#testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

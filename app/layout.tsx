@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import { SkipToMainLink } from "@/components/ui/skip-to-main-link";
+import { siteBaseUrl } from "@/data/site-url";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,11 +21,8 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.newparentharmony.com";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteBaseUrl),
   title: {
     default:
       "New Parent Harmony | Postpartum, lactation & infant sleep support",
