@@ -26,6 +26,30 @@ const nextConfig: NextConfig = {
         destination: "/services",
         permanent: true,
       },
+      { source: "/about-us.html", destination: "/about", permanent: true },
+      { source: "/services.html", destination: "/services", permanent: true },
+      { source: "/services-.html", destination: "/services", permanent: true },
+      {
+        source: "/ContctPage.html",
+        destination: "/contact",
+        permanent: true,
+      },
+      {
+        source: "/testimonials.html",
+        destination: "/#testimonials",
+        permanent: true,
+      },
+      {
+        source: "/lactation-counciling.html",
+        destination: "/services",
+        permanent: true,
+      },
+      {
+        source: "/parenting-course.html",
+        destination: "/services",
+        permanent: true,
+      },
+      { source: "/reiki.html", destination: "/about", permanent: true },
     ];
   },
 };
