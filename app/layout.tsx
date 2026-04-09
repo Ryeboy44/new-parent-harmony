@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     siteName: "New Parent Harmony",
   },
+  verification: {
+    google: "a5Tfyd4pi4wPaBmbPZ0qbxEi-KIyavW_lNKHj9mw9qY",
+  },
 };
 
 export default function RootLayout({
