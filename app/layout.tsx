@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import { SkipToMainLink } from "@/components/ui/skip-to-main-link";
 import { siteBaseUrl } from "@/data/site-url";
@@ -54,6 +55,7 @@ export default function RootLayout({
         <SkipToMainLink />
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
