@@ -1,5 +1,5 @@
 /**
- * Upgrade page copy and structure. Wire `data-stripe-plan` on checkout buttons to Stripe later.
+ * Upgrade page copy and structure. Checkout uses Stripe (see `/api/checkout`).
  */
 
 export const UPGRADE_HEADER = {
@@ -20,8 +20,6 @@ export const UPGRADE_PLANS = {
     name: "Monthly",
     price: "$9.99",
     period: "per month",
-    /** Placeholder — replace with Stripe Price ID when integrating */
-    stripeDataAttr: "monthly",
     note: "Flexible if you are not sure how long you will need the library.",
   },
   annual: {
@@ -29,7 +27,6 @@ export const UPGRADE_PLANS = {
     name: "Annual",
     price: "$79",
     period: "per year",
-    stripeDataAttr: "annual",
     note: "Best value — less than $7/month when you commit for the year.",
     bestValue: true,
   },
@@ -88,7 +85,7 @@ export const UPGRADE_FAQ: UpgradeFaqItem[] = [
   {
     question: "Can I cancel anytime?",
     answer:
-      "Yes. When Stripe billing is connected, you will manage your subscription from your account and can cancel before the next renewal. We will always show renewal dates clearly before you pay.",
+      "Yes. You can manage billing in Stripe’s customer portal (we will link this from the app when you are on premium). Cancel before the next renewal if you do not want another charge—we will always show renewal timing clearly before you pay.",
   },
   {
     question: "Is the free version still useful?",

@@ -41,8 +41,12 @@ model User {
   email         String?   @unique
   emailVerified DateTime?
   image         String?
-  /// "free" | "premium" — default free; set "premium" manually or via future Stripe webhook
+  /// "free" | "premium" — default free; Stripe webhooks keep this in sync
   plan          String    @default("free")
+  /// Stripe Customer id (cus_…)
+  stripeCustomerId     String? @unique
+  /// Active Stripe Subscription id (sub_…), if any
+  stripeSubscriptionId String? @unique
   accounts      Account[]
   sessions      Session[]
 }

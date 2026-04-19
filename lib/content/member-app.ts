@@ -5,6 +5,7 @@ export const MEMBER_NAV_ITEMS = [
   { href: "/app/support-library", label: "Support library" },
   { href: "/app/tools", label: "Tools" },
   { href: "/app/upgrade", label: "Upgrade" },
+  { href: "/app/account", label: "Account" },
 ] as const;
 
 export type MemberPageSlug =

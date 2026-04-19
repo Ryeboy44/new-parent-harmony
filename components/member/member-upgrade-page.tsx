@@ -1,8 +1,7 @@
-import type { ReactNode } from "react";
 import { ButtonLink } from "@/components/shared/ui/button-link";
-import { buttonBase, buttonVariantClass } from "@/components/shared/ui/button-classes";
 import { SectionShell } from "@/components/shared/ui/section-shell";
 import { surfaceCard } from "@/components/shared/ui/surface-card";
+import { StripeSubscriptionButton } from "@/components/member/stripe-subscription-button";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 import {
   UPGRADE_COMPARISON,
@@ -37,29 +36,6 @@ function CheckIcon() {
     >
       <path d="M20 6 9 17l-5-5" />
     </svg>
-  );
-}
-
-/** Placeholder checkout — swap for Stripe Checkout / Payment Links when ready. */
-function MockCheckoutButton({
-  planName,
-  stripeDataAttr,
-  children,
-}: {
-  planName: string;
-  stripeDataAttr: string;
-  children: ReactNode;
-}) {
-  return (
-    <button
-      type="button"
-      disabled
-      data-stripe-plan={stripeDataAttr}
-      className={`${buttonBase} ${buttonVariantClass.primary} w-full cursor-not-allowed opacity-80`}
-      aria-label={`${planName} — checkout coming soon`}
-    >
-      {children}
-    </button>
   );
 }
 
@@ -110,12 +86,9 @@ export function MemberUpgradePage() {
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted">{monthly.note}</p>
             <div className="mt-8 mt-auto pt-2">
-              <MockCheckoutButton
-                planName={monthly.name}
-                stripeDataAttr={monthly.stripeDataAttr}
-              >
+              <StripeSubscriptionButton billing="monthly" planName={monthly.name}>
                 Subscribe monthly
-              </MockCheckoutButton>
+              </StripeSubscriptionButton>
             </div>
           </div>
 
@@ -136,12 +109,9 @@ export function MemberUpgradePage() {
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted">{annual.note}</p>
             <div className="mt-8 mt-auto pt-2">
-              <MockCheckoutButton
-                planName={annual.name}
-                stripeDataAttr={annual.stripeDataAttr}
-              >
+              <StripeSubscriptionButton billing="annual" planName={annual.name}>
                 Subscribe annually
-              </MockCheckoutButton>
+              </StripeSubscriptionButton>
             </div>
           </div>
         </div>
