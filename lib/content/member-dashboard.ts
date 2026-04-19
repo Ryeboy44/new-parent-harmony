@@ -4,14 +4,7 @@ export const DASHBOARD_WELCOME = {
   eyebrow: "Your dashboard",
   heading: "Welcome to New Parent Harmony",
   subtext:
-    "A calm corner for you—whether you are still expecting or already in the thick of it. Explore gentle guidance for pregnancy, postpartum, feeding, sleep, and recovery at your own pace. There is no rush here.",
-} as const;
-
-export const DASHBOARD_CONTINUE = {
-  title: "Comfort measures after birth",
-  description: "Simple ideas for rest, warmth, and feeling a little more like yourself.",
-  meta: "Support library · Article",
-  href: "/app/support-library",
+    "A calm corner you can open anytime—starting with a small focus for today and a week that meets you where you are. Explore pregnancy, postpartum, feeding, sleep, and recovery at your own pace. There is no rush here.",
 } as const;
 
 export const DASHBOARD_QUICK_ACCESS = [
@@ -36,27 +29,27 @@ export const DASHBOARD_QUICK_ACCESS = [
 export const DASHBOARD_FREE_ESSENTIALS = [
   {
     title: "Hospital Bag Checklist",
-    href: "/app/support-library",
+    href: "/app/tools#tool-hospital-bag",
   },
   {
-    title: "Birth Plan Basics",
-    href: "/app/support-library",
+    title: "Birth Plan Worksheet",
+    href: "/app/tools#tool-birth-plan",
   },
   {
-    title: "Safe Sleep Setup",
-    href: "/app/support-library",
+    title: "Safe Sleep Checklist",
+    href: "/app/tools#tool-safe-sleep",
   },
   {
     title: "Nursery Essentials",
-    href: "/app/support-library",
+    href: "/app/tools#tool-nursery-essentials",
   },
   {
-    title: "Feeding Station Checklist",
-    href: "/app/support-library",
+    title: "Hospital Tour Questions",
+    href: "/app/tools#tool-hospital-tour",
   },
   {
-    title: "When to Ask for Help",
-    href: "/app/support-library",
+    title: "Route to Hospital",
+    href: "/app/tools#tool-route-hospital",
   },
 ] as const;
 

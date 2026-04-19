@@ -1,41 +1,36 @@
 /**
- * Support Library — placeholder catalog. Expand or replace with CMS / DB later.
+ * Support Library — structured catalog mapped from `docs/preparing-for-baby-guide.md`.
+ * Categories are mobile-friendly filters; copy stays concise and skimmable.
  */
 
 export const SUPPORT_LIBRARY_HEADER = {
   eyebrow: "Member resources",
   title: "Support Library",
   subheading:
-    "Trusted, gentle guidance for pregnancy, postpartum, feeding, sleep, and early parenthood—organized so you can find what you need without overwhelm.",
+    "Trusted, gentle guidance organized by topic—so you can find what you need without overwhelm.",
 } as const;
 
 export const SUPPORT_LIBRARY_SEARCH_PLACEHOLDER =
-  "Search feeding, sleep, recovery, newborn care...";
+  "Search birth prep, feeding, recovery, boundaries...";
 
 export type SupportLibraryCategoryId =
-  | "preparing"
-  | "labor"
-  | "feeding"
-  | "sleep"
-  | "recovery"
-  | "emotional"
-  | "newborn"
-  | "home"
-  | "support";
+  | "birth-prep"
+  | "home-baby"
+  | "feeding-equipment"
+  | "support-recovery"
+  | "family-boundaries"
+  | "celebration-registry";
 
 export const SUPPORT_LIBRARY_CATEGORIES: {
   id: SupportLibraryCategoryId;
   label: string;
 }[] = [
-  { id: "preparing", label: "Preparing for Baby" },
-  { id: "labor", label: "Labor & Birth Prep" },
-  { id: "feeding", label: "Feeding" },
-  { id: "sleep", label: "Sleep" },
-  { id: "recovery", label: "Postpartum Recovery" },
-  { id: "emotional", label: "Emotional Wellbeing" },
-  { id: "newborn", label: "Newborn Care" },
-  { id: "home", label: "Practical Home Prep" },
-  { id: "support", label: "Getting Support" },
+  { id: "birth-prep", label: "Birth Preparation" },
+  { id: "home-baby", label: "Home & Baby Setup" },
+  { id: "feeding-equipment", label: "Feeding & Equipment" },
+  { id: "support-recovery", label: "Support & Recovery" },
+  { id: "family-boundaries", label: "Family & Boundaries" },
+  { id: "celebration-registry", label: "Celebration & Registry" },
 ];
 
 export type LibraryTier = "free" | "premium";
@@ -46,209 +41,223 @@ export type SupportLibraryResource = {
   summary: string;
   categoryId: SupportLibraryCategoryId;
   tier: LibraryTier;
-  /** Shown in the featured strip when true */
   featured: boolean;
 };
 
 export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
   {
-    id: "birth-plan",
-    title: "Choosing a Birth Plan",
+    id: "birth-plan-values",
+    title: "Birth Plan as Values, Not a Script",
     summary:
-      "Clarify your values and preferences so your care team can support you—not a rigid script, just a clear compass.",
-    categoryId: "labor",
+      "Clarify what matters most—comfort, communication, consent—so your team can support you when paths change.",
+    categoryId: "birth-prep",
     tier: "free",
     featured: true,
   },
   {
-    id: "hospital-tour",
-    title: "Touring the Hospital or Birthing Center",
+    id: "hospital-tour-questions",
+    title: "Hospital or Birth Center Tour",
     summary:
-      "What to notice, who to meet, and how to feel more oriented before the big day.",
-    categoryId: "preparing",
+      "What to notice, who to meet, and questions that turn a walk-through into real orientation.",
+    categoryId: "birth-prep",
     tier: "free",
     featured: true,
   },
   {
-    id: "pain-options",
-    title: "Pain Management Options",
+    id: "childbirth-class-fit",
+    title: "Choosing a Childbirth Class",
     summary:
-      "An overview of medical and non-medical comfort measures—so you can ask better questions without fear.",
-    categoryId: "labor",
+      "Group vs. private, online vs. in person, and how to spot a balanced curriculum—not fear or fluff alone.",
+    categoryId: "birth-prep",
+    tier: "free",
+    featured: true,
+  },
+  {
+    id: "pain-options-overview",
+    title: "Pain Management: Natural & Medical",
+    summary:
+      "Breathing, movement, water, epidurals, nitrous—an overview so options feel familiar, not foreign.",
+    categoryId: "birth-prep",
     tier: "premium",
     featured: true,
   },
   {
-    id: "safe-sleep-space",
-    title: "Setting Up a Safe Sleep Space",
+    id: "stages-of-labor",
+    title: "Stages of Labor (Quick Map)",
     summary:
-      "Simple, evidence-aligned steps for a bassinet or crib that feels calm—not clinical.",
-    categoryId: "sleep",
+      "Early vs. active labor, pushing, and delivering the placenta—plain language for tired brains.",
+    categoryId: "birth-prep",
+    tier: "premium",
+    featured: false,
+  },
+  {
+    id: "route-to-hospital",
+    title: "Mapping Your Route to Care",
+    summary:
+      "Primary and backup routes, parking, weather, and who texts whom when you are on the way.",
+    categoryId: "birth-prep",
+    tier: "free",
+    featured: false,
+  },
+  {
+    id: "nursery-safe-sleep",
+    title: "Nursery & Safe Sleep Basics",
+    summary:
+      "Firm flat surface, alone, on the back—plus what to skip so the room feels calm, not cluttered.",
+    categoryId: "home-baby",
     tier: "free",
     featured: true,
+  },
+  {
+    id: "kitchen-prep",
+    title: "Kitchen & Easy Meals Before Baby",
+    summary:
+      "Stock staples, one-handed snacks, and freezer ideas that respect low energy—not gourmet expectations.",
+    categoryId: "home-baby",
+    tier: "free",
+    featured: true,
+  },
+  {
+    id: "car-seat-basics",
+    title: "Car Seat Installation Basics",
+    summary:
+      "Why install early, where to find CPST help, and why the manual is your best friend.",
+    categoryId: "home-baby",
+    tier: "free",
+    featured: false,
+  },
+  {
+    id: "gear-calm",
+    title: "Baby Gear Without the Noise",
+    summary:
+      "What often helps, what can wait, and how to avoid shopping from anxiety.",
+    categoryId: "home-baby",
+    tier: "premium",
+    featured: false,
   },
   {
     id: "feeding-station",
-    title: "Creating a Feeding & Diaper Station",
+    title: "Feeding & Diaper Station",
     summary:
-      "One cozy corner with everything within reach for those bleary 3 a.m. wakeups.",
-    categoryId: "feeding",
+      "One reachable zone for water, snacks, burp cloths, and supplies—for bleary 3 a.m. wakeups.",
+    categoryId: "feeding-equipment",
     tier: "free",
     featured: true,
+  },
+  {
+    id: "bottles-diapers",
+    title: "Choosing Bottles & Diapers",
+    summary:
+      "Starter strategies without buying every brand—simple beats perfect.",
+    categoryId: "feeding-equipment",
+    tier: "free",
+    featured: false,
+  },
+  {
+    id: "pump-selection",
+    title: "Pump Selection & Insurance",
+    summary:
+      "When a pump helps, questions for DME suppliers, and keeping expectations humane.",
+    categoryId: "feeding-equipment",
+    tier: "premium",
+    featured: false,
   },
   {
     id: "enlist-help",
-    title: "Enlisting Help After Baby Arrives",
+    title: "Finding Help You Can Actually Use",
     summary:
-      "How to name what you need, delegate without guilt, and protect your recovery window.",
-    categoryId: "support",
-    tier: "free",
+      "What a postpartum doula, IBCLC, night nurse, or cleaner each does—and how to say “yes, we need that” without shrinking.",
+    categoryId: "support-recovery",
+    tier: "premium",
     featured: true,
   },
   {
-    id: "third-trimester-checklist",
-    title: "Third Trimester Calm Checklist",
+    id: "postpartum-meals",
+    title: "Meals & Groceries When You’re Running on Empty",
     summary:
-      "Small, doable tasks spread across weeks so nothing piles up at the end.",
-    categoryId: "preparing",
-    tier: "free",
-    featured: false,
-  },
-  {
-    id: "partner-labor-role",
-    title: "Your Partner’s Role in Labor",
-    summary:
-      "Concrete ways to offer steady presence—hands, voice, advocacy—without guessing.",
-    categoryId: "labor",
-    tier: "premium",
-    featured: false,
-  },
-  {
-    id: "latch-basics",
-    title: "Latch & Positioning Basics",
-    summary:
-      "Photos-free cues for comfort for you and baby in the first days together.",
-    categoryId: "feeding",
-    tier: "free",
-    featured: false,
-  },
-  {
-    id: "pumping-intro",
-    title: "Pumping When You Need a Bridge",
-    summary:
-      "When a pump might help, how to protect supply, and how to keep expectations humane.",
-    categoryId: "feeding",
-    tier: "premium",
-    featured: false,
-  },
-  {
-    id: "day-night-rhythm",
-    title: "Gentle Day–Night Rhythm",
-    summary:
-      "Light, activity, and feeds—soft patterns without strict schedules in week one.",
-    categoryId: "sleep",
-    tier: "free",
-    featured: false,
-  },
-  {
-    id: "night-wakes",
-    title: "Understanding Night Wakes",
-    summary:
-      "What is typical, when to check in with a clinician, and language for tired brains.",
-    categoryId: "sleep",
+      "Meal trains, delivery apps, and snacks you can eat one-handed—fuel without another decision to make.",
+    categoryId: "support-recovery",
     tier: "premium",
     featured: false,
   },
   {
     id: "bleeding-lochia",
-    title: "Bleeding & Lochia: What’s Normal",
+    title: "Bleeding & Lochia: What’s Normal, What’s Not",
     summary:
-      "Ranges, red flags, and how to track without spiraling—written with postpartum brains in mind.",
-    categoryId: "recovery",
+      "What lochia tends to do day by day, what to watch for, and when to call—plain words for a tired brain.",
+    categoryId: "support-recovery",
     tier: "free",
     featured: false,
   },
   {
-    id: "cesarean-recovery",
-    title: "Cesarean Recovery at Home",
+    id: "household-duties",
+    title: "Dividing Duties at Home",
     summary:
-      "Movement, rest, incision care basics, and pacing that respects healing.",
-    categoryId: "recovery",
+      "Fair splits, visible task lists, and naming mental load—not just dishes.",
+    categoryId: "family-boundaries",
     tier: "premium",
-    featured: false,
-  },
-  {
-    id: "baby-blues",
-    title: "Baby Blues vs. Something More",
-    summary:
-      "Normalize the rollercoaster while naming when extra support matters.",
-    categoryId: "emotional",
-    tier: "free",
-    featured: false,
-  },
-  {
-    id: "anxiety-spirals",
-    title: "When Worry Shows Up in Loops",
-    summary:
-      "Grounding prompts and scripts for partners—premium deep-dive with examples.",
-    categoryId: "emotional",
-    tier: "premium",
-    featured: false,
-  },
-  {
-    id: "diapering-101",
-    title: "Diapering 101",
-    summary:
-      "Wipes, rash watch, and changing in the dark without losing your mind.",
-    categoryId: "newborn",
-    tier: "free",
-    featured: false,
-  },
-  {
-    id: "bathing-newborn",
-    title: "First Baths Without the Stress",
-    summary:
-      "Warmth, safety, and keeping it short—plus when to skip a day guilt-free.",
-    categoryId: "newborn",
-    tier: "premium",
-    featured: false,
-  },
-  {
-    id: "freezer-meals",
-    title: "Freezer & Snack Prep",
-    summary:
-      "One-handed fuel ideas that are kind to postpartum hunger and low energy.",
-    categoryId: "home",
-    tier: "free",
-    featured: false,
+    featured: true,
   },
   {
     id: "visitor-boundaries",
-    title: "Visitor Boundaries That Feel Kind",
+    title: "Visitors & Messaging Boundaries",
     summary:
-      "Scripts and timing ideas so your nest feels protected, not rude.",
-    categoryId: "home",
+      "Scripts for short visits, delayed meet-and-greets, and protecting your nest kindly.",
+    categoryId: "family-boundaries",
+    tier: "premium",
+    featured: true,
+  },
+  {
+    id: "nursing-in-public-family",
+    title: "Feeding Around Family & in Public",
+    summary:
+      "Values, privacy, and phrases that protect your choices without debate in the nursery.",
+    categoryId: "family-boundaries",
     tier: "premium",
     featured: false,
   },
   {
-    id: "lactation-visit",
-    title: "When to Book a Lactation Visit",
+    id: "discipline-alignment",
+    title: "Big-Picture Parenting Alignment",
     summary:
-      "Signals that one-to-one help could save weeks of worry—and how to prepare.",
-    categoryId: "support",
+      "How you might approach discipline, screen time later, and consistency—conversation starters, not verdicts.",
+    categoryId: "family-boundaries",
+    tier: "premium",
+    featured: false,
+  },
+  {
+    id: "baby-shower-registry",
+    title: "Baby Shower & Registry Sanity",
+    summary:
+      "Useful registries, group gifts, and permission to skip what does not fit your space or values.",
+    categoryId: "celebration-registry",
+    tier: "free",
+    featured: true,
+  },
+  {
+    id: "medical-financial-prep",
+    title: "Medical & Financial Pre-Birth Prep",
+    summary:
+      "Insurance checks, FSA/HSA, leave paperwork, and pediatric choice—chunked so it feels doable.",
+    categoryId: "celebration-registry",
+    tier: "premium",
+    featured: true,
+  },
+  {
+    id: "pets-siblings",
+    title: "Pets & Siblings Before Baby",
+    summary:
+      "Gradual introductions, routines, and emotional prep for older kids—gentle transitions.",
+    categoryId: "home-baby",
     tier: "premium",
     featured: false,
   },
 ];
 
-export function categoryLabel(
-  id: SupportLibraryCategoryId,
-): string {
+export function categoryLabel(id: SupportLibraryCategoryId): string {
   return SUPPORT_LIBRARY_CATEGORIES.find((c) => c.id === id)?.label ?? id;
 }
 
-/** Build `/app/support-library` URL with optional filters */
 export function supportLibraryHref(opts: { q?: string; cat?: string }) {
   const p = new URLSearchParams();
   const q = opts.q?.trim();

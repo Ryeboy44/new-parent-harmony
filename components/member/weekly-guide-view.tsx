@@ -9,6 +9,7 @@ import { PremiumGate, type MemberPlan } from "@/components/member/premium-gate";
 import {
   getNextWeekId,
   getWeeklyGuideWeek,
+  selectDailyFocusPrompt,
   WEEKLY_GUIDE_DETAILS,
   WEEKLY_GUIDE_HEADER,
   WEEKLY_GUIDE_STAGES,
@@ -42,13 +43,27 @@ function TierBadge({ tier }: { tier: WeeklyGuideWeek["tier"] }) {
   );
 }
 
+function resolveInitialWeek(initialWeekId: string | null | undefined): {
+  stageId: WeeklyGuideStageId;
+  weekId: string;
+} {
+  if (initialWeekId) {
+    const w = getWeeklyGuideWeek(initialWeekId);
+    if (w) return { stageId: w.stageId, weekId: w.id };
+  }
+  return { stageId: "preparing", weekId: "weeks-28-32" };
+}
+
 type WeeklyGuideViewProps = {
   userPlan: MemberPlan;
+  /** Deep link from dashboard or bookmarks; invalid values are ignored. */
+  initialWeekId?: string | null;
 };
 
-export function WeeklyGuideView({ userPlan }: WeeklyGuideViewProps) {
-  const [stageId, setStageId] = useState<WeeklyGuideStageId>("postpartum");
-  const [weekId, setWeekId] = useState<string>("week-1-postpartum");
+export function WeeklyGuideView({ userPlan, initialWeekId = null }: WeeklyGuideViewProps) {
+  const initial = useMemo(() => resolveInitialWeek(initialWeekId), [initialWeekId]);
+  const [stageId, setStageId] = useState<WeeklyGuideStageId>(initial.stageId);
+  const [weekId, setWeekId] = useState(initial.weekId);
 
   const weeksInStage = useMemo(
     () => WEEKLY_GUIDE_WEEKS.filter((w) => w.stageId === stageId),
@@ -56,19 +71,28 @@ export function WeeklyGuideView({ userPlan }: WeeklyGuideViewProps) {
   );
 
   const selectedWeek = getWeeklyGuideWeek(weekId);
-  const detail =
-    WEEKLY_GUIDE_DETAILS[weekId] ??
-    (selectedWeek
-      ? weeklyGuidePlaceholderDetail(selectedWeek.title)
-      : weeklyGuidePlaceholderDetail("This week"));
-
-  const nextId = weekId ? getNextWeekId(weekId) : null;
-  const nextWeek = nextId ? getWeeklyGuideWeek(nextId) : null;
+  const detail = useMemo(
+    () =>
+      WEEKLY_GUIDE_DETAILS[weekId] ??
+      (selectedWeek
+        ? weeklyGuidePlaceholderDetail(selectedWeek.title)
+        : weeklyGuidePlaceholderDetail("This week")),
+    [weekId, selectedWeek],
+  );
 
   const canReadSelectedWeek = Boolean(
     selectedWeek &&
       (selectedWeek.tier === "free" || userPlan === "premium"),
   );
+
+  /** Rotates by local weekday (0–6); same week + day = same line. */
+  const todayFocusLine = useMemo(() => {
+    if (!canReadSelectedWeek) return null;
+    return selectDailyFocusPrompt(detail.dailyFocus);
+  }, [canReadSelectedWeek, detail.dailyFocus]);
+
+  const nextId = weekId ? getNextWeekId(weekId) : null;
+  const nextWeek = nextId ? getWeeklyGuideWeek(nextId) : null;
 
   function selectStage(id: WeeklyGuideStageId) {
     setStageId(id);
@@ -183,6 +207,21 @@ export function WeeklyGuideView({ userPlan }: WeeklyGuideViewProps) {
           <h2 className="mt-2 font-display text-[1.5rem] font-normal text-foreground sm:text-2xl">
             {selectedWeek?.title ?? "Guide"}
           </h2>
+          {todayFocusLine ? (
+            <div
+              className={`${surfaceCard} mt-6 border-harmony-green/18 bg-gradient-to-br from-green-wash/35 via-surface to-cream-deep/25 shadow-soft ring-1 ring-harmony-green/10`}
+              role="status"
+              aria-live="polite"
+            >
+              <p className={`${eyebrowClass} text-harmony-green-deep/90`}>Today&apos;s focus</p>
+              <p
+                className="mt-3 text-[0.9375rem] leading-relaxed text-foreground/95 sm:text-base"
+                suppressHydrationWarning
+              >
+                {todayFocusLine}
+              </p>
+            </div>
+          ) : null}
           <div className="mt-6 space-y-4">
             {canReadSelectedWeek ? (
               detail.sections.map((section) => (

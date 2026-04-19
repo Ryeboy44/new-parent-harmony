@@ -3,13 +3,14 @@ import { ButtonLink } from "@/components/shared/ui/button-link";
 import { SectionShell } from "@/components/shared/ui/section-shell";
 import { surfaceCard } from "@/components/shared/ui/surface-card";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
+import type { MemberPlan } from "@/components/member/premium-gate";
 import {
-  DASHBOARD_CONTINUE,
   DASHBOARD_FREE_ESSENTIALS,
   DASHBOARD_PREMIUM_PREVIEWS,
   DASHBOARD_QUICK_ACCESS,
   DASHBOARD_WELCOME,
 } from "@/lib/content/member-dashboard";
+import type { DashboardWeeklySpotlight } from "@/lib/member/dashboard-spotlight";
 
 const eyebrowClass =
   "text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-harmony-green-muted sm:text-xs";
@@ -22,6 +23,9 @@ const interactiveCard =
 
 const premiumLockedCard =
   "relative overflow-hidden rounded-2xl border border-harmony-green/15 bg-gradient-to-br from-cream-deep/90 via-surface to-green-wash/30 p-5 shadow-soft sm:p-6";
+
+const focusCardClass =
+  `${surfaceCard} border-harmony-green/18 bg-gradient-to-br from-green-wash/40 via-surface to-cream-deep/30 shadow-soft ring-1 ring-harmony-green/10`;
 
 function LockGlyph({ className = "" }: { className?: string }) {
   return (
@@ -43,7 +47,15 @@ function LockGlyph({ className = "" }: { className?: string }) {
   );
 }
 
-export function MemberAppDashboard() {
+type MemberAppDashboardProps = {
+  userPlan: MemberPlan;
+  weeklySpotlight: DashboardWeeklySpotlight;
+};
+
+export function MemberAppDashboard({ userPlan, weeklySpotlight }: MemberAppDashboardProps) {
+  const { weekTitle, weekSummary, todayFocusLine, weeklyGuideHref, canReadFullGuide } =
+    weeklySpotlight;
+
   return (
     <>
       {/* 1. Welcome */}
@@ -61,37 +73,82 @@ export function MemberAppDashboard() {
         </div>
       </SectionShell>
 
-      {/* 2. Continue */}
+      {/* 2. Today’s focus */}
       <SectionShell background="white" padding="tight">
-        <h2 className={sectionTitleClass}>Continue where you left off</h2>
+        <div className="mx-auto max-w-2xl">
+          <h2 className={sectionTitleClass}>Today&apos;s focus</h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">
+            One gentle line from your Weekly Guide—same idea you will see there, so your day
+            can start with something small and true.
+          </p>
+          <div className={`${focusCardClass} mt-6 p-6 sm:p-8`} role="status" aria-live="polite">
+            <p className={`${eyebrowClass} text-harmony-green-deep/90`}>For you, today</p>
+            {todayFocusLine ? (
+              <p
+                className="mt-4 text-[0.9375rem] leading-relaxed text-foreground/95 sm:text-[1.0625rem] sm:leading-relaxed"
+                suppressHydrationWarning
+              >
+                {todayFocusLine}
+              </p>
+            ) : (
+              <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
+                {canReadFullGuide
+                  ? "Open your Weekly Guide for this week's gentle prompts."
+                  : "Premium weeks include the same kind of daily focus—unlock when you want the full postpartum and early-month path."}
+              </p>
+            )}
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+              <ButtonLink href={weeklyGuideHref} variant="primary" className="w-full sm:w-auto">
+                Open in Weekly Guide
+              </ButtonLink>
+              <Link
+                href="/app/weekly-guide"
+                className="text-center text-sm font-medium text-harmony-green-deep underline-offset-4 hover:underline sm:text-left"
+              >
+                Browse all phases
+              </Link>
+            </div>
+          </div>
+        </div>
+      </SectionShell>
+
+      {/* 3. Continue your week */}
+      <SectionShell background="cream" padding="tight">
+        <h2 className={sectionTitleClass}>Continue your week</h2>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted sm:text-[0.9375rem]">
-          Pick up right where you stopped—your place is saved for when you have
-          a quiet moment.
+          We are highlighting{" "}
+          <span className="font-medium text-foreground/90">{weekTitle}</span> here—many families
+          land on it in the first days home. Your timing is yours: switch weeks anytime in the
+          guide.
         </p>
+        {userPlan === "premium" ? (
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted sm:text-[0.9375rem]">
+            Your membership includes every postpartum and early-month week, with the same kind of
+            daily focus when a week offers it.
+          </p>
+        ) : null}
         <div className="mt-6 max-w-xl">
           <Link
-            href={DASHBOARD_CONTINUE.href}
-            className={`${interactiveCard} block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/45 focus-visible:ring-offset-2 focus-visible:ring-offset-surface`}
+            href={weeklyGuideHref}
+            className={`${interactiveCard} block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/45 focus-visible:ring-offset-2 focus-visible:ring-offset-cream`}
           >
             <p className="text-xs font-medium uppercase tracking-wide text-harmony-green-deep">
-              {DASHBOARD_CONTINUE.meta}
+              Weekly Guide · {canReadFullGuide ? "Open week" : "Preview"}
             </p>
             <p className="mt-2 font-display text-lg font-normal text-foreground sm:text-xl">
-              {DASHBOARD_CONTINUE.title}
+              {weekTitle}
             </p>
-            <p className="mt-2 text-sm leading-relaxed text-muted">
-              {DASHBOARD_CONTINUE.description}
-            </p>
+            <p className="mt-2 text-sm leading-relaxed text-muted">{weekSummary}</p>
             <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-harmony-green-deep">
-              Continue reading
+              {canReadFullGuide ? "Keep reading" : "See what's inside"}
               <span aria-hidden>→</span>
             </span>
           </Link>
         </div>
       </SectionShell>
 
-      {/* 3. Quick access */}
-      <SectionShell background="cream" padding="tight">
+      {/* 4. Quick access */}
+      <SectionShell background="white" padding="tight">
         <h2 className={sectionTitleClass}>Quick access</h2>
         <p className="mt-2 max-w-2xl text-sm text-muted sm:text-[0.9375rem]">
           Jump into the areas you will use most often.
@@ -101,7 +158,7 @@ export function MemberAppDashboard() {
             <li key={item.href}>
               <Link
                 href={item.href}
-                className={`${interactiveCard} flex h-full min-h-[6.5rem] flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/45 focus-visible:ring-offset-2 focus-visible:ring-offset-cream`}
+                className={`${interactiveCard} flex h-full min-h-[6.5rem] flex-col justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/45 focus-visible:ring-offset-2 focus-visible:ring-offset-surface`}
               >
                 <div>
                   <p className="font-display text-base font-normal text-foreground sm:text-lg">
@@ -120,8 +177,8 @@ export function MemberAppDashboard() {
         </ul>
       </SectionShell>
 
-      {/* 4. Free essentials */}
-      <SectionShell background="white" padding="tight">
+      {/* 5. Free essentials */}
+      <SectionShell background="cream" padding="tight">
         <h2 className={sectionTitleClass}>Free essentials</h2>
         <p className="mt-2 max-w-2xl text-sm text-muted sm:text-[0.9375rem]">
           Practical starters you can use today—no account upgrade required.
@@ -131,7 +188,7 @@ export function MemberAppDashboard() {
             <li key={item.title}>
               <Link
                 href={item.href}
-                className={`${interactiveCard} flex min-h-[4.75rem] items-center justify-between gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/45 focus-visible:ring-offset-2 focus-visible:ring-offset-surface`}
+                className={`${interactiveCard} flex min-h-[4.75rem] items-center justify-between gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/45 focus-visible:ring-offset-2 focus-visible:ring-offset-cream`}
               >
                 <span className="text-[0.9375rem] font-medium leading-snug text-foreground sm:text-base">
                   {item.title}
@@ -148,14 +205,13 @@ export function MemberAppDashboard() {
         </ul>
       </SectionShell>
 
-      {/* 5. Premium preview */}
-      <SectionShell background="cream" padding="tight">
+      {/* 6. Premium preview */}
+      <SectionShell background="white" padding="tight">
         <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <h2 className={sectionTitleClass}>Premium preview</h2>
             <p className="mt-2 max-w-2xl text-sm text-muted sm:text-[0.9375rem]">
-              A peek at deeper support—unlock when you are ready for more tailored
-              care.
+              A peek at deeper support—unlock when you are ready for more tailored care.
             </p>
           </div>
           <Link
@@ -182,9 +238,7 @@ export function MemberAppDashboard() {
                     <span aria-hidden>Premium</span>
                   </span>
                 </div>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
-                  {item.teaser}
-                </p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{item.teaser}</p>
                 <p className="mt-4 text-xs text-harmony-green-muted">
                   Included with premium membership
                 </p>
@@ -194,7 +248,7 @@ export function MemberAppDashboard() {
         </ul>
       </SectionShell>
 
-      {/* 6. CTA */}
+      {/* 7. CTA */}
       <SectionShell background="subtle" padding="tight">
         <div className="mx-auto max-w-2xl text-center">
           <p className={eyebrowClass}>Personalized support</p>
@@ -202,8 +256,8 @@ export function MemberAppDashboard() {
             Want a human beside you—not just an app?
           </h2>
           <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
-            Book a free 15-minute chat to talk through what you need, or explore
-            in-home and virtual services on the main site.
+            Book a free 15-minute chat to talk through what you need, or explore in-home and
+            virtual services on the main site.
           </p>
           <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-center">
             <ButtonLink href={PRIMARY_CTA_HREF} variant="primary" className="w-full sm:w-auto">

@@ -50,9 +50,13 @@ export function StripeSubscriptionButton({ billing, planName, children }: Props)
         disabled={loading}
         className={`${buttonBase} ${buttonVariantClass.primary} w-full`}
         aria-busy={loading}
-        aria-label={loading ? `${planName} — opening checkout` : `${planName} — subscribe with Stripe`}
+        aria-label={
+          loading
+            ? `${planName} — opening secure checkout`
+            : `${planName} — continue to checkout`
+        }
       >
-        {loading ? "Opening secure checkout…" : children}
+        {loading ? "One moment…" : children}
       </button>
       {error ? (
         <p className="mt-2 text-center text-sm text-red-800/90 dark:text-red-200/90" role="alert">

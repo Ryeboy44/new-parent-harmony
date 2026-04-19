@@ -5,11 +5,14 @@ import { StripeSubscriptionButton } from "@/components/member/stripe-subscriptio
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 import {
   UPGRADE_COMPARISON,
+  UPGRADE_COMPARISON_INTRO,
   UPGRADE_CTA,
   UPGRADE_FAQ,
   UPGRADE_HEADER,
   UPGRADE_PLANS,
   UPGRADE_PREMIUM_INCLUDES,
+  UPGRADE_PRICING_INTRO,
+  UPGRADE_SUBSCRIBE_LABELS,
   UPGRADE_VALUE_SUMMARY,
 } from "@/lib/content/member-upgrade";
 
@@ -71,7 +74,7 @@ export function MemberUpgradePage() {
       <SectionShell background="cream" padding="tight">
         <h2 className={sectionTitleClass}>Choose your plan</h2>
         <p className="mt-2 max-w-2xl text-sm text-muted sm:text-[0.9375rem]">
-          Checkout will connect to Stripe here—buttons are placeholders for now.
+          {UPGRADE_PRICING_INTRO}
         </p>
         <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6 lg:max-w-4xl lg:mx-auto">
           <div className={pricingCardBase}>
@@ -87,7 +90,7 @@ export function MemberUpgradePage() {
             <p className="mt-3 text-sm leading-relaxed text-muted">{monthly.note}</p>
             <div className="mt-8 mt-auto pt-2">
               <StripeSubscriptionButton billing="monthly" planName={monthly.name}>
-                Subscribe monthly
+                {UPGRADE_SUBSCRIBE_LABELS.monthly}
               </StripeSubscriptionButton>
             </div>
           </div>
@@ -110,7 +113,7 @@ export function MemberUpgradePage() {
             <p className="mt-3 text-sm leading-relaxed text-muted">{annual.note}</p>
             <div className="mt-8 mt-auto pt-2">
               <StripeSubscriptionButton billing="annual" planName={annual.name}>
-                Subscribe annually
+                {UPGRADE_SUBSCRIBE_LABELS.annual}
               </StripeSubscriptionButton>
             </div>
           </div>
@@ -136,7 +139,7 @@ export function MemberUpgradePage() {
       <SectionShell background="cream" padding="tight">
         <h2 className={sectionTitleClass}>Free vs premium</h2>
         <p className="mt-2 max-w-2xl text-sm text-muted sm:text-[0.9375rem]">
-          A simple side-by-side—no fine print, just honest differences.
+          {UPGRADE_COMPARISON_INTRO}
         </p>
         <div className="mt-6 overflow-x-auto rounded-2xl border border-border-soft/60 bg-surface shadow-soft">
           <table className="w-full min-w-[20rem] border-collapse text-left text-sm sm:text-[0.9375rem]">

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { MemberUpgradePage } from "@/components/member/member-upgrade-page";
 
 export const metadata: Metadata = {
-  title: "Upgrade",
+  title: "Support for the weeks ahead",
   description:
-    "Premium week-by-week guidance, deeper feeding and sleep support, and the full expert library from New Parent Harmony—optional monthly or annual plans.",
+    "Optional premium for New Parent Harmony members—more weekly guidance, deeper library, and gentle tools when free is not quite enough. Monthly or annual.",
 };
 
 export default function UpgradePage() {

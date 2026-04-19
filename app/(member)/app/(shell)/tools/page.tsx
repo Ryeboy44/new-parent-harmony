@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { MemberPlaceholderSection } from "@/components/member/member-placeholder-section";
-import { MEMBER_PAGE_BLURBS } from "@/lib/content/member-app";
+import { MemberToolsPage } from "@/components/member/member-tools-page";
+import type { MemberPlan } from "@/components/member/premium-gate";
+import { getMemberPlan } from "@/lib/member-plan";
 
 export const metadata: Metadata = {
-  title: MEMBER_PAGE_BLURBS.tools.title,
+  title: "Tools & checklists",
+  description:
+    "Hospital bag, birth plan prompts, safe sleep, and more—gentle worksheets from New Parent Harmony.",
 };
 
-export default function ToolsPage() {
-  const { title, body } = MEMBER_PAGE_BLURBS.tools;
+export default async function ToolsPage() {
+  const plan: MemberPlan = await getMemberPlan();
+
   return (
     <main id="main-content" className="flex flex-1 flex-col">
-      <MemberPlaceholderSection title={title} body={body} />
+      <MemberToolsPage userPlan={plan} />
     </main>
   );
 }
