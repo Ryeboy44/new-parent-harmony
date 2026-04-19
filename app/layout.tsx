@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Fraunces, Geist, Geist_Mono } from "next/font/google";
-import { SkipToMainLink } from "@/components/ui/skip-to-main-link";
+import { SkipToMainLink } from "@/components/shared/ui/skip-to-main-link";
 import { siteBaseUrl } from "@/data/site-url";
 import "./globals.css";
 

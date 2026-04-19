@@ -1,7 +1,7 @@
-import { SectionShell } from "@/components/ui/section-shell";
-import { ButtonLink } from "@/components/ui/button-link";
+import { SectionShell } from "@/components/shared/ui/section-shell";
+import { ButtonLink } from "@/components/shared/ui/button-link";
 import { SectionHeading } from "@/components/home/section-heading";
-import { surfaceCard } from "@/components/ui/surface-card";
+import { surfaceCard } from "@/components/shared/ui/surface-card";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 
 const otherServices = [

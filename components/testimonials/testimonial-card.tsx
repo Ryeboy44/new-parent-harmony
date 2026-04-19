@@ -1,5 +1,5 @@
 import type { Testimonial } from "@/data/testimonials";
-import { surfaceCardMuted } from "@/components/ui/surface-card";
+import { surfaceCardMuted } from "@/components/shared/ui/surface-card";
 
 type TestimonialCardProps = {
   testimonial: Testimonial;

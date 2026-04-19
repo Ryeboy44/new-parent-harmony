@@ -1,7 +1,7 @@
 import { SectionHeading } from "@/components/home/section-heading";
 import { TestimonialCard } from "@/components/testimonials/testimonial-card";
-import { ButtonLink } from "@/components/ui/button-link";
-import { SectionShell } from "@/components/ui/section-shell";
+import { ButtonLink } from "@/components/shared/ui/button-link";
+import { SectionShell } from "@/components/shared/ui/section-shell";
 import { testimonials } from "@/data/testimonials";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 

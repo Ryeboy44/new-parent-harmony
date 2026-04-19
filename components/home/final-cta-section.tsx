@@ -1,4 +1,4 @@
-import { ButtonLink } from "@/components/ui/button-link";
+import { ButtonLink } from "@/components/shared/ui/button-link";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 
 export function FinalCTASection() {

@@ -1,6 +1,6 @@
-import { SectionShell } from "@/components/ui/section-shell";
+import { SectionShell } from "@/components/shared/ui/section-shell";
 import { SectionHeading } from "@/components/home/section-heading";
-import { surfaceCard } from "@/components/ui/surface-card";
+import { surfaceCard } from "@/components/shared/ui/surface-card";
 
 const reasons = [
   {

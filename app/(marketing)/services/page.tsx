@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { SectionHeading } from "@/components/home/section-heading";
 import { SiteFooter } from "@/components/home/site-footer";
 import { SiteNavbar } from "@/components/home/site-navbar";
-import { ButtonLink } from "@/components/ui/button-link";
-import { SectionShell } from "@/components/ui/section-shell";
-import { surfaceCard } from "@/components/ui/surface-card";
+import { ButtonLink } from "@/components/shared/ui/button-link";
+import { SectionShell } from "@/components/shared/ui/section-shell";
+import { surfaceCard } from "@/components/shared/ui/surface-card";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 
 export const metadata: Metadata = {

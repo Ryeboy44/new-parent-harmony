@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { gemmaPortraitImage } from "@/data/site-images";
-import { SectionShell } from "@/components/ui/section-shell";
-import { ButtonLink } from "@/components/ui/button-link";
+import { SectionShell } from "@/components/shared/ui/section-shell";
+import { ButtonLink } from "@/components/shared/ui/button-link";
 
 /** Intrinsic size of `public/images/gemma-portrait.jpg` (updates if you replace the file). */
 const GEMMA_PORTRAIT_WIDTH = 2838;

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { buttonBase, buttonVariantClass } from "@/components/ui/button-classes";
+import { buttonBase, buttonVariantClass } from "@/components/shared/ui/button-classes";
 
 type ButtonLinkProps = {
   href: string;

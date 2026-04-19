@@ -1,4 +1,4 @@
-import { SectionShell } from "@/components/ui/section-shell";
+import { SectionShell } from "@/components/shared/ui/section-shell";
 
 export function IntroTrustSection() {
   return (

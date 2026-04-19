@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useTransition } from "react";
 import { submitDiscoveryCall } from "@/app/actions/discovery-call";
-import { buttonBase, buttonVariantClass } from "@/components/ui/button-classes";
+import { buttonBase, buttonVariantClass } from "@/components/shared/ui/button-classes";
 import {
   SERVICE_OPTIONS,
   discoveryCallSchema,

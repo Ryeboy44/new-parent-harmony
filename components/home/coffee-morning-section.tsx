@@ -1,5 +1,5 @@
-import { SectionShell } from "@/components/ui/section-shell";
-import { ButtonLink } from "@/components/ui/button-link";
+import { SectionShell } from "@/components/shared/ui/section-shell";
+import { ButtonLink } from "@/components/shared/ui/button-link";
 
 export function CoffeeMorningSection() {
   return (
