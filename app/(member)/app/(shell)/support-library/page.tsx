@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { auth } from "@/auth";
 import { MemberSupportLibrary } from "@/components/member/member-support-library";
 import type { MemberPlan } from "@/components/member/premium-gate";
+import { getMemberPlan } from "@/lib/member-plan";
 import { SUPPORT_LIBRARY_CATEGORIES } from "@/lib/content/support-library";
 
 export const metadata: Metadata = {
@@ -19,9 +19,7 @@ type PageProps = {
 };
 
 export default async function SupportLibraryPage({ searchParams }: PageProps) {
-  const session = await auth();
-  const userPlan: MemberPlan =
-    session?.user?.plan === "premium" ? "premium" : "free";
+  const userPlan: MemberPlan = await getMemberPlan();
 
   const sp = (await searchParams) ?? {};
   const query = typeof sp.q === "string" ? sp.q : "";

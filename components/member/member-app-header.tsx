@@ -1,13 +1,18 @@
 import Link from "next/link";
 import type { Session } from "next-auth";
+import type { MemberPlan } from "@/components/member/premium-gate";
 import { MemberSignOutButton } from "@/components/member/member-sign-out-button";
 
 type MemberAppHeaderProps = {
   session: Session | null;
+  /** From DB in server layout — overrides stale JWT `plan` after webhooks */
+  memberPlan?: MemberPlan;
 };
 
-export function MemberAppHeader({ session }: MemberAppHeaderProps) {
+export function MemberAppHeader({ session, memberPlan }: MemberAppHeaderProps) {
   const user = session?.user;
+  const planBadge: MemberPlan =
+    memberPlan ?? (user?.plan === "premium" ? "premium" : "free");
 
   return (
     <header className="border-b border-border-soft/60 bg-surface/95 backdrop-blur-sm">
@@ -26,7 +31,7 @@ export function MemberAppHeader({ session }: MemberAppHeaderProps) {
                 {user.email ?? user.name ?? "Signed in"}
               </span>
               <span className="rounded-full border border-harmony-green/25 bg-green-wash/40 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-harmony-green-deep">
-                {user.plan === "premium" ? "Premium" : "Free"}
+                {planBadge === "premium" ? "Premium" : "Free"}
               </span>
               <MemberSignOutButton />
             </>

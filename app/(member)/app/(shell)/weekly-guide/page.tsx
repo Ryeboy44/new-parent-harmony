@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { auth } from "@/auth";
 import { WeeklyGuideView } from "@/components/member/weekly-guide-view";
 import type { MemberPlan } from "@/components/member/premium-gate";
+import { getMemberPlan } from "@/lib/member-plan";
 
 export const metadata: Metadata = {
   title: "Weekly Guide",
@@ -10,9 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function WeeklyGuidePage() {
-  const session = await auth();
-  const userPlan: MemberPlan =
-    session?.user?.plan === "premium" ? "premium" : "free";
+  const userPlan: MemberPlan = await getMemberPlan();
 
   return (
     <main id="main-content" className="flex flex-1 flex-col">

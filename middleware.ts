@@ -1,10 +1,14 @@
-import { auth } from "@/auth";
+import { authConfig } from "@/auth.config";
+import NextAuth from "next-auth";
 import { NextResponse } from "next/server";
 
 /**
- * Protect `/app/*` except auth pages. Uses JWT session (no Prisma in middleware).
+ * Edge-safe auth wrapper — no Prisma / PrismaAdapter (see `auth.config.ts`).
+ * Route protection for `/app/*` only; public marketing routes are not matched.
  */
-export default auth((req) => {
+const { auth: edgeAuth } = NextAuth(authConfig);
+
+export default edgeAuth((req) => {
   const path = req.nextUrl.pathname;
 
   if (path.startsWith("/app/login") || path.startsWith("/app/signup")) {
