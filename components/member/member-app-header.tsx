@@ -1,6 +1,14 @@
 import Link from "next/link";
+import type { Session } from "next-auth";
+import { MemberSignOutButton } from "@/components/member/member-sign-out-button";
 
-export function MemberAppHeader() {
+type MemberAppHeaderProps = {
+  session: Session | null;
+};
+
+export function MemberAppHeader({ session }: MemberAppHeaderProps) {
+  const user = session?.user;
+
   return (
     <header className="border-b border-border-soft/60 bg-surface/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-6 lg:px-10">
@@ -11,12 +19,32 @@ export function MemberAppHeader() {
           New Parent Harmony
           <span className="ml-2 text-sm font-sans font-normal text-muted">Member</span>
         </Link>
-        <Link
-          href="/"
-          className="inline-flex min-h-10 items-center text-sm text-muted transition-colors hover:text-foreground"
-        >
-          Public site
-        </Link>
+        <div className="flex flex-wrap items-center justify-end gap-2 sm:gap-3">
+          {user ? (
+            <>
+              <span className="max-w-[12rem] truncate text-sm text-muted sm:max-w-xs">
+                {user.email ?? user.name ?? "Signed in"}
+              </span>
+              <span className="rounded-full border border-harmony-green/25 bg-green-wash/40 px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-harmony-green-deep">
+                {user.plan === "premium" ? "Premium" : "Free"}
+              </span>
+              <MemberSignOutButton />
+            </>
+          ) : (
+            <Link
+              href="/app/login"
+              className="inline-flex min-h-10 items-center rounded-xl border border-border-soft/80 bg-surface px-4 text-sm font-medium text-foreground shadow-soft transition-colors hover:border-harmony-green/25 hover:bg-cream-deep/80"
+            >
+              Sign in
+            </Link>
+          )}
+          <Link
+            href="/"
+            className="inline-flex min-h-10 items-center text-sm text-muted transition-colors hover:text-foreground"
+          >
+            Public site
+          </Link>
+        </div>
       </div>
     </header>
   );

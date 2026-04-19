@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { PremiumGate, type MemberPlan } from "@/components/member/premium-gate";
 import { ButtonLink } from "@/components/shared/ui/button-link";
 import { SectionShell } from "@/components/shared/ui/section-shell";
 import { surfaceCard } from "@/components/shared/ui/surface-card";
@@ -41,7 +42,13 @@ function TierBadge({ tier }: { tier: SupportLibraryResource["tier"] }) {
   );
 }
 
-function ResourceCard({ resource }: { resource: SupportLibraryResource }) {
+function ResourceCard({
+  resource,
+  userPlan,
+}: {
+  resource: SupportLibraryResource;
+  userPlan: MemberPlan;
+}) {
   return (
     <article
       className={`${interactiveCard} flex h-full flex-col`}
@@ -56,10 +63,20 @@ function ResourceCard({ resource }: { resource: SupportLibraryResource }) {
       <h3 className="mt-3 font-display text-lg font-normal leading-snug text-foreground sm:text-xl">
         {resource.title}
       </h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">
-        {resource.summary}
-      </p>
-      <p className="mt-4 text-xs text-harmony-green-muted">Full article · coming soon</p>
+      {resource.tier === "free" ? (
+        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">
+          {resource.summary}
+        </p>
+      ) : (
+        <PremiumGate plan={userPlan}>
+          <p className="mt-2 flex-1 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">
+            {resource.summary}
+          </p>
+        </PremiumGate>
+      )}
+      {resource.tier === "free" || userPlan === "premium" ? (
+        <p className="mt-4 text-xs text-harmony-green-muted">Full article · coming soon</p>
+      ) : null}
     </article>
   );
 }
@@ -67,9 +84,14 @@ function ResourceCard({ resource }: { resource: SupportLibraryResource }) {
 type MemberSupportLibraryProps = {
   query: string;
   category: string;
+  userPlan: MemberPlan;
 };
 
-export function MemberSupportLibrary({ query, category }: MemberSupportLibraryProps) {
+export function MemberSupportLibrary({
+  query,
+  category,
+  userPlan,
+}: MemberSupportLibraryProps) {
   const q = query.trim();
   const cat = category || "all";
 
@@ -180,7 +202,7 @@ export function MemberSupportLibrary({ query, category }: MemberSupportLibraryPr
           <ul className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {featured.map((r) => (
               <li key={r.id}>
-                <ResourceCard resource={r} />
+                <ResourceCard resource={r} userPlan={userPlan} />
               </li>
             ))}
           </ul>
@@ -203,7 +225,7 @@ export function MemberSupportLibrary({ query, category }: MemberSupportLibraryPr
           <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {gridResources.map((r) => (
               <li key={r.id}>
-                <ResourceCard resource={r} />
+                <ResourceCard resource={r} userPlan={userPlan} />
               </li>
             ))}
           </ul>

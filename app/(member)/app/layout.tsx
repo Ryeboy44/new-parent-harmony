@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { MemberAppHeader } from "@/components/member/member-app-header";
-import { MemberSubNav } from "@/components/member/member-sub-nav";
+import { AppSessionProvider } from "@/components/member/app-session-provider";
 
 export const metadata: Metadata = {
   title: "Member app",
@@ -10,18 +9,12 @@ export const metadata: Metadata = {
 };
 
 /**
- * Member experience at `/app` and nested routes. Route group `(member)` is omitted from URLs.
+ * All `/app/*` routes (auth + shell). SessionProvider wraps children; shell chrome lives in `(shell)/layout.tsx`.
  */
-export default function MemberAppLayout({
+export default function MemberAppRootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <div className="flex min-h-full flex-1 flex-col">
-      <MemberAppHeader />
-      <MemberSubNav />
-      {children}
-    </div>
-  );
+  return <AppSessionProvider>{children}</AppSessionProvider>;
 }

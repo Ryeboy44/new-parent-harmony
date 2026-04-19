@@ -5,6 +5,7 @@ import { ButtonLink } from "@/components/shared/ui/button-link";
 import { buttonBase, buttonVariantClass } from "@/components/shared/ui/button-classes";
 import { SectionShell } from "@/components/shared/ui/section-shell";
 import { surfaceCard } from "@/components/shared/ui/surface-card";
+import { PremiumGate, type MemberPlan } from "@/components/member/premium-gate";
 import {
   getNextWeekId,
   getWeeklyGuideWeek,
@@ -41,7 +42,11 @@ function TierBadge({ tier }: { tier: WeeklyGuideWeek["tier"] }) {
   );
 }
 
-export function WeeklyGuideView() {
+type WeeklyGuideViewProps = {
+  userPlan: MemberPlan;
+};
+
+export function WeeklyGuideView({ userPlan }: WeeklyGuideViewProps) {
   const [stageId, setStageId] = useState<WeeklyGuideStageId>("postpartum");
   const [weekId, setWeekId] = useState<string>("week-1-postpartum");
 
@@ -59,6 +64,11 @@ export function WeeklyGuideView() {
 
   const nextId = weekId ? getNextWeekId(weekId) : null;
   const nextWeek = nextId ? getWeeklyGuideWeek(nextId) : null;
+
+  const canReadSelectedWeek = Boolean(
+    selectedWeek &&
+      (selectedWeek.tier === "free" || userPlan === "premium"),
+  );
 
   function selectStage(id: WeeklyGuideStageId) {
     setStageId(id);
@@ -174,19 +184,23 @@ export function WeeklyGuideView() {
             {selectedWeek?.title ?? "Guide"}
           </h2>
           <div className="mt-6 space-y-4">
-            {detail.sections.map((section) => (
-              <section
-                key={section.heading}
-                className={`${surfaceCard} border-border-soft/50 bg-cream/40`}
-              >
-                <h3 className="font-display text-lg font-normal text-foreground sm:text-xl">
-                  {section.heading}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">
-                  {section.body}
-                </p>
-              </section>
-            ))}
+            {canReadSelectedWeek ? (
+              detail.sections.map((section) => (
+                <section
+                  key={section.heading}
+                  className={`${surfaceCard} border-border-soft/50 bg-cream/40`}
+                >
+                  <h3 className="font-display text-lg font-normal text-foreground sm:text-xl">
+                    {section.heading}
+                  </h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted sm:text-[0.9375rem]">
+                    {section.body}
+                  </p>
+                </section>
+              ))
+            ) : (
+              <PremiumGate plan={userPlan} />
+            )}
           </div>
         </div>
       </SectionShell>

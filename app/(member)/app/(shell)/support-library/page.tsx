@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { auth } from "@/auth";
 import { MemberSupportLibrary } from "@/components/member/member-support-library";
+import type { MemberPlan } from "@/components/member/premium-gate";
 import { SUPPORT_LIBRARY_CATEGORIES } from "@/lib/content/support-library";
 
 export const metadata: Metadata = {
@@ -17,6 +19,10 @@ type PageProps = {
 };
 
 export default async function SupportLibraryPage({ searchParams }: PageProps) {
+  const session = await auth();
+  const userPlan: MemberPlan =
+    session?.user?.plan === "premium" ? "premium" : "free";
+
   const sp = (await searchParams) ?? {};
   const query = typeof sp.q === "string" ? sp.q : "";
   const rawCat = typeof sp.cat === "string" ? sp.cat : "all";
@@ -25,7 +31,11 @@ export default async function SupportLibraryPage({ searchParams }: PageProps) {
 
   return (
     <main id="main-content" className="flex flex-1 flex-col">
-      <MemberSupportLibrary query={query} category={category} />
+      <MemberSupportLibrary
+        query={query}
+        category={category}
+        userPlan={userPlan}
+      />
     </main>
   );
 }
