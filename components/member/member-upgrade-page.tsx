@@ -9,6 +9,7 @@ import {
   UPGRADE_CTA,
   UPGRADE_FAQ,
   UPGRADE_HEADER,
+  UPGRADE_OFFERINGS,
   UPGRADE_PLANS,
   UPGRADE_PREMIUM_INCLUDES,
   UPGRADE_PRICING_INTRO,
@@ -70,9 +71,64 @@ export function MemberUpgradePage() {
         </p>
       </SectionShell>
 
-      {/* 3. Pricing */}
+      {/* 3. Support options */}
       <SectionShell background="cream" padding="tight">
-        <h2 className={sectionTitleClass}>Choose your plan</h2>
+        <h2 className={sectionTitleClass}>Support options</h2>
+        <p className="mt-2 max-w-2xl text-sm text-muted sm:text-[0.9375rem]">
+          Start where you are. You can begin with a free chat, keep it fully digital, or add live
+          support when you want a human in the loop.
+        </p>
+        <ul className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
+          {UPGRADE_OFFERINGS.map((offering) => (
+            <li key={offering.id}>
+              <div className={`${pricingCardBase} h-full`}>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <h3 className="font-display text-lg font-normal text-foreground sm:text-xl">
+                    {offering.title}
+                  </h3>
+                  <span className="rounded-full border border-harmony-green/25 bg-green-wash/35 px-2.5 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide text-harmony-green-deep">
+                    {offering.cadence}
+                  </span>
+                </div>
+                <p className="mt-3 flex items-baseline gap-1">
+                  <span className="font-display text-3xl font-normal text-foreground sm:text-4xl">
+                    {offering.price}
+                  </span>
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-muted">{offering.blurb}</p>
+                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-muted">
+                  {offering.bullets.map((line) => (
+                    <li key={line} className="flex gap-2">
+                      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-harmony-green/55" />
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+                  <ButtonLink href={offering.primaryHref} variant="primary" className="w-full sm:w-auto">
+                    {offering.primaryLabel}
+                  </ButtonLink>
+                  {offering.secondaryHref && offering.secondaryLabel ? (
+                    <ButtonLink
+                      href={offering.secondaryHref}
+                      variant="secondary"
+                      className="w-full sm:w-auto"
+                    >
+                      {offering.secondaryLabel}
+                    </ButtonLink>
+                  ) : null}
+                </div>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </SectionShell>
+
+      {/* 4. Digital membership pricing */}
+      <SectionShell background="cream" padding="tight">
+        <h2 id="digital-membership" className={sectionTitleClass}>
+          Premium digital membership
+        </h2>
         <p className="mt-2 max-w-2xl text-sm text-muted sm:text-[0.9375rem]">
           {UPGRADE_PRICING_INTRO}
         </p>
@@ -120,7 +176,7 @@ export function MemberUpgradePage() {
         </div>
       </SectionShell>
 
-      {/* 4. What premium includes */}
+      {/* 5. What premium includes */}
       <SectionShell background="white" padding="tight">
         <h2 className={sectionTitleClass}>What premium includes</h2>
         <ul className="mt-6 max-w-2xl space-y-4">
@@ -135,7 +191,7 @@ export function MemberUpgradePage() {
         </ul>
       </SectionShell>
 
-      {/* 5. Comparison */}
+      {/* 6. Comparison */}
       <SectionShell background="cream" padding="tight">
         <h2 className={sectionTitleClass}>Free vs premium</h2>
         <p className="mt-2 max-w-2xl text-sm text-muted sm:text-[0.9375rem]">
@@ -185,7 +241,7 @@ export function MemberUpgradePage() {
         </div>
       </SectionShell>
 
-      {/* 6. CTA */}
+      {/* 7. CTA */}
       <SectionShell background="subtle" padding="tight">
         <div className="mx-auto max-w-2xl text-center">
           <p className={eyebrowClass}>Human support</p>
@@ -206,7 +262,7 @@ export function MemberUpgradePage() {
         </div>
       </SectionShell>
 
-      {/* 7. FAQ */}
+      {/* 8. FAQ */}
       <SectionShell background="white" padding="tight">
         <h2 className={sectionTitleClass}>Questions</h2>
         <div className="mx-auto mt-6 max-w-2xl divide-y divide-border-soft/60 rounded-2xl border border-border-soft/60 bg-surface/80 px-1 py-1 shadow-inner sm:px-2">

@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { MemberUpgradePage } from "@/components/member/member-upgrade-page";
 
 export const metadata: Metadata = {
-  title: "Support for the weeks ahead",
+  title: "Support",
   description:
-    "Optional premium for New Parent Harmony members—more weekly guidance, deeper library, and gentle tools when free is not quite enough. Monthly or annual.",
+    "Choose calm support options for this season: free chat, premium digital membership, premium plus virtual doula sessions, and sleep package support.",
 };
 
 export default function UpgradePage() {

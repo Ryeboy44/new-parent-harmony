@@ -1,39 +1,24 @@
 import type { Metadata } from "next";
-import { MemberSupportLibrary } from "@/components/member/member-support-library";
-import type { MemberPlan } from "@/components/member/premium-gate";
-import { getMemberPlan } from "@/lib/member-plan";
-import { SUPPORT_LIBRARY_CATEGORIES } from "@/lib/content/support-library";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "Support Library",
-  description:
-    "Trusted guidance for pregnancy, postpartum, feeding, sleep, and early parenthood—articles, checklists, and deep dives from New Parent Harmony.",
+  title: "Support library (moved)",
 };
-
-const VALID_CATEGORY = new Set<string>(
-  SUPPORT_LIBRARY_CATEGORIES.map((c) => c.id),
-);
 
 type PageProps = {
-  searchParams?: Promise<{ q?: string; cat?: string }>;
+  searchParams?: Promise<{ q?: string; cat?: string; topic?: string }>;
 };
 
-export default async function SupportLibraryPage({ searchParams }: PageProps) {
-  const userPlan: MemberPlan = await getMemberPlan();
-
+export default async function SupportLibraryRedirectPage({ searchParams }: PageProps) {
   const sp = (await searchParams) ?? {};
-  const query = typeof sp.q === "string" ? sp.q : "";
-  const rawCat = typeof sp.cat === "string" ? sp.cat : "all";
-  const category =
-    rawCat === "all" || VALID_CATEGORY.has(rawCat) ? rawCat : "all";
+  const p = new URLSearchParams();
+  const q = typeof sp.q === "string" ? sp.q : "";
+  const cat = typeof sp.cat === "string" ? sp.cat : "";
+  const topic = typeof sp.topic === "string" ? sp.topic : "";
+  if (q) p.set("q", q);
+  if (cat) p.set("cat", cat);
+  if (topic) p.set("topic", topic);
 
-  return (
-    <main id="main-content" className="flex flex-1 flex-col">
-      <MemberSupportLibrary
-        query={query}
-        category={category}
-        userPlan={userPlan}
-      />
-    </main>
-  );
+  const qs = p.toString();
+  redirect(qs ? `/app/support?${qs}` : "/app/support");
 }

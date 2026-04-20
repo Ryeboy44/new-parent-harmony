@@ -3,15 +3,15 @@
  */
 
 export const UPGRADE_HEADER = {
-  eyebrow: "Member app",
-  title: "When you’re ready, more of the path opens up",
+  eyebrow: "Support",
+  title: "Choose the kind of help that fits this week",
   subheading:
-    "Late nights, loud feeds, a body that is still healing—you should not have to stitch it all together from random corners of the internet. Premium keeps the same calm voice you already trust here, with more weeks, more depth, and a place to land when your brain is tired but your questions are not.",
+    "Some seasons need information. Some need a steady voice. Some need a real human in the loop. This page lays out calm options—digital, live, and bundled—so you can match support to how depleted you feel, not how “productive” you think you should be.",
 } as const;
 
 export const UPGRADE_VALUE_SUMMARY = {
-  title: "What premium is actually for",
-  body: "Free already gives you something real: trustworthy reads, practical checklists, and Week One postpartum so you are not starting from zero. Premium is for when you want the rest of the story in one steady place—the weeks after Week One, the trickier feeding and sleep stretches, recovery and mood when they get loud, and tools for boundaries and home life when you are too tired to invent a system. You are not paying for hype; you are paying for less guesswork on the hard days. Stay on free as long as it feels like enough. If it does not, we are here.",
+  title: "What digital membership is for",
+  body: "The free side of the app is intentionally real: short reads, checklists embedded in Topics, and a resource library you can search when your brain is fried. Premium digital membership is for when you want more depth unlocked in one quiet place—extra planners, longer guidance, and fewer closed doors when you are trying to make a decision at midnight. It is okay to stay free. It is also okay to upgrade because you are tired of piecing it together alone.",
 } as const;
 
 /** Inviting checkout labels (monthly vs annual). Pricing unchanged in UPGRADE_PLANS. */
@@ -42,11 +42,10 @@ export const UPGRADE_PLANS = {
 } as const;
 
 export const UPGRADE_PREMIUM_INCLUDES = [
-  "Fewer 3 a.m. spirals—clearer guidance for the weeks when nights and feeds feel personal, not theoretical",
-  "A sense of what might come next, so surprise feels a little less like failure",
-  "Words you can actually use with a partner or family when you need backup, not just more tabs to read",
-  "Checklists and planners for the boring-but-heavy stuff (bags, boundaries, pump prep) so your tired brain does not have to invent them",
-  "The full library when you want to go deeper—still in short, gentle chunks, not a wall of jargon",
+  "More library depth unlocked—still written to be scanned, not studied",
+  "Extra planners and worksheets for the boring-but-heavy stuff (boundaries, pump prep, household load)",
+  "Clearer language for the “what if this happens” moments—especially feeding, sleep safety, and recovery pacing",
+  "A steadier digital companion between visits if you are also working with Gemma in real life",
 ] as const;
 
 export type UpgradeComparisonRow = {
@@ -60,23 +59,23 @@ export const UPGRADE_COMPARISON_INTRO =
 
 export const UPGRADE_COMPARISON: UpgradeComparisonRow[] = [
   {
-    label: "Guides & pathways",
-    free: "A strong start, including Week One postpartum",
-    premium: "The rest of the weekly path—trimester prep through early months",
+    label: "Navigation",
+    free: "Topics-first browsing + search",
+    premium: "Same calm layout, more unlocked depth inside Topics + library",
   },
   {
     label: "Feeding & sleep",
     free: "Foundations that keep you oriented and safe",
-    premium: "Later weeks and messier nights—more “what if this happens”",
+    premium: "More “what if” scenarios and extra planners when you want more backup",
   },
   {
     label: "Recovery & mood",
     free: "Essentials and when to worry",
-    premium: "More pacing, language for hard days, and room for your partner too",
+    premium: "More pacing, language for hard days, and scripts for asking for help",
   },
   {
     label: "Tools & checklists",
-    free: "Core bag, birth plan, safe sleep, route, nursery",
+    free: "Core bag, birth plan, safe sleep, route, nursery (embedded in Topics)",
     premium: "Extra worksheets—boundaries, pump prep, duties, pediatric questions, and more",
   },
   {
@@ -85,9 +84,9 @@ export const UPGRADE_COMPARISON: UpgradeComparisonRow[] = [
     premium: "Everything unlocked, including longer reads when you want them",
   },
   {
-    label: "1:1 doula or consult time",
-    free: "Not included",
-    premium: "Not included—book separately anytime if you want hands-on care",
+    label: "Live doula/consult time",
+    free: "Not included in digital membership",
+    premium: "Not included—choose a live package below if you want Gemma in the loop",
   },
 ];
 
@@ -102,7 +101,7 @@ export const UPGRADE_FAQ: UpgradeFaqItem[] = [
   {
     question: "Is free still enough?",
     answer:
-      "For a lot of people, yes—and we meant it that way. Free is real articles, real checklists, real Week One. Premium is only if you want the longer runway and the fuller library in one quiet app, not because we hid the basics behind a paywall.",
+      "For a lot of people, yes—and we meant it that way. Free is real Topics pages, real checklists, and a searchable resource library. Premium is only if you want more unlocked depth in one quiet place—not because the basics are hidden behind a paywall.",
   },
   {
     question: "Who is premium really for?",
@@ -110,9 +109,9 @@ export const UPGRADE_FAQ: UpgradeFaqItem[] = [
       "Anyone who wishes they had one gentle place to open when it is late and things feel loud—feeding, sleep, your own healing, the visitors text thread. If piecing it together from ten blogs sounds exhausting, premium is built for that tired version of you.",
   },
   {
-    question: "Does this include time with Gemma?",
+    question: "Does digital membership include live support?",
     answer:
-      "Premium is the digital side—guides, tools, library. If you want Gemma’s eyes and hands on your situation, that is booked through the main site. Plenty of families use both: the app between visits, Gemma when they need a person in the room (or on a screen).",
+      "Digital membership unlocks content. Live support (calls, consults, doula time) is booked separately—start with a free 15-minute chat if you are not sure what fits.",
   },
 ];
 
@@ -120,3 +119,81 @@ export const UPGRADE_CTA = {
   title: "Rather talk to a human first?",
   body: "Book a free 15-minute chat or peek at 1:1 services on the main site—zero obligation to buy premium. We will meet you where you are.",
 } as const;
+
+export type UpgradeOffering = {
+  id: "free-chat" | "premium-digital" | "premium-plus" | "sleep-package";
+  title: string;
+  price: string;
+  cadence: string;
+  blurb: string;
+  bullets: string[];
+  primaryHref: string;
+  primaryLabel: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+};
+
+export const UPGRADE_OFFERINGS: UpgradeOffering[] = [
+  {
+    id: "free-chat",
+    title: "Free 15-minute chat",
+    price: "Free",
+    cadence: "one conversation",
+    blurb:
+      "A low-pressure way to say the hard sentence out loud and hear what support could look like for your family.",
+    bullets: [
+      "Bring whatever feels messy—feeding, sleep, recovery, visitors, or “everything at once.”",
+      "Leave with a clearer next step (even if that next step is simply rest).",
+    ],
+    primaryHref: "/discovery-call",
+    primaryLabel: "Book a chat",
+    secondaryHref: "/contact",
+    secondaryLabel: "Contact",
+  },
+  {
+    id: "premium-digital",
+    title: "Premium digital membership",
+    price: "See plans",
+    cadence: "monthly or annual",
+    blurb:
+      "All digital content unlocked: deeper library reads, extra planners, and fewer closed doors when you are deciding at midnight.",
+    bullets: [
+      "Built for late-night scrolling—short sections, calm tone, practical framing.",
+      "Pairs well with occasional live support if you want both.",
+    ],
+    primaryHref: "#digital-membership",
+    primaryLabel: "View membership options",
+  },
+  {
+    id: "premium-plus",
+    title: "Premium Plus Support",
+    price: "$59.99",
+    cadence: "per month",
+    blurb:
+      "All digital content, plus two 1-hour virtual sessions monthly with a professional doula—help translating worry into a doable plan.",
+    bullets: [
+      "For seasons when you want both information and a steady human check-in.",
+      "Especially helpful when feeding questions, sleep safety, recovery pacing, and household load stack up together.",
+    ],
+    primaryHref: "/services",
+    primaryLabel: "Ask about Premium Plus",
+    secondaryHref: "/discovery-call",
+    secondaryLabel: "Start with a chat",
+  },
+  {
+    id: "sleep-package",
+    title: "Sleep training package",
+    price: "$600",
+    cadence: "package",
+    blurb:
+      "A written sleep plan tailored to your baby and your values, plus two weeks of virtual support while you implement—without shame-based pressure tactics.",
+    bullets: [
+      "Supportive troubleshooting as nights shift (because they always do).",
+      "A better fit when sleep feels like the main drain on your nervous system.",
+    ],
+    primaryHref: "/services",
+    primaryLabel: "Ask about sleep support",
+    secondaryHref: "/discovery-call",
+    secondaryLabel: "Book a chat",
+  },
+];

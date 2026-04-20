@@ -1,55 +1,54 @@
 /** Placeholder dashboard copy and links — swap for user-specific data later. */
 
 export const DASHBOARD_WELCOME = {
-  eyebrow: "Your dashboard",
-  heading: "Welcome to New Parent Harmony",
+  eyebrow: "Your home",
+  heading: "You don’t have to hold everything in your head",
   subtext:
-    "A calm corner you can open anytime—starting with a small focus for today and a week that meets you where you are. Explore pregnancy, postpartum, feeding, sleep, and recovery at your own pace. There is no rush here.",
+    "This app is organized by what you need—not a timeline. Start with a tiny focus for today, then open the topic that matches your night (feeding, sleep, recovery, and more).",
 } as const;
 
 export const DASHBOARD_QUICK_ACCESS = [
   {
-    href: "/app/weekly-guide",
-    label: "Weekly Guide",
-    hint: "Week-by-week reassurance",
+    href: "/app/topics",
+    label: "Topics",
+    hint: "Find help by need",
   },
   {
-    href: "/app/support-library",
-    label: "Support Library",
-    hint: "Articles & checklists",
+    href: "/app/support",
+    label: "Resource library",
+    hint: "Short reads & checklists",
   },
-  { href: "/app/tools", label: "Tools", hint: "Trackers & planners" },
   {
     href: "/app/upgrade",
-    label: "Upgrade",
-    hint: "More depth when you are ready",
+    label: "Support options",
+    hint: "Digital + live help",
   },
 ] as const;
 
 export const DASHBOARD_FREE_ESSENTIALS = [
   {
     title: "Hospital Bag Checklist",
-    href: "/app/tools#tool-hospital-bag",
+    href: "/app/topics/getting-ready#tool-hospital-bag",
   },
   {
     title: "Birth Plan Worksheet",
-    href: "/app/tools#tool-birth-plan",
+    href: "/app/topics/getting-ready#tool-birth-plan",
   },
   {
     title: "Safe Sleep Checklist",
-    href: "/app/tools#tool-safe-sleep",
+    href: "/app/topics/sleep#tool-safe-sleep",
   },
   {
     title: "Nursery Essentials",
-    href: "/app/tools#tool-nursery-essentials",
+    href: "/app/topics/home-setup#tool-nursery-essentials",
   },
   {
     title: "Hospital Tour Questions",
-    href: "/app/tools#tool-hospital-tour",
+    href: "/app/topics/getting-ready#tool-hospital-tour",
   },
   {
     title: "Route to Hospital",
-    href: "/app/tools#tool-route-hospital",
+    href: "/app/topics/getting-ready#tool-route-hospital",
   },
 ] as const;
 

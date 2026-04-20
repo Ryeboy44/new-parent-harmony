@@ -34,7 +34,7 @@ export default async function LoginPage({ searchParams }: PageProps) {
     <main id="main-content" className="flex flex-1 flex-col">
       <MemberAuthCard
         title="Welcome back"
-        subtitle="Sign in to save your place in the Weekly Guide, Support Library, and tools. We use Google for a simple, secure login—email magic links can be added later."
+        subtitle="Sign in to keep your place in Topics, the resource library, and your support tools. We use Google for a simple, secure login—email magic links can be added later."
         footer={
           <p className="text-center text-sm text-muted">
             New here?{" "}

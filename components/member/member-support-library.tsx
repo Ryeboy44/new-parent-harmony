@@ -7,13 +7,14 @@ import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 import {
   categoryLabel,
   matchesSupportLibraryFilters,
-  supportLibraryHref,
+  resourceLibraryHref,
   SUPPORT_LIBRARY_CATEGORIES,
   SUPPORT_LIBRARY_HEADER,
   SUPPORT_LIBRARY_RESOURCES,
   SUPPORT_LIBRARY_SEARCH_PLACEHOLDER,
   type SupportLibraryResource,
 } from "@/lib/content/support-library";
+import { MEMBER_TOPICS } from "@/lib/content/member-topics";
 
 const eyebrowClass =
   "text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-harmony-green-muted sm:text-xs";
@@ -84,18 +85,21 @@ function ResourceCard({
 type MemberSupportLibraryProps = {
   query: string;
   category: string;
+  topic: string;
   userPlan: MemberPlan;
 };
 
 export function MemberSupportLibrary({
   query,
   category,
+  topic,
   userPlan,
 }: MemberSupportLibraryProps) {
   const q = query.trim();
   const cat = category || "all";
+  const top = topic || "all";
 
-  const filterOpts = { q, cat };
+  const filterOpts = { q, cat, topic: top };
 
   const featured = SUPPORT_LIBRARY_RESOURCES.filter(
     (r) => r.featured && matchesSupportLibraryFilters(r, filterOpts),
@@ -127,10 +131,11 @@ export function MemberSupportLibrary({
         <form
           role="search"
           method="get"
-          action="/app/support-library"
+          action="/app/support"
           className="mx-auto max-w-2xl"
         >
           {cat !== "all" ? <input type="hidden" name="cat" value={cat} /> : null}
+          {top !== "all" ? <input type="hidden" name="topic" value={top} /> : null}
           <label htmlFor="support-library-search" className="sr-only">
             Search resources
           </label>
@@ -153,10 +158,44 @@ export function MemberSupportLibrary({
         </form>
 
         <div className="mt-8">
-          <p className={eyebrowClass}>Browse by topic</p>
+          <p className={eyebrowClass}>Browse by need (topics)</p>
           <div className="mt-3 flex snap-x snap-mandatory gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
             <Link
-              href={supportLibraryHref({ q })}
+              href={resourceLibraryHref({ q, cat, topic: "all" })}
+              className={`${chipBase} ${
+                top === "all"
+                  ? "border-harmony-green/35 bg-green-wash/50 text-foreground"
+                  : "border-border-soft/70 bg-surface text-muted hover:border-harmony-green/25 hover:bg-cream-deep/50"
+              }`}
+              scroll={false}
+            >
+              All needs
+            </Link>
+            {MEMBER_TOPICS.map((t) => {
+              const active = top === t.id;
+              return (
+                <Link
+                  key={t.id}
+                  href={resourceLibraryHref({ q, cat, topic: t.id })}
+                  className={`${chipBase} max-w-[11rem] sm:max-w-none ${
+                    active
+                      ? "border-harmony-green/35 bg-green-wash/50 text-foreground"
+                      : "border-border-soft/70 bg-surface text-muted hover:border-harmony-green/25 hover:bg-cream-deep/50"
+                  }`}
+                  scroll={false}
+                >
+                  {t.label}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="mt-8">
+          <p className={eyebrowClass}>Browse by library category</p>
+          <div className="mt-3 flex snap-x snap-mandatory gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:flex-wrap sm:overflow-visible sm:pb-0 [&::-webkit-scrollbar]:hidden">
+            <Link
+              href={resourceLibraryHref({ q, topic: top, cat: "all" })}
               className={`${chipBase} ${
                 cat === "all"
                   ? "border-harmony-green/35 bg-green-wash/50 text-foreground"
@@ -164,14 +203,14 @@ export function MemberSupportLibrary({
               }`}
               scroll={false}
             >
-              All topics
+              All categories
             </Link>
             {SUPPORT_LIBRARY_CATEGORIES.map((c) => {
               const active = cat === c.id;
               return (
                 <Link
                   key={c.id}
-                  href={supportLibraryHref({ q, cat: c.id })}
+                  href={resourceLibraryHref({ q, topic: top, cat: c.id })}
                   className={`${chipBase} max-w-[11rem] sm:max-w-none ${
                     active
                       ? "border-harmony-green/35 bg-green-wash/50 text-foreground"

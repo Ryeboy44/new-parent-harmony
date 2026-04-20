@@ -5,6 +5,16 @@ export {
 } from "@/lib/content/member-app";
 
 export {
+  MEMBER_TOPICS,
+  MEMBER_TOPIC_DAILY_FOCUS,
+  getMemberTopicById,
+  type MemberTopic,
+  type MemberTopicId,
+} from "@/lib/content/member-topics";
+
+export { selectDailyFocusPrompt } from "@/lib/content/daily-focus";
+
+export {
   DASHBOARD_FREE_ESSENTIALS,
   DASHBOARD_PREMIUM_PREVIEWS,
   DASHBOARD_QUICK_ACCESS,
@@ -14,6 +24,7 @@ export {
 export {
   categoryLabel,
   matchesSupportLibraryFilters,
+  resourceLibraryHref,
   supportLibraryHref,
   SUPPORT_LIBRARY_CATEGORIES,
   SUPPORT_LIBRARY_HEADER,
@@ -30,6 +41,7 @@ export {
   UPGRADE_CTA,
   UPGRADE_FAQ,
   UPGRADE_HEADER,
+  UPGRADE_OFFERINGS,
   UPGRADE_PLANS,
   UPGRADE_PREMIUM_INCLUDES,
   UPGRADE_PRICING_INTRO,
@@ -37,24 +49,8 @@ export {
   UPGRADE_VALUE_SUMMARY,
   type UpgradeComparisonRow,
   type UpgradeFaqItem,
+  type UpgradeOffering,
 } from "@/lib/content/member-upgrade";
-
-export {
-  getNextWeekId,
-  getWeeklyGuideWeek,
-  selectDailyFocusPrompt,
-  WEEKLY_GUIDE_DETAILS,
-  WEEKLY_GUIDE_HEADER,
-  WEEKLY_GUIDE_ORDER,
-  WEEKLY_GUIDE_STAGES,
-  WEEKLY_GUIDE_WEEKS,
-  weeklyGuidePlaceholderDetail,
-  type WeeklyDetailSection,
-  type WeeklyGuideDetail,
-  type WeeklyGuideStageId,
-  type WeeklyGuideTier,
-  type WeeklyGuideWeek,
-} from "@/lib/content/weekly-guide";
 
 export {
   canAccessTool,

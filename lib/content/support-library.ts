@@ -5,9 +5,9 @@
 
 export const SUPPORT_LIBRARY_HEADER = {
   eyebrow: "Member resources",
-  title: "Support Library",
+  title: "Resource library",
   subheading:
-    "Trusted, gentle guidance organized by topic—so you can find what you need without overwhelm.",
+    "Trusted, gentle guidance organized for scanning—short reads, checklists, and next-step links without overwhelm.",
 } as const;
 
 export const SUPPORT_LIBRARY_SEARCH_PLACEHOLDER =
@@ -40,6 +40,15 @@ export type SupportLibraryResource = {
   title: string;
   summary: string;
   categoryId: SupportLibraryCategoryId;
+  /** Topic-first navigation bucket (maps to `MEMBER_TOPICS`). */
+  topicId:
+    | "feeding"
+    | "sleep"
+    | "recovery"
+    | "getting-ready"
+    | "home-setup"
+    | "support-boundaries"
+    | "mental-emotional";
   tier: LibraryTier;
   featured: boolean;
 };
@@ -51,6 +60,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Clarify what matters most—comfort, communication, consent—so your team can support you when paths change.",
     categoryId: "birth-prep",
+    topicId: "getting-ready",
     tier: "free",
     featured: true,
   },
@@ -60,6 +70,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "What to notice, who to meet, and questions that turn a walk-through into real orientation.",
     categoryId: "birth-prep",
+    topicId: "getting-ready",
     tier: "free",
     featured: true,
   },
@@ -69,6 +80,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Group vs. private, online vs. in person, and how to spot a balanced curriculum—not fear or fluff alone.",
     categoryId: "birth-prep",
+    topicId: "getting-ready",
     tier: "free",
     featured: true,
   },
@@ -78,6 +90,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Breathing, movement, water, epidurals, nitrous—an overview so options feel familiar, not foreign.",
     categoryId: "birth-prep",
+    topicId: "getting-ready",
     tier: "premium",
     featured: true,
   },
@@ -87,6 +100,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Early vs. active labor, pushing, and delivering the placenta—plain language for tired brains.",
     categoryId: "birth-prep",
+    topicId: "getting-ready",
     tier: "premium",
     featured: false,
   },
@@ -96,6 +110,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Primary and backup routes, parking, weather, and who texts whom when you are on the way.",
     categoryId: "birth-prep",
+    topicId: "getting-ready",
     tier: "free",
     featured: false,
   },
@@ -105,6 +120,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Firm flat surface, alone, on the back—plus what to skip so the room feels calm, not cluttered.",
     categoryId: "home-baby",
+    topicId: "sleep",
     tier: "free",
     featured: true,
   },
@@ -114,6 +130,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Stock staples, one-handed snacks, and freezer ideas that respect low energy—not gourmet expectations.",
     categoryId: "home-baby",
+    topicId: "home-setup",
     tier: "free",
     featured: true,
   },
@@ -123,6 +140,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Why install early, where to find CPST help, and why the manual is your best friend.",
     categoryId: "home-baby",
+    topicId: "getting-ready",
     tier: "free",
     featured: false,
   },
@@ -132,6 +150,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "What often helps, what can wait, and how to avoid shopping from anxiety.",
     categoryId: "home-baby",
+    topicId: "home-setup",
     tier: "premium",
     featured: false,
   },
@@ -141,6 +160,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "One reachable zone for water, snacks, burp cloths, and supplies—for bleary 3 a.m. wakeups.",
     categoryId: "feeding-equipment",
+    topicId: "feeding",
     tier: "free",
     featured: true,
   },
@@ -150,6 +170,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Starter strategies without buying every brand—simple beats perfect.",
     categoryId: "feeding-equipment",
+    topicId: "feeding",
     tier: "free",
     featured: false,
   },
@@ -159,6 +180,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "When a pump helps, questions for DME suppliers, and keeping expectations humane.",
     categoryId: "feeding-equipment",
+    topicId: "feeding",
     tier: "premium",
     featured: false,
   },
@@ -168,6 +190,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "What a postpartum doula, IBCLC, night nurse, or cleaner each does—and how to say “yes, we need that” without shrinking.",
     categoryId: "support-recovery",
+    topicId: "recovery",
     tier: "premium",
     featured: true,
   },
@@ -177,6 +200,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Meal trains, delivery apps, and snacks you can eat one-handed—fuel without another decision to make.",
     categoryId: "support-recovery",
+    topicId: "recovery",
     tier: "premium",
     featured: false,
   },
@@ -186,6 +210,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "What lochia tends to do day by day, what to watch for, and when to call—plain words for a tired brain.",
     categoryId: "support-recovery",
+    topicId: "recovery",
     tier: "free",
     featured: false,
   },
@@ -195,6 +220,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Fair splits, visible task lists, and naming mental load—not just dishes.",
     categoryId: "family-boundaries",
+    topicId: "support-boundaries",
     tier: "premium",
     featured: true,
   },
@@ -204,6 +230,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Scripts for short visits, delayed meet-and-greets, and protecting your nest kindly.",
     categoryId: "family-boundaries",
+    topicId: "support-boundaries",
     tier: "premium",
     featured: true,
   },
@@ -213,6 +240,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Values, privacy, and phrases that protect your choices without debate in the nursery.",
     categoryId: "family-boundaries",
+    topicId: "support-boundaries",
     tier: "premium",
     featured: false,
   },
@@ -222,6 +250,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "How you might approach discipline, screen time later, and consistency—conversation starters, not verdicts.",
     categoryId: "family-boundaries",
+    topicId: "support-boundaries",
     tier: "premium",
     featured: false,
   },
@@ -231,6 +260,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Useful registries, group gifts, and permission to skip what does not fit your space or values.",
     categoryId: "celebration-registry",
+    topicId: "home-setup",
     tier: "free",
     featured: true,
   },
@@ -240,6 +270,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Insurance checks, FSA/HSA, leave paperwork, and pediatric choice—chunked so it feels doable.",
     categoryId: "celebration-registry",
+    topicId: "getting-ready",
     tier: "premium",
     featured: true,
   },
@@ -249,6 +280,7 @@ export const SUPPORT_LIBRARY_RESOURCES: SupportLibraryResource[] = [
     summary:
       "Gradual introductions, routines, and emotional prep for older kids—gentle transitions.",
     categoryId: "home-baby",
+    topicId: "home-setup",
     tier: "premium",
     featured: false,
   },
@@ -264,17 +296,29 @@ export function supportLibraryHref(opts: { q?: string; cat?: string }) {
   if (q) p.set("q", q);
   if (opts.cat && opts.cat !== "all") p.set("cat", opts.cat);
   const s = p.toString();
-  return s ? `/app/support-library?${s}` : "/app/support-library";
+  return s ? `/app/support?${s}` : "/app/support";
+}
+
+export function resourceLibraryHref(opts: { q?: string; cat?: string; topic?: string }) {
+  const p = new URLSearchParams();
+  const q = opts.q?.trim();
+  if (q) p.set("q", q);
+  if (opts.cat && opts.cat !== "all") p.set("cat", opts.cat);
+  if (opts.topic && opts.topic !== "all") p.set("topic", opts.topic);
+  const s = p.toString();
+  return s ? `/app/support?${s}` : "/app/support";
 }
 
 export function matchesSupportLibraryFilters(
   resource: SupportLibraryResource,
-  opts: { q: string; cat: string },
+  opts: { q: string; cat: string; topic?: string },
 ): boolean {
   const q = opts.q.trim().toLowerCase();
   const cat = opts.cat || "all";
+  const topic = opts.topic || "all";
 
   if (cat !== "all" && resource.categoryId !== cat) return false;
+  if (topic !== "all" && resource.topicId !== topic) return false;
 
   if (!q) return true;
 
@@ -282,6 +326,7 @@ export function matchesSupportLibraryFilters(
     resource.title,
     resource.summary,
     categoryLabel(resource.categoryId),
+    resource.topicId,
   ]
     .join(" ")
     .toLowerCase();

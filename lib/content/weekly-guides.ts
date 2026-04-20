@@ -3,6 +3,9 @@
  * Concise, skimmable sections; freemium tiers on entries (not individual sections).
  */
 
+import { selectDailyFocusPrompt } from "@/lib/content/daily-focus";
+
+export { selectDailyFocusPrompt };
 export const WEEKLY_GUIDE_HEADER = {
   eyebrow: "Member app",
   title: "Weekly Guide",
@@ -136,16 +139,6 @@ export type WeeklyGuideDetail = {
   /** Short daily check-in lines; UI picks one per calendar day (local). */
   dailyFocus?: string[];
 };
-
-/**
- * Which `dailyFocus` string to show today. Uses local weekday: 0 = Sunday … 6 = Saturday.
- * Same parent always sees the same prompt on a given calendar day (until midnight).
- */
-export function selectDailyFocusPrompt(prompts: string[] | undefined): string | null {
-  if (!prompts?.length) return null;
-  const day = new Date().getDay();
-  return prompts[day % prompts.length] ?? null;
-}
 
 export const WEEKLY_GUIDE_DETAILS: Record<string, WeeklyGuideDetail> = {
   "weeks-28-32": {
