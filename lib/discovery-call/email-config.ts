@@ -3,8 +3,8 @@
  *
  * Required for real delivery (Resend):
  *   RESEND_API_KEY          — API key from https://resend.com
- *   DISCOVERY_CALL_TO       — Inbox for submissions (e.g. gemma@newparentharmony.com)
- *   DISCOVERY_CALL_FROM     — Verified sender in Resend, e.g. "New Parent Harmony <gemma@newparentharmony.com>"
+ *   DISCOVERY_CALL_TO       — Inbox for form submissions (server-side only; not shown on the site)
+ *   DISCOVERY_CALL_FROM     — Verified sender in Resend, e.g. "New Parent Harmony <hello@yourdomain.com>"
  *
  * Optional:
  *   DISCOVERY_CALL_LOG_ONLY=true  — Log payload to server console instead of sending (handy for local dev)

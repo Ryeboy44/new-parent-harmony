@@ -9,7 +9,6 @@ import {
   discoveryCallSchema,
 } from "@/lib/discovery-call/schema";
 import { zodFieldErrors } from "@/lib/discovery-call/zod-field-errors";
-import { SITE_EMAIL, siteMailtoHref } from "@/data/site-contact";
 import { PRIMARY_CTA_LABEL } from "@/data/site-cta";
 
 type ServiceId = (typeof SERVICE_OPTIONS)[number]["id"];
@@ -135,15 +134,9 @@ export function DiscoveryCallForm() {
             within one business day.
           </p>
           <p className="mt-5 text-sm leading-relaxed text-muted sm:mt-6">
-            If you don&apos;t see a reply, please check spam or reach out
-            directly at{" "}
-            <a
-              href={siteMailtoHref}
-              className="font-medium text-harmony-green-deep underline decoration-harmony-green/30 underline-offset-[0.2em] transition-colors hover:decoration-harmony-green-deep"
-            >
-              {SITE_EMAIL}
-            </a>
-            .
+            If you don&apos;t see a reply within a business day, please check your
+            spam folder. Please reach out through the contact form and I&apos;ll get
+            back to you as soon as I can.
           </p>
           <Link
             href="/"

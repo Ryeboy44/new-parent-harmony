@@ -1,4 +1,5 @@
-import { SITE_EMAIL, siteMailtoHref } from "@/data/site-contact";
+import Link from "next/link";
+import { CONTACT_FORM_HREF } from "@/data/site-contact";
 
 export function SiteFooter() {
   return (
@@ -11,13 +12,15 @@ export function SiteFooter() {
           <p className="mt-2 text-sm text-muted">
             Montgomery County, MD and surrounding areas
           </p>
-          <p className="mt-5 text-sm">
-            <a
-              href={siteMailtoHref}
-              className="text-muted underline-offset-4 transition-colors hover:text-foreground hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
+          <p className="mt-5 text-sm leading-relaxed text-muted">
+            Please reach out through the{" "}
+            <Link
+              href={CONTACT_FORM_HREF}
+              className="font-medium text-foreground underline-offset-4 transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
             >
-              {SITE_EMAIL}
-            </a>
+              contact form
+            </Link>{" "}
+            and I&apos;ll get back to you as soon as I can.
           </p>
         </div>
 
@@ -57,6 +60,14 @@ export function SiteFooter() {
               >
                 FAQ
               </a>
+            </li>
+            <li>
+              <Link
+                href={CONTACT_FORM_HREF}
+                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
+              >
+                Contact
+              </Link>
             </li>
           </ul>
         </div>

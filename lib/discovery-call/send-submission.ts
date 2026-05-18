@@ -5,7 +5,6 @@ import {
   describeConfigIssue,
   getDiscoveryEmailConfig,
 } from "@/lib/discovery-call/email-config";
-import { SITE_EMAIL } from "@/data/site-contact";
 
 function buildHtml(data: DiscoveryCallInput): string {
   const servicesList = data.services
@@ -76,7 +75,8 @@ export async function sendDiscoverySubmission(
     });
     return {
       ok: false,
-      message: `We couldn’t send your message right now. Please try again later or email ${SITE_EMAIL} directly.`,
+      message:
+        "We couldn’t send your message right now. Please try again in a few minutes, or refresh the page and submit the contact form again.",
     };
   }
 
