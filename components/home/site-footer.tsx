@@ -23,6 +23,46 @@ export function SiteFooter() {
 
         <div>
           <p className="text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-harmony-green-muted">
+            Explore
+          </p>
+          <ul className="mt-4 flex flex-col gap-3 text-sm text-muted">
+            <li>
+              <a
+                href="/blog"
+                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
+              >
+                Blog
+              </a>
+            </li>
+            <li>
+              <a
+                href="/services"
+                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
+              >
+                Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="/testimonials"
+                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
+              >
+                Testimonials
+              </a>
+            </li>
+            <li>
+              <a
+                href="/faq"
+                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
+              >
+                FAQ
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-harmony-green-muted">
             Connect
           </p>
           <ul className="mt-4 flex flex-col gap-3 text-sm text-muted sm:flex-row sm:gap-8">

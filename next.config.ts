@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* All marketing images are served from /public — no remote image domains required. */
+  transpilePackages: ["next-sanity", "sanity", "@sanity/vision"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "cdn.sanity.io",
+        pathname: "/images/**",
+      },
+    ],
+  },
   async redirects() {
     return [
       { source: "/reiki", destination: "/about", permanent: true },
