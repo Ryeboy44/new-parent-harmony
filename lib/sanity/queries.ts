@@ -1,3 +1,11 @@
+/** Only posts that are published and not scheduled for the future. */
+const publishedFilter = `
+  _type == "post"
+  && published == true
+  && defined(slug.current)
+  && publishDate <= now()
+`;
+
 export const postListFields = `
   _id,
   title,
@@ -20,18 +28,18 @@ export const postListFields = `
 `;
 
 export const postsQuery = `
-  *[_type == "post" && published == true] | order(publishDate desc) {
+  *[${publishedFilter}] | order(publishDate desc) {
     ${postListFields}
   }
 `;
 
 export const postBySlugQuery = `
-  *[_type == "post" && published == true && slug.current == $slug][0] {
+  *[${publishedFilter} && slug.current == $slug][0] {
     ${postListFields},
     body
   }
 `;
 
 export const postSlugsQuery = `
-  *[_type == "post" && published == true && defined(slug.current)].slug.current
+  *[${publishedFilter}].slug.current
 `;

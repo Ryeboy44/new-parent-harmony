@@ -22,7 +22,6 @@ export const revalidate = 60;
 
 export default async function BlogPage() {
   const posts = await getPublishedPosts();
-  const hasPlaceholders = posts.some((p) => p.isPlaceholder);
 
   return (
     <>
@@ -46,13 +45,6 @@ export default async function BlogPage() {
 
         <SectionShell background="white" padding="tight">
           <SanitySetupNotice />
-
-          {hasPlaceholders ? (
-            <p className="mb-8 text-center text-sm text-muted" role="note">
-              Showing sample layout posts for development — publish real articles in
-              Sanity Studio to replace these.
-            </p>
-          ) : null}
 
           {posts.length > 0 ? (
             <ul

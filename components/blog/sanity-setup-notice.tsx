@@ -9,7 +9,7 @@ export function SanitySetupNotice() {
       className="mb-10 rounded-2xl border border-border-soft/60 bg-surface-muted/80 px-5 py-5 text-[0.9375rem] leading-relaxed text-muted sm:px-6 sm:py-6"
       role="status"
     >
-      <p className="font-medium text-foreground">Blog CMS not connected yet</p>
+      <p className="font-medium text-foreground">Blog CMS not connected</p>
       <p className="mt-2">
         Add{" "}
         <code className="rounded bg-cream-deep px-1.5 py-0.5 text-xs">
@@ -19,11 +19,12 @@ export function SanitySetupNotice() {
         <code className="rounded bg-cream-deep px-1.5 py-0.5 text-xs">
           NEXT_PUBLIC_SANITY_DATASET
         </code>{" "}
-        in your environment, then open{" "}
+        to <code className="rounded bg-cream-deep px-1.5 py-0.5 text-xs">.env.local</code>{" "}
+        (local) and Vercel (production), then open{" "}
         <Link href="/studio" className="font-medium text-harmony-green-deep underline">
           Sanity Studio
-        </Link>{" "}
-        to create and publish posts.
+        </Link>
+        .
       </p>
     </aside>
   );

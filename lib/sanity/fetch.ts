@@ -1,10 +1,14 @@
 import type { PortableTextBlock } from "@portabletext/types";
-import { blogFallbackPosts } from "@/data/blog-fallback-posts";
 import { isSanityConfigured } from "@/sanity/env";
-import { sanityClient } from "@/lib/sanity/client";
+import { getSanityClient } from "@/lib/sanity/client";
 import { postBySlugQuery, postSlugsQuery, postsQuery } from "@/lib/sanity/queries";
 import type { BlogCategory, BlogPost, PostFeaturedImage } from "@/lib/sanity/types";
 import { estimateReadingMinutes } from "@/lib/sanity/reading-time";
+
+const fetchOptions = { next: { tags: ["blog-posts"], revalidate: 60 } };
+const slugFetchOptions = (slug: string) => ({
+  next: { tags: [`blog-post-${slug}`, "blog-posts"], revalidate: 60 },
+});
 
 type SanityPostRow = {
   _id: string;
@@ -44,62 +48,41 @@ function mapPost(row: SanityPostRow, includeBody = false): BlogPost {
 }
 
 export async function getPublishedPosts(): Promise<BlogPost[]> {
-  if (!isSanityConfigured) {
-    return process.env.NODE_ENV === "development" ? blogFallbackPosts : [];
-  }
+  if (!isSanityConfigured) return [];
 
   try {
-    const rows = await sanityClient.fetch<SanityPostRow[]>(
-      postsQuery,
-      {},
-      { next: { tags: ["blog-posts"], revalidate: 60 } },
-    );
+    const rows = await getSanityClient().fetch<SanityPostRow[]>(postsQuery, {}, fetchOptions);
     return rows.map((row) => mapPost(row));
   } catch (error) {
     console.error("[blog] Failed to fetch posts:", error);
-    return process.env.NODE_ENV === "development" ? blogFallbackPosts : [];
+    return [];
   }
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  if (!isSanityConfigured) {
-    const fallback = blogFallbackPosts.find((p) => p.slug === slug);
-    return fallback ?? null;
-  }
+  if (!isSanityConfigured) return null;
 
   try {
-    const row = await sanityClient.fetch<SanityPostRow | null>(
+    const row = await getSanityClient().fetch<SanityPostRow | null>(
       postBySlugQuery,
       { slug },
-      { next: { tags: [`blog-post-${slug}`], revalidate: 60 } },
+      slugFetchOptions(slug),
     );
-    if (!row) {
-      if (process.env.NODE_ENV === "development") {
-        return blogFallbackPosts.find((p) => p.slug === slug) ?? null;
-      }
-      return null;
-    }
-    return mapPost(row, true);
+    return row ? mapPost(row, true) : null;
   } catch (error) {
     console.error(`[blog] Failed to fetch post "${slug}":`, error);
-    return process.env.NODE_ENV === "development"
-      ? (blogFallbackPosts.find((p) => p.slug === slug) ?? null)
-      : null;
+    return null;
   }
 }
 
 export async function getPublishedPostSlugs(): Promise<string[]> {
-  if (!isSanityConfigured) {
-    return process.env.NODE_ENV === "development"
-      ? blogFallbackPosts.map((p) => p.slug)
-      : [];
-  }
+  if (!isSanityConfigured) return [];
 
   try {
-    return await sanityClient.fetch<string[]>(
+    return await getSanityClient().fetch<string[]>(
       postSlugsQuery,
       {},
-      { next: { tags: ["blog-slugs"], revalidate: 60 } },
+      { next: { tags: ["blog-slugs", "blog-posts"], revalidate: 60 } },
     );
   } catch (error) {
     console.error("[blog] Failed to fetch slugs:", error);

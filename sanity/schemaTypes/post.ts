@@ -108,7 +108,8 @@ export const postType = defineType({
       name: "author",
       title: "Author",
       type: "string",
-      initialValue: "Gemma Cawley",
+      initialValue: "Gemma Cawley · New Parent Harmony",
+      description: "Shown on blog posts. Default is Gemma Cawley / New Parent Harmony.",
     }),
     defineField({
       name: "seoTitle",
