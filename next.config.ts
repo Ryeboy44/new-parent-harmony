@@ -15,11 +15,6 @@ const nextConfig: NextConfig = {
         destination: "/services",
         permanent: true,
       },
-      {
-        source: "/testimonials",
-        destination: "/#testimonials",
-        permanent: true,
-      },
       { source: "/meet-gemma", destination: "/about", permanent: true },
       {
         source: "/ways-we-work-together",
@@ -36,7 +31,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/testimonials.html",
-        destination: "/#testimonials",
+        destination: "/testimonials",
         permanent: true,
       },
       {

@@ -4,7 +4,6 @@ import { EarlySupportBannerSection } from "@/components/services/early-support-b
 import { NotSureSection } from "@/components/services/not-sure-section";
 import { ServiceDetailBlock } from "@/components/services/service-detail-block";
 import { ServicesHero } from "@/components/services/services-hero";
-import { ServicesTestimonialsPreview } from "@/components/services/services-testimonials-preview";
 import { SiteFooter } from "@/components/home/site-footer";
 import { SiteNavbar } from "@/components/home/site-navbar";
 import { serviceDetails } from "@/data/services-page-content";
@@ -47,7 +46,6 @@ export default function ServicesPage() {
         </div>
 
         <NotSureSection />
-        <ServicesTestimonialsPreview />
       </main>
       <SiteFooter />
     </>
