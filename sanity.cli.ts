@@ -5,5 +5,9 @@ import { dataset, projectId } from "./sanity/env";
 loadSanityEnv();
 
 export default defineCliConfig({
-  api: { projectId, dataset },
+  api: {
+    projectId: projectId || undefined,
+    dataset,
+  },
+  studioHost: "localhost:3333",
 });

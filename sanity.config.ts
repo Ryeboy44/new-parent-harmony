@@ -1,13 +1,17 @@
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
-import { siteBaseUrl } from "./data/site-url";
 import { apiVersion, dataset, projectId } from "./sanity/env";
-import { schema } from "./sanity/schemaTypes";
+import { schemaTypes } from "./sanity/schemaTypes";
+import { structure } from "./sanity/structure";
+
+const siteBaseUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.newparentharmony.com"
+).replace(/\/$/, "");
 
 if (!projectId) {
   console.warn(
-    "[sanity] Missing NEXT_PUBLIC_SANITY_PROJECT_ID — Studio and blog fetching will not work until it is set in .env.local or Vercel.",
+    "[sanity] Missing NEXT_PUBLIC_SANITY_PROJECT_ID. Add it to .env.local, then restart Studio (npm run sanity).",
   );
 }
 
@@ -18,8 +22,13 @@ export default defineConfig({
   dataset,
   basePath: "/studio",
   apiVersion,
-  plugins: [structureTool(), visionTool()],
-  schema,
+  plugins: [
+    structureTool({ structure }),
+    visionTool({ defaultApiVersion: apiVersion }),
+  ],
+  schema: {
+    types: schemaTypes,
+  },
   document: {
     productionUrl: async (doc) => {
       const slug = (doc as { slug?: { current?: string } }).slug?.current;

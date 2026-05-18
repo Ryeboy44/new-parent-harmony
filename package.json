@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "sanity": "sanity dev",
+    "sanity": "node --import ./sanity/preload-env.mjs ./node_modules/sanity/bin/sanity dev",
     "sanity:check": "node scripts/check-sanity.mjs"
   },
   "dependencies": {
