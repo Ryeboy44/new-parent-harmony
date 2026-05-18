@@ -4,6 +4,8 @@ import { CoffeeMorningSection } from "@/components/home/coffee-morning-section";
 import { FinalCTASection } from "@/components/home/final-cta-section";
 import { HeroSection } from "@/components/home/hero-section";
 import { IntroTrustSection } from "@/components/home/intro-trust-section";
+import { EarlySupportBanner } from "@/components/ui/early-support-banner";
+import { homeEarlySupportMessage } from "@/data/home-page-content";
 import { ServicesOverview } from "@/components/home/services-overview";
 import { SiteFooter } from "@/components/home/site-footer";
 import { SiteNavbar } from "@/components/home/site-navbar";
@@ -13,11 +15,11 @@ import { WhyChooseSection } from "@/components/home/why-choose-section";
 export const metadata: Metadata = {
   title: "Calm postpartum, lactation & infant sleep support",
   description:
-    "Postpartum support, breastfeeding help near Montgomery County, MD, and gentle newborn sleep help when feeding and sleep feel hard. Book a free 15-minute chat—no pressure, judgment-free care in home or online.",
+    "Postpartum support, breastfeeding help near Montgomery County, MD, and gentle newborn sleep help when feeding and sleep feel hard. Book a free discovery call—no pressure, judgment-free care in home or online.",
   openGraph: {
     title: "Calm postpartum, lactation & infant sleep support | New Parent Harmony",
     description:
-      "Postpartum doula care, lactation support, and infant sleep help for Montgomery County, MD and surrounding areas—start with a free 15-minute chat.",
+      "Postpartum doula care, lactation support, and infant sleep help for Montgomery County, MD and surrounding areas—start with a free discovery call.",
   },
 };
 
@@ -27,6 +29,7 @@ export default function Home() {
       <SiteNavbar />
       <main id="main-content">
         <HeroSection />
+        <EarlySupportBanner message={homeEarlySupportMessage} />
         <IntroTrustSection />
         <ServicesOverview />
         <CoffeeMorningSection />

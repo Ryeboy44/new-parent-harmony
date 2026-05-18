@@ -97,11 +97,11 @@ export const faqItems: FaqItem[] = [
   {
     question: "How do I know which service is right for me?",
     answer:
-      "You do not need to have it all figured out before reaching out. A free 15-minute chat is a simple way to talk through what is going on and decide what kind of support would best fit your family.",
+      "You do not need to have it all figured out before reaching out. A free discovery call is a simple way to talk through what is going on and decide what kind of support would best fit your family.",
   },
   {
     question: "How do I book support with New Parent Harmony?",
     answer:
-      "Families can start by booking a free 15-minute chat through the website, then choose the support option that feels right for their needs.",
+      "Families can start by booking a free discovery call through the website, then choose the support option that feels right for their needs.",
   },
 ];

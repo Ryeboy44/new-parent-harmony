@@ -4,11 +4,11 @@ import { SiteFooter } from "@/components/home/site-footer";
 import { SiteNavbar } from "@/components/home/site-navbar";
 
 export const metadata: Metadata = {
-  title: "Book a free 15-minute chat",
+  title: "Book a Free Discovery Call",
   description:
-    "Schedule a confidential, no-pressure chat for postpartum support, breastfeeding help, or infant sleep support. Montgomery County, MD and surrounding areas; virtual visits welcome.",
+    "Schedule a confidential, no-pressure discovery call for postpartum support, breastfeeding help, or infant sleep support. Montgomery County, MD and surrounding areas; virtual visits welcome.",
   openGraph: {
-    title: "Book a free 15-minute chat | New Parent Harmony",
+    title: "Book a Free Discovery Call | New Parent Harmony",
     description:
       "Reach out for calm postpartum, lactation, and sleep support—Montgomery County, MD and surrounding areas.",
   },

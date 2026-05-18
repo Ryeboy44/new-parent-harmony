@@ -6,6 +6,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { SectionShell } from "@/components/ui/section-shell";
 import { surfaceCard } from "@/components/ui/surface-card";
 import { faqItems } from "@/data/faq-items";
+import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 
 export const metadata: Metadata = {
   title: "Frequently asked questions",
@@ -74,7 +75,7 @@ export default function FaqPage() {
               You don&apos;t need to have everything figured out before reaching out.
             </p>
             <div className="mt-7">
-              <ButtonLink href="/discovery-call">Book a Free 15-Minute Chat</ButtonLink>
+              <ButtonLink href={PRIMARY_CTA_HREF}>{PRIMARY_CTA_LABEL}</ButtonLink>
             </div>
           </div>
         </SectionShell>

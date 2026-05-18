@@ -120,7 +120,7 @@ export function ServicesOverview() {
       </ul>
 
       <p className="mx-auto mt-10 max-w-xl text-center text-[0.9375rem] leading-relaxed text-muted sm:mt-12 sm:text-base">
-        During your free chat, we can talk through what kind of support feels
+        During your free discovery call, we can talk through what kind of support feels
         right for your family.
       </p>
     </SectionShell>

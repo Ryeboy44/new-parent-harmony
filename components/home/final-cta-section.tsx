@@ -18,7 +18,7 @@ export function FinalCTASection() {
         <p className="mt-5 text-[0.9375rem] leading-relaxed text-muted sm:mt-6 sm:text-base">
           If you&apos;re pregnant or in the thick of new parenthood, you
           deserve calm, experienced support tailored to your family. In a free
-          15-minute chat, we&apos;ll talk through what you need and how I can
+          discovery call, we&apos;ll talk through what you need and how I can
           help—with no pressure to commit.
         </p>
         <div className="mt-9 flex justify-center sm:mt-10">

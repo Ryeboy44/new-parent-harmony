@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ApproachSection } from "@/components/services/approach-section";
-import { EarlySupportBanner } from "@/components/services/early-support-banner";
+import { EarlySupportBannerSection } from "@/components/services/early-support-banner";
 import { NotSureSection } from "@/components/services/not-sure-section";
 import { ServiceDetailBlock } from "@/components/services/service-detail-block";
 import { ServicesHero } from "@/components/services/services-hero";
@@ -33,7 +33,7 @@ export default function ServicesPage() {
       <SiteNavbar />
       <main id="main-content" className="flex flex-1 flex-col">
         <ServicesHero />
-        <EarlySupportBanner />
+        <EarlySupportBannerSection />
         <ApproachSection />
 
         <div id="services-list" className="scroll-mt-24">

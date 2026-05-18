@@ -164,7 +164,7 @@ export function DiscoveryCallForm() {
       />
       <div className="border-b border-border-soft/50 px-6 pb-7 pt-8 sm:px-8 sm:pb-8 sm:pt-9">
         <p className="text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-harmony-green-muted">
-          Free chat
+          Discovery call
         </p>
         <h1
           id="discovery-call-title"
