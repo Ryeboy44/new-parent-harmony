@@ -1,114 +1,53 @@
 import type { Metadata } from "next";
-import { SectionHeading } from "@/components/home/section-heading";
+import { ApproachSection } from "@/components/services/approach-section";
+import { EarlySupportBanner } from "@/components/services/early-support-banner";
+import { NotSureSection } from "@/components/services/not-sure-section";
+import { ServiceDetailBlock } from "@/components/services/service-detail-block";
+import { ServicesHero } from "@/components/services/services-hero";
+import { ServicesTestimonialsPreview } from "@/components/services/services-testimonials-preview";
 import { SiteFooter } from "@/components/home/site-footer";
 import { SiteNavbar } from "@/components/home/site-navbar";
-import { ButtonLink } from "@/components/ui/button-link";
-import { SectionShell } from "@/components/ui/section-shell";
-import { surfaceCard } from "@/components/ui/surface-card";
-import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
+import { serviceDetails } from "@/data/services-page-content";
 
 export const metadata: Metadata = {
-  title: "Postpartum, lactation & sleep services",
+  title: "Postpartum doula, lactation & sleep services",
   description:
-    "Sleep & Feed Reset, postpartum doula care, lactation counseling, and help with newborn sleep—in person or virtual for families in Montgomery County, MD and surrounding areas.",
+    "Postpartum doula care in Montgomery County MD, lactation counseling in Maryland, pediatric sleep consulting, and Sleep & Feed Reset — in-home in Bethesda and Rockville or virtual newborn support near you.",
   openGraph: {
     title: "Postpartum, lactation & sleep services | New Parent Harmony",
     description:
-      "Focused support for feeding, sleep, and the early weeks—serving Montgomery County, MD and surrounding areas.",
+      "Certified postpartum doula, lactation counselor, and sleep consultant support for families in Montgomery County, MD and beyond — transparent pricing and free discovery calls.",
   },
 };
 
-const serviceBlocks = [
-  {
-    id: "sleep-feed-reset",
-    title: "Sleep & Feed Reset",
-    body: "A focused package to untangle feeding and sleep patterns together, with a clear, compassionate path forward you can actually follow between visits.",
-  },
-  {
-    id: "postpartum-doula-care",
-    title: "Postpartum Doula Care",
-    body: "Hands-on help with recovery, newborn care, emotional check-ins, and light household rhythm so your early weeks feel more manageable—in the rhythm that works for your home.",
-  },
-  {
-    id: "lactation-support",
-    title: "Lactation Support",
-    body: "Private, practical guidance for latch, supply, pumping, bottle-feeding, and feeding plans—meeting you where you are with patience and skill, without judgment.",
-  },
-  {
-    id: "sleep-support",
-    title: "Sleep Support",
-    body: "Gentle, responsive approaches to nights and naps that respect your baby's needs and your family's values—without rigid rules or pressure to move faster than feels right.",
-  },
-] as const;
+const serviceVariants: Array<"cream" | "white" | "subtle"> = [
+  "white",
+  "cream",
+  "subtle",
+  "white",
+];
 
 export default function ServicesPage() {
   return (
     <>
       <SiteNavbar />
       <main id="main-content" className="flex flex-1 flex-col">
-        <SectionShell background="cream" padding="tight">
-          <SectionHeading
-            eyebrow="Services"
-            title="Ways we can work together"
-            description="Every family is different. These are the main paths families choose when they want steady, experienced support through postpartum, feeding, and early sleep."
-          />
-        </SectionShell>
+        <ServicesHero />
+        <EarlySupportBanner />
+        <ApproachSection />
 
-        <div className="border-t border-border-soft/40 bg-surface">
-          <div className="mx-auto max-w-6xl space-y-0 px-4 sm:px-6 lg:px-10">
-            {serviceBlocks.map((block, index) => (
-              <section
-                key={block.id}
-                id={block.id}
-                className={`scroll-mt-28 py-16 md:py-20 lg:py-24 ${
-                  index > 0 ? "border-t border-border-soft/50" : ""
-                }`}
-              >
-                <article className={`${surfaceCard} max-w-3xl`}>
-                  <h2 className="font-display text-xl font-normal text-foreground sm:text-2xl">
-                    {block.title}
-                  </h2>
-                  <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
-                    {block.body}
-                  </p>
-                  <div className="mt-8">
-                    <ButtonLink href={PRIMARY_CTA_HREF} className="w-full sm:w-auto">
-                      {PRIMARY_CTA_LABEL}
-                    </ButtonLink>
-                  </div>
-                </article>
-              </section>
-            ))}
-          </div>
+        <div id="services-list" className="scroll-mt-24">
+          {serviceDetails.map((service, index) => (
+            <ServiceDetailBlock
+              key={service.id}
+              service={service}
+              variant={serviceVariants[index] ?? "white"}
+            />
+          ))}
         </div>
 
-        <SectionShell id="about-gemma" background="cream">
-          <div className="mx-auto max-w-2xl text-center md:max-w-[44rem]">
-            <p className="text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-harmony-green-muted sm:text-xs">
-              About
-            </p>
-            <h2 className="mt-3 font-display text-[1.625rem] font-normal leading-[1.2] tracking-[-0.02em] text-foreground sm:text-3xl md:text-[2.125rem]">
-              Meet Gemma
-            </h2>
-            <p className="mt-5 text-[0.9375rem] leading-relaxed text-muted sm:mt-6 sm:text-base">
-              I&apos;m a postpartum and family support specialist with years of
-              experience helping parents navigate recovery, feeding decisions,
-              and sleep without losing sight of what matters to you. My approach
-              blends hands-on care, clear education, and emotional steadiness.
-            </p>
-            <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
-              Based in Montgomery County, MD and surrounding areas, I work
-              with families locally and virtually, always prioritizing safety,
-              respect, and confidence over perfection.
-            </p>
-            <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-              <ButtonLink href={PRIMARY_CTA_HREF}>{PRIMARY_CTA_LABEL}</ButtonLink>
-              <ButtonLink href="/" variant="secondary">
-                Back to home
-              </ButtonLink>
-            </div>
-          </div>
-        </SectionShell>
+        <NotSureSection />
+        <ServicesTestimonialsPreview />
       </main>
       <SiteFooter />
     </>
