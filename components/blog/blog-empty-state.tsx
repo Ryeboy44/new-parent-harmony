@@ -7,7 +7,7 @@ export function BlogEmptyState() {
       <p className="font-display text-xl text-foreground">Articles coming soon</p>
       <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
         New posts will appear here once they are published.
-        {isSanityConfigured ? (
+        {isSanityConfigured() ? (
           <>
             {" "}
             You can add posts in{" "}

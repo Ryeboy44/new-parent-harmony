@@ -1,7 +1,12 @@
-/** Only posts that are published and not scheduled for the future. */
+/**
+ * Posts visible on the public blog.
+ * - Draft documents are excluded by the Sanity client (`perspective: "published"`).
+ * - Requires a slug and a publish date that is not in the future.
+ * - The `published` boolean in Studio is for editorial labelling only; site visibility
+ *   follows Sanity’s Publish action, not that toggle.
+ */
 const publishedFilter = `
   _type == "post"
-  && published == true
   && defined(slug.current)
   && publishDate <= now()
 `;

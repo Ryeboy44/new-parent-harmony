@@ -1,9 +1,28 @@
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { structureTool } from "sanity/structure";
-import { apiVersion, dataset, projectId } from "./sanity/env";
 import { schemaTypes } from "./sanity/schemaTypes";
 import { structure } from "./sanity/structure";
+
+/**
+ * Standalone Studio (`npm run sanity`): preload-env.mjs loads .env.local and
+ * mirrors NEXT_PUBLIC_* → SANITY_STUDIO_* for Vite. Use both prefixes here.
+ * Embedded Studio (`/studio`): Next.js inlines NEXT_PUBLIC_* at build time.
+ */
+const projectId =
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ||
+  process.env.SANITY_STUDIO_PROJECT_ID ||
+  "";
+
+const dataset =
+  process.env.NEXT_PUBLIC_SANITY_DATASET ||
+  process.env.SANITY_STUDIO_DATASET ||
+  "production";
+
+const apiVersion =
+  process.env.NEXT_PUBLIC_SANITY_API_VERSION ||
+  process.env.SANITY_STUDIO_API_VERSION ||
+  "2025-01-01";
 
 const siteBaseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.newparentharmony.com"
@@ -11,14 +30,14 @@ const siteBaseUrl = (
 
 if (!projectId) {
   console.warn(
-    "[sanity] Missing NEXT_PUBLIC_SANITY_PROJECT_ID. Add it to .env.local, then restart Studio (npm run sanity).",
+    "[sanity] Missing project ID. Add NEXT_PUBLIC_SANITY_PROJECT_ID to .env.local and run `npm run sanity` (not `npx sanity dev`).",
   );
 }
 
 export default defineConfig({
   name: "new-parent-harmony",
   title: "New Parent Harmony",
-  projectId: projectId || "missing-project-id",
+  projectId,
   dataset,
   basePath: "/studio",
   apiVersion,
@@ -31,9 +50,11 @@ export default defineConfig({
   },
   document: {
     productionUrl: async (doc) => {
-      const slug = (doc as { slug?: { current?: string } }).slug?.current;
-      if (!slug) return undefined;
-      return `${siteBaseUrl}/blog/${slug}`;
+      const d = doc as { slug?: { current?: string } } | undefined;
+      if (!d || !d.slug || !d.slug.current) {
+        return undefined;
+      }
+      return `${siteBaseUrl}/blog/${d.slug.current}`;
     },
   },
 });

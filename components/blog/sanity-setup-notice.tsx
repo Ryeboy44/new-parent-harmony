@@ -2,7 +2,7 @@ import Link from "next/link";
 import { isSanityConfigured } from "@/sanity/env";
 
 export function SanitySetupNotice() {
-  if (isSanityConfigured) return null;
+  if (isSanityConfigured()) return null;
 
   return (
     <aside

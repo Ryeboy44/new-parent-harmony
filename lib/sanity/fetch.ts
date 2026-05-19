@@ -48,7 +48,7 @@ function mapPost(row: SanityPostRow, includeBody = false): BlogPost {
 }
 
 export async function getPublishedPosts(): Promise<BlogPost[]> {
-  if (!isSanityConfigured) return [];
+  if (!isSanityConfigured()) return [];
 
   try {
     const rows = await getSanityClient().fetch<SanityPostRow[]>(postsQuery, {}, fetchOptions);
@@ -60,7 +60,7 @@ export async function getPublishedPosts(): Promise<BlogPost[]> {
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  if (!isSanityConfigured) return null;
+  if (!isSanityConfigured()) return null;
 
   try {
     const row = await getSanityClient().fetch<SanityPostRow | null>(
@@ -76,7 +76,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 }
 
 export async function getPublishedPostSlugs(): Promise<string[]> {
-  if (!isSanityConfigured) return [];
+  if (!isSanityConfigured()) return [];
 
   try {
     return await getSanityClient().fetch<string[]>(

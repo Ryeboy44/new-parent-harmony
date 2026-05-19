@@ -31,7 +31,7 @@ if (!projectId) {
 }
 
 const query = encodeURIComponent(
-  `*[_type == "post"]{ _id, title, published, "slug": slug.current }`,
+  `*[_type == "post"]{ _id, title, published, "slug": slug.current, publishDate }`,
 );
 const url = `https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}?query=${query}`;
 

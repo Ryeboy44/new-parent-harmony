@@ -1,17 +1,17 @@
 /**
- * Loads .env.local / .env before `sanity dev` so schema and project ID resolve correctly.
- * Used via: node --import ./sanity/preload-env.mjs …
+ * Loads .env.local / .env before `sanity dev`.
+ * Mirrors NEXT_PUBLIC_SANITY_* → SANITY_STUDIO_* so Vite exposes them to the Studio UI.
  */
 import { existsSync, readFileSync } from "node:fs";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { resolve } from "node:path";
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+const root = process.cwd();
 
-function loadFile(filename) {
+function parseEnvFile(filename) {
   const path = resolve(root, filename);
   if (!existsSync(path)) return;
-  for (const line of readFileSync(path, "utf8").split("\n")) {
+  const raw = readFileSync(path, "utf8").replace(/^\uFEFF/, "");
+  for (const line of raw.split(/\r?\n/)) {
     const trimmed = line.trim();
     if (!trimmed || trimmed.startsWith("#")) continue;
     const eq = trimmed.indexOf("=");
@@ -24,9 +24,17 @@ function loadFile(filename) {
     ) {
       value = value.slice(1, -1);
     }
-    if (!process.env[key]) process.env[key] = value;
+    process.env[key] = value;
   }
 }
 
-loadFile(".env.local");
-loadFile(".env");
+parseEnvFile(".env");
+parseEnvFile(".env.local");
+
+/** Vite-based Studio only inlines SANITY_STUDIO_* into the browser bundle. */
+if (process.env.NEXT_PUBLIC_SANITY_PROJECT_ID && !process.env.SANITY_STUDIO_PROJECT_ID) {
+  process.env.SANITY_STUDIO_PROJECT_ID = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+}
+if (process.env.NEXT_PUBLIC_SANITY_DATASET && !process.env.SANITY_STUDIO_DATASET) {
+  process.env.SANITY_STUDIO_DATASET = process.env.NEXT_PUBLIC_SANITY_DATASET;
+}
