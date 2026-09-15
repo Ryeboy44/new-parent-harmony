@@ -4,8 +4,8 @@ import { z } from "zod";
 export const SERVICE_OPTIONS = [
   { id: "sleep_feed_reset", label: "Sleep & Feed Reset" },
   { id: "postpartum", label: "Postpartum Doula Care" },
-  { id: "lactation", label: "Lactation Support" },
-  { id: "sleep", label: "Sleep Support" },
+  { id: "lactation", label: "Feeding/Lactation Support" },
+  { id: "sleep", label: "Infant Sleep Support" },
   { id: "not_sure", label: "Not sure yet" },
 ] as const;
 

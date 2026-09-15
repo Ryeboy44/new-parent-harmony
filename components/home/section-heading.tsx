@@ -5,6 +5,7 @@ type SectionHeadingProps = {
   align?: "left" | "center";
   /** Use h1 once per page for the primary topic (SEO); default h2 for sections. */
   titleAs?: "h1" | "h2";
+  compact?: boolean;
 };
 
 export function SectionHeading({
@@ -13,6 +14,7 @@ export function SectionHeading({
   description,
   align = "left",
   titleAs = "h2",
+  compact = false,
 }: SectionHeadingProps) {
   const alignClass = align === "center" ? "mx-auto text-center" : "";
   const descMax =
@@ -20,9 +22,15 @@ export function SectionHeading({
   const titleClassName =
     "font-display text-[1.625rem] font-normal leading-[1.2] tracking-[-0.02em] text-foreground sm:text-3xl md:text-[2.125rem]";
   const HeadingTag = titleAs === "h1" ? "h1" : "h2";
+  const spacing =
+    titleAs === "h1"
+      ? "mb-0"
+      : compact
+        ? "mb-7 md:mb-8"
+        : "mb-12 md:mb-14 lg:mb-16";
 
   return (
-    <header className={`mb-12 md:mb-14 lg:mb-16 ${alignClass}`}>
+    <header className={`${spacing} ${alignClass}`}>
       {eyebrow ? (
         <p className="mb-3 text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-harmony-green-muted sm:text-xs">
           {eyebrow}

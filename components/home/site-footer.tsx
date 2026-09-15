@@ -1,6 +1,18 @@
 import Link from "next/link";
 import { CONTACT_FORM_HREF } from "@/data/site-contact";
 
+const footerLinkClass =
+  "transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep";
+
+const exploreLinks = [
+  { href: "/blog", label: "Blog" },
+  { href: "/services", label: "Services" },
+  { href: "/community-collective", label: "Community Collective" },
+  { href: "/testimonials", label: "Testimonials" },
+  { href: "/faq", label: "FAQ" },
+  { href: CONTACT_FORM_HREF, label: "Contact" },
+] as const;
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-border-soft/50 bg-cream-deep/50 py-14 md:py-16">
@@ -29,46 +41,13 @@ export function SiteFooter() {
             Explore
           </p>
           <ul className="mt-4 flex flex-col gap-3 text-sm text-muted">
-            <li>
-              <a
-                href="/blog"
-                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
-              >
-                Blog
-              </a>
-            </li>
-            <li>
-              <a
-                href="/services"
-                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="/testimonials"
-                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
-              >
-                Testimonials
-              </a>
-            </li>
-            <li>
-              <a
-                href="/faq"
-                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
-              >
-                FAQ
-              </a>
-            </li>
-            <li>
-              <Link
-                href={CONTACT_FORM_HREF}
-                className="transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/50 focus-visible:ring-offset-2 focus-visible:ring-offset-cream-deep"
-              >
-                Contact
-              </Link>
-            </li>
+            {exploreLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className={footerLinkClass}>
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

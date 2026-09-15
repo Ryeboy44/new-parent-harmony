@@ -1,5 +1,11 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { type NextRequest, NextResponse } from "next/server";
+import {
+  COLLECTIVE_SETTINGS_TAG,
+  COLLECTIVE_SUPPORTERS_TAG,
+  COMMUNITY_EVENTS_TAG,
+  TESTIMONIALS_TAG,
+} from "@/lib/sanity/fetch";
 
 /**
  * Sanity webhook target for on-demand cache refresh after publish.
@@ -16,7 +22,14 @@ export async function POST(request: NextRequest) {
 
   revalidateTag("blog-posts", "max");
   revalidateTag("blog-slugs", "max");
+  revalidateTag(COMMUNITY_EVENTS_TAG, "max");
+  revalidateTag(COLLECTIVE_SETTINGS_TAG, "max");
+  revalidateTag(COLLECTIVE_SUPPORTERS_TAG, "max");
+  revalidateTag(TESTIMONIALS_TAG, "max");
   revalidatePath("/blog");
+  revalidatePath("/testimonials");
+  revalidatePath("/community-collective");
+  revalidatePath("/community-collective/support");
   revalidatePath("/sitemap.xml");
 
   return NextResponse.json({ revalidated: true, now: Date.now() });

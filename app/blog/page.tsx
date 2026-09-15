@@ -27,7 +27,7 @@ export default async function BlogPage() {
     <>
       <SiteNavbar />
       <main id="main-content" className="flex flex-1 flex-col">
-        <SectionShell background="cream" padding="tight">
+        <SectionShell background="cream" padding="pageIntro">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-4 text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-harmony-green-muted sm:text-xs">
               Blog

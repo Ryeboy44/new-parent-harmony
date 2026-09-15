@@ -9,3 +9,25 @@ export const heroBabyImage = "/images/hero-baby.png";
  * If you replace the file, update width/height in `about-gemma-preview.tsx` to match intrinsic dimensions.
  */
 export const gemmaPortraitImage = "/images/gemma-portrait.jpg";
+
+/**
+ * Community Collective landing hero — group of parents and babies.
+ * File in repo: `public/images/community-collective-families.png`.
+ * Use only on `/community-collective`.
+ */
+export const collectiveFamiliesImage = "/images/community-collective-families.png";
+
+/**
+ * Request Support — parent holding a sleeping newborn.
+ * File in repo: `public/images/request-support-parent.jpg`.
+ * Use only on `/community-collective/request-support`.
+ */
+export const requestSupportParentImage = "/images/request-support-parent.jpg";
+
+/**
+ * Support the Collective hero — community gathering with parents and babies.
+ * File in repo: `public/images/support-collective-community.jpg`.
+ * Use only on `/community-collective/support`.
+ */
+export const supportCollectiveCommunityImage =
+  "/images/support-collective-community.jpg";

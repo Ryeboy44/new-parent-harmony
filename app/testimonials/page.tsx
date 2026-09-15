@@ -5,16 +5,14 @@ import { SiteNavbar } from "@/components/home/site-navbar";
 import { TestimonialFullCard } from "@/components/testimonials/testimonial-full-card";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionShell } from "@/components/ui/section-shell";
-import {
-  testimonialCategories,
-  testimonialsByCategory,
-} from "@/data/testimonials";
+import { groupTestimonials } from "@/data/testimonials";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
+import { getPublishedTestimonials } from "@/lib/sanity/fetch";
 
 export const metadata: Metadata = {
   title: "Testimonials",
   description:
-    "Families share their experience with postpartum doula care, lactation support, and pediatric sleep consulting with New Parent Harmony in Maryland, DC, and beyond.",
+    "Families share their experience with postpartum doula care, feeding/lactation support, and infant sleep support with New Parent Harmony in Maryland, DC, and beyond.",
   openGraph: {
     title: "Testimonials | New Parent Harmony",
     description:
@@ -22,47 +20,55 @@ export const metadata: Metadata = {
   },
 };
 
-export default function TestimonialsPage() {
+export const revalidate = 60;
+
+export default async function TestimonialsPage() {
+  const testimonials = await getPublishedTestimonials();
+  const groups = groupTestimonials(testimonials);
+
   return (
     <>
       <SiteNavbar />
       <main id="main-content" className="flex flex-1 flex-col">
-        <SectionShell background="cream" padding="tight">
+        <SectionShell background="cream" padding="pageIntro">
           <SectionHeading
             eyebrow="Testimonials"
             title="Kind words from families"
-            description="These reflections are shared with permission, in each family’s own words — from postpartum doula care, lactation support, and sleep consulting."
+            description="These reflections are shared with permission, in each family’s own words — from postpartum doula care, feeding/lactation support, and infant sleep support."
             titleAs="h1"
             align="center"
           />
         </SectionShell>
 
-        {testimonialCategories.map((category, categoryIndex) => {
-          const items = testimonialsByCategory(category.id);
-          if (items.length === 0) return null;
-
-          return (
+        {groups.length === 0 ? (
+          <SectionShell background="white" padding="tight">
+            <p className="mx-auto max-w-2xl text-center text-[0.9375rem] leading-relaxed text-muted sm:text-base">
+              Kind words from families will appear here shortly.
+            </p>
+          </SectionShell>
+        ) : (
+          groups.map((group, categoryIndex) => (
             <SectionShell
-              key={category.id}
+              key={group.id}
               background={categoryIndex % 2 === 0 ? "white" : "cream"}
               padding="tight"
             >
               <h2
-                id={`testimonials-${category.id}`}
+                id={`testimonials-${group.id}`}
                 className="mb-8 font-display text-xl font-normal text-foreground sm:mb-10 sm:text-2xl md:text-[1.75rem]"
               >
-                {category.label}
+                {group.label}
               </h2>
               <ul className="mx-auto flex max-w-3xl flex-col gap-6 sm:gap-8">
-                {items.map((testimonial) => (
+                {group.items.map((testimonial) => (
                   <li key={testimonial.id}>
                     <TestimonialFullCard testimonial={testimonial} />
                   </li>
                 ))}
               </ul>
             </SectionShell>
-          );
-        })}
+          ))
+        )}
 
         <section
           className="border-t border-border-soft/50 bg-green-wash/35 py-20 md:py-24 lg:py-28"

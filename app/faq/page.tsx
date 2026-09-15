@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SectionHeading } from "@/components/home/section-heading";
 import { SiteFooter } from "@/components/home/site-footer";
 import { SiteNavbar } from "@/components/home/site-navbar";
@@ -11,11 +12,11 @@ import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 export const metadata: Metadata = {
   title: "Frequently asked questions",
   description:
-    "Answers to common questions about postpartum doula care, lactation support, and sleep consulting in Montgomery County, MD and surrounding areas.",
+    "Answers to common questions about postpartum doula care, feeding/lactation support, infant sleep support, and the Community Collective in Montgomery County, MD.",
   openGraph: {
     title: "Frequently asked questions | New Parent Harmony",
     description:
-      "Get clear answers about postpartum doula care, lactation support, and sleep consulting with New Parent Harmony.",
+      "Get clear answers about postpartum doula care, feeding/lactation support, infant sleep support, and the Community Collective.",
   },
 };
 
@@ -27,7 +28,9 @@ const faqSchema = {
     name: item.question,
     acceptedAnswer: {
       "@type": "Answer",
-      text: item.answer,
+      text: item.links?.length
+        ? `${item.answer} ${item.links.map((link) => link.label).join(" ")}`
+        : item.answer,
     },
   })),
 };
@@ -37,16 +40,20 @@ export default function FaqPage() {
     <>
       <SiteNavbar />
       <main id="main-content" className="flex flex-1 flex-col">
-        <SectionShell background="cream" padding="tight">
+        <SectionShell background="cream" padding="pageIntro">
           <SectionHeading
             eyebrow="FAQ"
             titleAs="h1"
             title="Frequently Asked Questions"
-            description="If you’re wondering what support might look like, you’re not alone. These are some of the questions families often ask about postpartum doula care, lactation support, and sleep support with New Parent Harmony."
+            description="If you’re wondering what support might look like, you’re not alone. These are some of the questions families often ask about postpartum doula care, feeding/lactation support, infant sleep support, and the Community Collective."
           />
         </SectionShell>
 
-        <SectionShell background="white" className="border-y border-border-soft/40">
+        <SectionShell
+          background="white"
+          padding="tight"
+          className="border-y border-border-soft/40"
+        >
           <div className="space-y-4">
             {faqItems.map((item) => (
               <details key={item.question} className={`${surfaceCard} group`}>
@@ -64,6 +71,16 @@ export default function FaqPage() {
                 <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
                   {item.answer}
                 </p>
+                {item.links?.map((link) => (
+                  <p key={link.href} className="mt-3">
+                    <Link
+                      href={link.href}
+                      className="inline-flex min-h-11 items-center rounded-sm text-[0.9375rem] font-medium text-harmony-green-deep underline decoration-harmony-green/40 underline-offset-4 hover:text-foreground hover:decoration-harmony-green-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-harmony-green-deep/60 focus-visible:ring-offset-2 focus-visible:ring-offset-surface sm:text-base"
+                    >
+                      {link.label}
+                    </Link>
+                  </p>
+                ))}
               </details>
             ))}
           </div>

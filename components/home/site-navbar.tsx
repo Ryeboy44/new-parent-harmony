@@ -5,14 +5,26 @@ import { useState } from "react";
 import { ButtonLink } from "@/components/ui/button-link";
 import { PRIMARY_CTA_HREF, PRIMARY_CTA_LABEL } from "@/data/site-cta";
 
-const navLinks = [
+type NavLink = {
+  href: string;
+  label: string;
+  /** Used in the mobile menu, where there is room for the full name. */
+  longLabel?: string;
+};
+
+const navLinks: NavLink[] = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  {
+    href: "/community-collective",
+    label: "Collective",
+    longLabel: "Community Collective",
+  },
   { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
-] as const;
+];
 
 export function SiteNavbar() {
   const [open, setOpen] = useState(false);
@@ -22,35 +34,39 @@ export function SiteNavbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3.5 sm:gap-4 sm:px-6 lg:px-10">
         <Link
           href="/"
-          className="font-display text-base font-normal tracking-tight text-foreground sm:text-lg"
+          className="shrink-0 font-display text-base font-normal tracking-tight text-foreground sm:text-lg"
         >
           New Parent Harmony
         </Link>
 
         <nav
-          className="hidden items-center md:flex md:gap-7 lg:gap-8"
+          className="hidden items-center lg:flex lg:gap-5 xl:gap-8"
           aria-label="Primary"
         >
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-muted transition-colors hover:text-foreground"
+              className="whitespace-nowrap text-sm text-muted transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <ButtonLink href={PRIMARY_CTA_HREF} variant="primary">
+        <div className="hidden shrink-0 lg:block">
+          <ButtonLink
+            href={PRIMARY_CTA_HREF}
+            variant="primary"
+            className="whitespace-nowrap"
+          >
             {PRIMARY_CTA_LABEL}
           </ButtonLink>
         </div>
 
         <button
           type="button"
-          className="inline-flex size-10 items-center justify-center rounded-xl border border-border-soft/70 bg-surface text-foreground md:hidden"
+          className="inline-flex size-10 items-center justify-center rounded-xl border border-border-soft/70 bg-surface text-foreground lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
@@ -84,7 +100,7 @@ export function SiteNavbar() {
       {open ? (
         <div
           id="mobile-nav"
-          className="border-t border-border-soft/50 bg-cream px-4 py-5 md:hidden"
+          className="border-t border-border-soft/50 bg-cream px-4 py-5 lg:hidden"
         >
           <nav className="flex flex-col gap-1" aria-label="Mobile primary">
             {navLinks.map((link) => (
@@ -94,7 +110,7 @@ export function SiteNavbar() {
                 className="rounded-xl px-3 py-3 text-base text-foreground/90 transition-colors hover:bg-surface"
                 onClick={() => setOpen(false)}
               >
-                {link.label}
+                {link.longLabel ?? link.label}
               </Link>
             ))}
             <div className="mt-4 pt-2">

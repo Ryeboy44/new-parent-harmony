@@ -15,20 +15,17 @@ export type ServiceDetail = {
 export const servicesHero = {
   eyebrow: "Services",
   title:
-    "Support for the early years of parenting — with care that meets your family where you are.",
+    "Support for the early years of parenting — with care that fits your family.",
   description:
-    "Whether you are preparing for postpartum, navigating feeding challenges, struggling with sleep, or simply feeling overwhelmed, New Parent Harmony offers practical, compassionate support designed to help families feel more confident and less alone.",
+    "Whether you are preparing for postpartum, working through feeding challenges, struggling with sleep, or simply feeling overwhelmed, New Parent Harmony offers practical, compassionate support for families welcoming a baby.",
   primaryCta: { label: "Book a Free Discovery Call", href: PRIMARY_CTA_HREF },
   secondaryCta: { label: "Explore Services", href: "#services-list" },
 } as const;
 
-export const earlySupportMessage =
-  "Many families reach out once they are already exhausted and overwhelmed. Support is often most helpful when put into place early — before burnout fully sets in. Whether your baby is already here or you are preparing for postpartum, reaching out early allows us to create support that truly fits your family.";
-
 export const approachSection = {
   title: "A Whole-Family Approach to Support",
   paragraphs: [
-    "At New Parent Harmony, support is never one-size-fits-all. Every baby, parent, recovery, and family dynamic is different. My role is to provide calm, practical, evidence-informed support that helps families feel less overwhelmed and more supported during one of the biggest transitions of life.",
+    "At New Parent Harmony, support is shaped around your baby, your recovery, and the way your household actually works. My role is to provide calm, practical, evidence-informed support that helps families feel less overwhelmed during one of the biggest transitions of life.",
     "As a certified postpartum doula, certified lactation counselor, and pediatric sleep consultant with over 20 years of experience supporting families, I look at the full picture — because feeding, sleep, emotional wellbeing, recovery, and confidence are all deeply connected.",
   ],
   credentials: [
@@ -44,7 +41,7 @@ export const serviceDetails: ServiceDetail[] = [
     id: "postpartum-doula-care",
     title: "Postpartum Doula Care",
     introParagraphs: [
-      "The early days with a new baby can feel beautiful, emotional, exhausting, and overwhelming all at once. My role as your postpartum doula is to step into that season with calm, practical, non-judgmental support so that you do not have to navigate it alone.",
+      "The early days with a baby can feel beautiful, emotional, exhausting, and overwhelming all at once. My role as your postpartum doula is to step into that season with calm, practical, non-judgmental support so the days feel more manageable.",
       "As a certified postpartum doula, certified lactation counselor, and pediatric sleep consultant with over 20 years of experience supporting families, I look at the full picture — not just the baby, but the wellbeing of the entire family.",
     ],
     closingParagraphs: [
@@ -59,7 +56,7 @@ export const serviceDetails: ServiceDetail[] = [
       "light household support",
       "meal prep and organization",
       "infant soothing and sleep shaping",
-      "confidence-building for new parents",
+      "confidence-building for parents",
     ],
     whyItMatters: [
       "Postpartum doula support in Montgomery County, MD and surrounding areas helps families feel steadier during recovery — with guidance that honors your values and your pace.",
@@ -76,7 +73,7 @@ export const serviceDetails: ServiceDetail[] = [
   },
   {
     id: "lactation-support",
-    title: "Lactation Support",
+    title: "Feeding/Lactation Support",
     introParagraphs: [
       "Feeding a baby is not always as instinctive or straightforward as many parents expect, and struggling does not mean you are failing.",
       "Whether you are breastfeeding, combination feeding, pumping, bottle feeding, or still figuring out what works best for your family, my goal is to offer support without pressure or judgment.",
@@ -107,7 +104,7 @@ export const serviceDetails: ServiceDetail[] = [
   },
   {
     id: "sleep-support",
-    title: "Pediatric Sleep Support",
+    title: "Infant Sleep Support",
     introParagraphs: [
       "Sleep deprivation affects every part of parenting — mental health, relationships, recovery, patience, confidence, and daily functioning. Many parents are not looking for perfection. They simply want more rest and more predictability for their family.",
     ],

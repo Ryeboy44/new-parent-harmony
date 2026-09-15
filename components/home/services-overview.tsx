@@ -12,13 +12,13 @@ const otherServices = [
     learnMoreHref: "/services#postpartum-doula-care",
   },
   {
-    title: "Lactation Support",
+    title: "Feeding/Lactation Support",
     description:
       "Breastfeeding support near you in Montgomery County and virtually too—latch, supply, pumping, and bottle-feeding with patience and skill.",
     learnMoreHref: "/services#lactation-support",
   },
   {
-    title: "Sleep Support",
+    title: "Infant Sleep Support",
     description:
       "Gentle infant sleep support and help with newborn sleep—responsive nights and naps that fit your baby and your values, without rigid rules.",
     learnMoreHref: "/services#sleep-support",
@@ -36,7 +36,7 @@ export function ServicesOverview() {
     <SectionShell id="services" background="cream">
       <SectionHeading
         eyebrow="Services"
-        title="Support that meets you in real life"
+        title="Support that fits real family life"
         description={
           "Every family\u2019s needs are different. Some families need a gentle starting point, while others are looking for more ongoing support—in Montgomery County, MD and surrounding areas, in home or online."
         }

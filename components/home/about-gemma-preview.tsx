@@ -31,10 +31,10 @@ export function AboutGemmaPreview() {
           </h2>
           <p className="mt-5 text-[0.9375rem] leading-relaxed text-muted sm:mt-6 sm:text-base">
             I&apos;m a postpartum and family support specialist with years of
-            experience helping parents navigate recovery, feeding decisions,
-            and sleep without losing sight of what matters to you. My approach
+            experience helping parents with recovery, feeding decisions, and
+            sleep without losing sight of what matters to you. My approach
             blends hands-on care, clear education, and emotional steadiness—so
-            you never feel like you&apos;re facing the hard nights alone.
+            the hard nights feel a little more manageable.
           </p>
           <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
             Based in Montgomery County, MD and surrounding areas, I work with

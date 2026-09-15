@@ -11,5 +11,4 @@ export default defineCliConfig({
     projectId: projectId || undefined,
     dataset: getSanityDataset(),
   },
-  studioHost: "localhost:3333",
 });

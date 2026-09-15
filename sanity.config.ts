@@ -5,6 +5,10 @@ import { schemaTypes } from "./sanity/schemaTypes";
 import { structure } from "./sanity/structure";
 
 /**
+ * Embedded Studio for the existing New Parent Harmony Sanity project.
+ * Open at `/studio` in this Next.js app. Blog, Community Events, Collective
+ * impact settings, supporters, and testimonials all share this one project and dataset.
+ *
  * Standalone Studio (`npm run sanity`): preload-env.mjs loads .env.local and
  * mirrors NEXT_PUBLIC_* → SANITY_STUDIO_* for Vite. Use both prefixes here.
  * Embedded Studio (`/studio`): Next.js inlines NEXT_PUBLIC_* at build time.
@@ -50,11 +54,29 @@ export default defineConfig({
   },
   document: {
     productionUrl: async (doc) => {
-      const d = doc as { slug?: { current?: string } } | undefined;
-      if (!d || !d.slug || !d.slug.current) {
-        return undefined;
+      const d = doc as
+        | { _type?: string; slug?: { current?: string } }
+        | undefined;
+
+      if (d?._type === "communityEvent") {
+        return `${siteBaseUrl}/community-collective#community-events`;
       }
-      return `${siteBaseUrl}/blog/${d.slug.current}`;
+      if (d?._type === "communityCollectiveSettings") {
+        return `${siteBaseUrl}/community-collective`;
+      }
+      if (d?._type === "collectiveSupporter") {
+        return `${siteBaseUrl}/community-collective/support#sponsor-recognition`;
+      }
+      if (d?._type === "testimonial") {
+        return `${siteBaseUrl}/testimonials`;
+      }
+      if (d?._type === "post" && d.slug?.current) {
+        return `${siteBaseUrl}/blog/${d.slug.current}`;
+      }
+      return undefined;
     },
+    /** Collective settings is a singleton — reachable only from its structure item. */
+    newDocumentOptions: (prev) =>
+      prev.filter((item) => item.templateId !== "communityCollectiveSettings"),
   },
 });

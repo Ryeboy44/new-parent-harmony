@@ -17,8 +17,9 @@ export function CoffeeMorningSection() {
           Join a Coffee Morning
         </h2>
         <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:mt-5 sm:text-base">
-          A relaxed space to connect with other moms, share experiences, and
-          feel supported in your journey—no pitch, just warmth.
+          A relaxed space to connect with other parents, share what these weeks
+          actually feel like, and leave a little more supported—no pitch, just
+          warmth.
         </p>
         <div className="mt-7 sm:mt-8">
           <ButtonLink href="/contact" variant="secondary">

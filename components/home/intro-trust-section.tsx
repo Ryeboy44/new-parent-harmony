@@ -14,10 +14,14 @@ export function IntroTrustSection() {
         </p>
         <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:mt-5 sm:text-base">
           I walk beside families during the tender postpartum season—especially
-          when you&apos;re an overwhelmed new parent and everything feels
-          louder than you expected. Whether you&apos;re healing, learning to
-          feed your baby, or craving more sleep, my role is to help you feel
-          grounded, informed, and genuinely supported—not rushed or corrected.
+          when you&apos;re overwhelmed and everything feels louder than you
+          expected. Whether you&apos;re healing, learning to feed your baby, or
+          craving more sleep, my role is to help you feel grounded, informed,
+          and genuinely supported—not rushed or corrected.
+        </p>
+        <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:mt-5 sm:text-base">
+          Whether this is your first baby or your family is growing again,
+          every postpartum season deserves support.
         </p>
       </div>
     </SectionShell>

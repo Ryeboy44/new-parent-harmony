@@ -1,12 +1,16 @@
+/** Inbox for every on-site form submission (not shown on the public site). */
+export const FORM_SUBMISSION_INBOX = "gemma@newparentharmony.com";
+
 /**
- * Discovery call email delivery — configure in `.env.local` (see `.env.example`).
+ * Private form email delivery (discovery call, Community Collective Request Support, and supporter inquiries).
+ * Configure in `.env.local` (see `.env.example`) and Vercel.
  *
  * Required for real delivery (Resend):
  *   RESEND_API_KEY          — API key from https://resend.com
- *   DISCOVERY_CALL_TO       — Inbox for form submissions (server-side only; not shown on the site)
  *   DISCOVERY_CALL_FROM     — Verified sender in Resend, e.g. "New Parent Harmony <hello@yourdomain.com>"
  *
  * Optional:
+ *   DISCOVERY_CALL_TO       — Override inbox (defaults to FORM_SUBMISSION_INBOX)
  *   DISCOVERY_CALL_LOG_ONLY=true  — Log payload to server console instead of sending (handy for local dev)
  */
 export type EmailDeliveryConfig = {
@@ -21,7 +25,7 @@ export type EmailDeliveryConfig = {
 
 export function getDiscoveryEmailConfig(): EmailDeliveryConfig {
   return {
-    to: process.env.DISCOVERY_CALL_TO?.trim() ?? "",
+    to: process.env.DISCOVERY_CALL_TO?.trim() || FORM_SUBMISSION_INBOX,
     from: process.env.DISCOVERY_CALL_FROM?.trim() ?? "",
     resendApiKey: process.env.RESEND_API_KEY?.trim() ?? "",
     logOnly: process.env.DISCOVERY_CALL_LOG_ONLY === "true",

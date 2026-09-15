@@ -16,7 +16,7 @@ export function FinalCTASection() {
           You don&apos;t have to figure it all out alone
         </h2>
         <p className="mt-5 text-[0.9375rem] leading-relaxed text-muted sm:mt-6 sm:text-base">
-          If you&apos;re pregnant or in the thick of new parenthood, you
+          If you&apos;re pregnant or already in the postpartum season, you
           deserve calm, experienced support tailored to your family. In a free
           discovery call, we&apos;ll talk through what you need and how I can
           help—with no pressure to commit.

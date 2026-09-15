@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "testimonial-kelli-n",
+    "_type": "testimonial",
+    "name": "Kelli N.",
+    "shortQuote": "I didn’t have postpartum support with my first two births, so I wasn’t entirely sure what to expect — but having Gemma made such a difference, and I only wish I had her the first two times as well.",
+    "fullQuote": "We recently finished working with Gemma after the birth of my third child, and I can't say enough positive things about our experience. I didn't have postpartum support with my first two births, so I wasn't entirely sure what to expect — but having Gemma made such a difference, and I only wish I had her the first two times as well.\n\nShe was always punctual and arrived with a warm, positive energy, immediately asking about my goals for the day and how she could best support me. She was incredibly knowledgeable and always able to answer any questions I had about the baby, nursing, pumping, sleep, and more, which gave me so much reassurance.\n\nWhat stood out most was how much she genuinely cared — not just for the baby, but for me as well. That level of support meant everything during those early weeks. In addition to caring for the baby, Gemma also helped with things like cooking and laundry, which made our home feel more manageable and allowed me to focus on recovery and bonding.\n\nI highly recommend her to anyone looking for postpartum support.",
+    "category": "postpartum-doula",
+    "contextLine": "Postpartum Doula Care · Potomac, MD · 2026",
+    "locationLine": "Potomac, MD · 2026",
+    "year": "2026",
+    "displayOrder": 1,
+    "featured": true,
+    "visible": true
+  },
+  {
+    "_id": "testimonial-jill-s",
+    "_type": "testimonial",
+    "name": "Jill S.",
+    "shortQuote": "Our toddler was struggling going to bed and we were beyond exhausted and frustrated. Working with Gemma just a few days and we saw immediate change.",
+    "fullQuote": "Gemma is a godsend. She came into our life at the perfect time. Our toddler was struggling going to bed and we were beyond exhausted and frustrated. Working with Gemma just a few days and we saw immediate change. It's been a few weeks and our son is going to bed with zero issues. We can't thank Gemma enough!",
+    "category": "sleep-support",
+    "contextLine": "Sleep Support · Washington, DC · 2024",
+    "locationLine": "Washington, DC · 2024",
+    "year": "2024",
+    "displayOrder": 1,
+    "featured": true,
+    "visible": true
+  },
+  {
+    "_id": "testimonial-rachel-r",
+    "_type": "testimonial",
+    "name": "Rachel R.",
+    "shortQuote": "Gemma has been fantastic — exactly what we were looking for. She has been incredibly helpful keeping our house in order as we settle back into a new routine in the first few weeks home from the hospital.",
+    "fullQuote": "Gemma has been fantastic — exactly what we were looking for. She has been incredibly helpful keeping our house in order as we settle back into a new routine in the first few weeks home from the hospital. And she has provided invaluable advice and support with lactation and other baby care. Thank you, Gemma!",
+    "category": "postpartum-lactation",
+    "contextLine": "Postpartum & Lactation Support · Oakland, CA · 2024",
+    "locationLine": "Oakland, CA · 2024",
+    "year": "2024",
+    "displayOrder": 1,
+    "featured": true,
+    "visible": true
+  },
+  {
+    "_id": "testimonial-ariel-b",
+    "_type": "testimonial",
+    "name": "Ariel B.",
+    "shortQuote": "Gemma made sure our fridge was stocked, took care of me in those early postpartum days, cleaned, cooked, and watched the baby so that my husband and I could get some much needed rest.",
+    "fullQuote": "Gemma is amazing! Gemma worked with us when our daughter was 5 days old and helped us so much. Gemma made sure our fridge was stocked, took care of me in those early postpartum days, cleaned, cooked, and watched the baby so that my husband and I could get some much needed rest.\n\nShe helped with our first bath and she is just a wealth of knowledge with so much advice and kind words. I really appreciated that in between visits she would also check in to see how we were doing — this was above and beyond what I had expected and would recommend Gemma to anyone.",
+    "category": "postpartum-doula",
+    "contextLine": "Postpartum Doula Care · Rockville, MD · 2023",
+    "locationLine": "Rockville, MD · 2023",
+    "year": "2023",
+    "displayOrder": 2,
+    "featured": true,
+    "visible": true
+  }
+]

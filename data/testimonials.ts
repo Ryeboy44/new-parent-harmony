@@ -1,7 +1,10 @@
 export type TestimonialCategory =
   | "postpartum-doula"
+  | "feeding-lactation"
+  | "infant-sleep"
   | "sleep-support"
-  | "postpartum-lactation";
+  | "postpartum-lactation"
+  | "other";
 
 export type Testimonial = {
   id: string;
@@ -16,6 +19,8 @@ export type Testimonial = {
   /** Location · year — shown on the full testimonials page */
   locationLine: string;
   featured: boolean;
+  year?: string;
+  displayOrder?: number;
 };
 
 export const testimonialCategories: {
@@ -23,9 +28,37 @@ export const testimonialCategories: {
   label: string;
 }[] = [
   { id: "postpartum-doula", label: "Postpartum Doula Care" },
+  { id: "feeding-lactation", label: "Feeding/Lactation Support" },
+  { id: "infant-sleep", label: "Infant Sleep Support" },
   { id: "sleep-support", label: "Sleep Support" },
   { id: "postpartum-lactation", label: "Postpartum & Lactation Support" },
+  { id: "other", label: "Other" },
 ];
+
+export function categoryLabelFor(category: TestimonialCategory): string {
+  return (
+    testimonialCategories.find((item) => item.id === category)?.label ?? "Other"
+  );
+}
+
+export function groupTestimonials(items: Testimonial[]): {
+  id: TestimonialCategory;
+  label: string;
+  items: Testimonial[];
+}[] {
+  return testimonialCategories
+    .map((category) => ({
+      ...category,
+      items: items
+        .filter((item) => item.category === category.id)
+        .sort(
+          (a, b) =>
+            (a.displayOrder ?? 0) - (b.displayOrder ?? 0) ||
+            a.name.localeCompare(b.name),
+        ),
+    }))
+    .filter((group) => group.items.length > 0);
+}
 
 export const testimonials: Testimonial[] = [
   {
@@ -45,6 +78,8 @@ I highly recommend her to anyone looking for postpartum support.`,
     contextLine: "Postpartum Doula Care \u00b7 Potomac, MD \u00b7 2026",
     locationLine: "Potomac, MD \u00b7 2026",
     featured: true,
+    year: "2026",
+    displayOrder: 1,
   },
   {
     id: "jill-s",
@@ -57,6 +92,8 @@ I highly recommend her to anyone looking for postpartum support.`,
     contextLine: "Sleep Support \u00b7 Washington, DC \u00b7 2024",
     locationLine: "Washington, DC \u00b7 2024",
     featured: true,
+    year: "2024",
+    displayOrder: 1,
   },
   {
     id: "rachel-r",
@@ -69,6 +106,8 @@ I highly recommend her to anyone looking for postpartum support.`,
     contextLine: "Postpartum & Lactation Support \u00b7 Oakland, CA \u00b7 2024",
     locationLine: "Oakland, CA \u00b7 2024",
     featured: true,
+    year: "2024",
+    displayOrder: 1,
   },
   {
     id: "ariel-b",
@@ -83,6 +122,8 @@ She helped with our first bath and she is just a wealth of knowledge with so muc
     contextLine: "Postpartum Doula Care \u00b7 Rockville, MD \u00b7 2023",
     locationLine: "Rockville, MD \u00b7 2023",
     featured: true,
+    year: "2023",
+    displayOrder: 2,
   },
 ];
 

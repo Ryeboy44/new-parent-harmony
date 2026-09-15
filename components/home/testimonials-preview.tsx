@@ -2,9 +2,12 @@ import { SectionHeading } from "@/components/home/section-heading";
 import { TestimonialCard } from "@/components/testimonials/testimonial-card";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionShell } from "@/components/ui/section-shell";
-import { featuredTestimonials } from "@/data/testimonials";
+import { getFeaturedTestimonials } from "@/lib/sanity/fetch";
 
-export function TestimonialsPreview() {
+export async function TestimonialsPreview() {
+  const featuredTestimonials = await getFeaturedTestimonials();
+  if (featuredTestimonials.length === 0) return null;
+
   return (
     <SectionShell id="testimonials" background="white" className="relative">
       <SectionHeading
