@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import { AboutGemmaPreview } from "@/components/home/about-gemma-preview";
-import { CoffeeMorningSection } from "@/components/home/coffee-morning-section";
 import { FinalCTASection } from "@/components/home/final-cta-section";
 import { HeroSection } from "@/components/home/hero-section";
 import { IntroTrustSection } from "@/components/home/intro-trust-section";
-import { EarlySupportBanner } from "@/components/ui/early-support-banner";
-import { homeEarlySupportMessage } from "@/data/home-page-content";
 import { ServicesOverview } from "@/components/home/services-overview";
 import { SiteFooter } from "@/components/home/site-footer";
 import { SiteNavbar } from "@/components/home/site-navbar";
@@ -29,10 +26,8 @@ export default function Home() {
       <SiteNavbar />
       <main id="main-content">
         <HeroSection />
-        <EarlySupportBanner message={homeEarlySupportMessage} />
         <IntroTrustSection />
         <ServicesOverview />
-        <CoffeeMorningSection />
         <WhyChooseSection />
         <TestimonialsPreview />
         <AboutGemmaPreview />

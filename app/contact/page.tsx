@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CollectivePathNote } from "@/components/discovery-call/collective-path-note";
 import { DiscoveryCallForm } from "@/components/discovery-call/discovery-call-form";
 import { SiteFooter } from "@/components/home/site-footer";
 import { SiteNavbar } from "@/components/home/site-navbar";
@@ -22,8 +23,9 @@ export default function ContactPage() {
         id="main-content"
         className="flex flex-1 flex-col border-b border-border-soft/40 bg-cream"
       >
-        <div className="mx-auto w-full max-w-xl flex-1 px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto flex w-full max-w-xl flex-1 flex-col gap-6 px-4 py-12 sm:gap-8 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
           <DiscoveryCallForm />
+          <CollectivePathNote />
         </div>
       </main>
       <SiteFooter />

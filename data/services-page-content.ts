@@ -1,3 +1,4 @@
+import { COLLECTIVE_HREF, COLLECTIVE_REQUEST_HREF } from "@/data/community-collective-content";
 import { PRIMARY_CTA_HREF } from "@/data/site-cta";
 
 export type ServiceDetail = {
@@ -178,4 +179,12 @@ export const notSureSection = {
   ],
   ctaLabel: "Book Your Free Discovery Call",
   ctaHref: PRIMARY_CTA_HREF,
+} as const;
+
+export const communitySupportPath = {
+  title: "Need support, but cost is a barrier?",
+  description:
+    "The New Parent Harmony Community Collective helps make postpartum and family support more accessible when funding and availability allow.",
+  primaryCta: { label: "Explore Community Support", href: COLLECTIVE_HREF },
+  secondaryCta: { label: "Request Support", href: COLLECTIVE_REQUEST_HREF },
 } as const;
