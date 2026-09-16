@@ -9,7 +9,7 @@ export function HeroSection() {
       className="border-b border-border-soft/40 bg-cream"
       aria-labelledby="hero-heading"
     >
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:gap-12 sm:px-6 sm:py-16 lg:grid-cols-[1fr_minmax(0,24rem)] lg:items-center lg:gap-16 lg:px-10 lg:py-28">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 pt-14 pb-8 sm:gap-12 sm:px-6 sm:pt-16 sm:pb-8 lg:grid-cols-[1fr_minmax(0,24rem)] lg:items-center lg:gap-16 lg:px-10 lg:pt-28 lg:pb-8">
         <div className="min-w-0">
           <p className="mb-4 text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-harmony-green-muted sm:mb-5 sm:text-xs">
             New Parent Harmony

@@ -5,7 +5,7 @@ type SectionShellProps = {
   children: ReactNode;
   className?: string;
   /** Vertical rhythm between major sections */
-  padding?: "default" | "tight" | "loose" | "pageIntro";
+  padding?: "default" | "tight" | "loose" | "pageIntro" | "afterHero";
   background?: "cream" | "white" | "subtle";
 };
 
@@ -15,6 +15,8 @@ const paddingMap = {
   loose: "py-24 md:py-28 lg:py-32",
   /** Compact page header — avoids a full-height hero gap above the first content block. */
   pageIntro: "pt-10 pb-4 sm:pt-12 sm:pb-5 lg:pt-14 lg:pb-6",
+  /** Smaller top padding so the homepage services block sits closer to the hero. */
+  afterHero: "pt-10 pb-20 md:pt-12 md:pb-24 lg:pt-10 lg:pb-28",
 };
 
 const bgMap = {

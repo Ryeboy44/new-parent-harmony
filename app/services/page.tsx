@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ApproachSection } from "@/components/services/approach-section";
 import { CommunitySupportPath } from "@/components/services/community-support-path";
 import { NotSureSection } from "@/components/services/not-sure-section";
+import { ServiceAreaSection } from "@/components/services/service-area-section";
 import { ServiceDetailBlock } from "@/components/services/service-detail-block";
 import { ServicesHero } from "@/components/services/services-hero";
 import { SiteFooter } from "@/components/home/site-footer";
@@ -46,6 +47,7 @@ export default function ServicesPage() {
 
         <NotSureSection />
         <CommunitySupportPath />
+        <ServiceAreaSection />
       </main>
       <SiteFooter />
     </>

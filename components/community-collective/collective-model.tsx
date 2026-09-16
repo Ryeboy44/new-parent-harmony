@@ -11,9 +11,6 @@ export function CollectiveModel() {
         <h2 className="font-display text-[1.625rem] font-normal leading-[1.2] tracking-[-0.02em] text-foreground sm:text-3xl md:text-[2.125rem]">
           {collectiveModel.title}
         </h2>
-        <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
-          {collectiveModel.intro}
-        </p>
       </header>
 
       <ol className="mt-8 grid gap-6 sm:mt-10 lg:grid-cols-3 lg:gap-8">

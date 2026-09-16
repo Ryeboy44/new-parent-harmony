@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { AboutGemmaPreview } from "@/components/home/about-gemma-preview";
+import { CollectiveIntro } from "@/components/home/collective-intro";
 import { FinalCTASection } from "@/components/home/final-cta-section";
 import { HeroSection } from "@/components/home/hero-section";
-import { IntroTrustSection } from "@/components/home/intro-trust-section";
 import { ServicesOverview } from "@/components/home/services-overview";
 import { SiteFooter } from "@/components/home/site-footer";
 import { SiteNavbar } from "@/components/home/site-navbar";
@@ -26,11 +26,11 @@ export default function Home() {
       <SiteNavbar />
       <main id="main-content">
         <HeroSection />
-        <IntroTrustSection />
         <ServicesOverview />
         <WhyChooseSection />
+        <CollectiveIntro />
         <TestimonialsPreview />
-        <AboutGemmaPreview />
+        <AboutGemmaPreview compact />
         <FinalCTASection />
       </main>
       <SiteFooter />

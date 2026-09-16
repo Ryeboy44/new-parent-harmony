@@ -5,7 +5,6 @@ import { CollectiveImpact } from "@/components/community-collective/collective-i
 import { CollectiveModel } from "@/components/community-collective/collective-model";
 import { CollectivePageNav } from "@/components/community-collective/collective-page-nav";
 import { CommunityEvents } from "@/components/community-collective/community-events";
-import { CommunityProgramming } from "@/components/community-collective/community-programming";
 import { HowSupportWorks } from "@/components/community-collective/how-support-works";
 import { HowWeHelp } from "@/components/community-collective/how-we-help";
 import { PartnerSection } from "@/components/community-collective/partner-section";
@@ -109,7 +108,6 @@ export default async function CommunityCollectivePage() {
         <CollectiveModel />
         <HowWeHelp />
         <HowSupportWorks applicationsStatus={settings.applicationsStatus} />
-        <CommunityProgramming />
         <CommunityEvents events={events} />
         <PartnerSection />
         <CollectiveImpact settings={settings} />

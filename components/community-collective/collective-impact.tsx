@@ -48,8 +48,8 @@ type CollectiveImpactProps = {
 
 export function CollectiveImpact({ settings }: CollectiveImpactProps) {
   const metrics = buildMetrics(settings);
-  const [openingParagraph, standardParagraph] = impactSection.paragraphs;
-  const closingParagraph = settings.impactMessage || standardParagraph;
+  const statement =
+    settings.impactMessage || impactSection.paragraphs[0];
 
   return (
     <SectionShell id="collective-impact" background="subtle" padding="tight">
@@ -58,10 +58,7 @@ export function CollectiveImpact({ settings }: CollectiveImpactProps) {
           {impactSection.title}
         </h2>
         <p className="mt-5 text-[0.9375rem] leading-relaxed text-muted sm:mt-6 sm:text-base">
-          {openingParagraph}
-        </p>
-        <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:text-base">
-          {closingParagraph}
+          {statement}
         </p>
       </div>
 

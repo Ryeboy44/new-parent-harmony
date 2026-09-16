@@ -18,16 +18,14 @@ export const collectiveHero = {
   title: "New Parent Harmony Community Collective",
   tagline: "Support should be within reach.",
   paragraphs: [
-    "The Community Collective is an initiative of New Parent Harmony, being built to help make postpartum, feeding, infant sleep, education and community support more accessible to families who may otherwise face financial barriers.",
-    "Community support, grants, sponsorships and partnerships come together here so families can receive professional care, education and connection as funding and availability grow.",
+    "The New Parent Harmony Community Collective helps make postpartum, feeding and sleep support, community events, and educational workshops more accessible to families who may otherwise face financial barriers.",
+    "Through grants, sponsorships, partnerships and community funding, the Collective helps subsidize professional support, provides reduced-cost or free educational opportunities, and creates ways for families to connect and feel supported.",
   ],
 } as const;
 
 export const collectiveModel = {
   eyebrow: "The model",
   title: "How the Collective Comes Together",
-  intro:
-    "This is a community-funded way to expand access — still growing, and shaped by the people who take part.",
   steps: [
     {
       title: "Community support, grants, sponsorships and partnerships",
@@ -51,15 +49,15 @@ export const serviceAreaSection = {
   places: [
     {
       label: "In-person support",
-      detail: "Montgomery County, Maryland",
+      detail: "Montgomery County, Maryland and surrounding areas",
     },
     {
       label: "Virtual support",
-      detail: "May be available nationwide",
+      detail: "Available nationwide",
     },
   ],
   qualifier:
-    "Services depend on provider availability, available resources, funding and the type of support requested.",
+    "Support through the Collective is based on individual need, available funding and provider availability.",
 } as const;
 
 export type CollectiveHelpIcon =
@@ -87,7 +85,7 @@ export const howWeHelpSection = {
       icon: "education" as CollectiveHelpIcon,
       title: "Education & Virtual Support",
       description:
-        "Virtual postpartum guidance, sleep support, parent education and workshops that can extend the Collective’s reach beyond our local community.",
+        "Virtual postpartum guidance, sleep support, parent education and workshops.",
     },
     {
       icon: "connection" as CollectiveHelpIcon,
@@ -109,12 +107,12 @@ export const howItWorksSection = {
     {
       title: "We review what’s available",
       description:
-        "Requests are considered in the order received. We look at current Collective funding, New Parent Harmony’s availability and our ability to provide the support requested.",
+        "Requests are reviewed in the order received, based on current Collective funding and New Parent Harmony’s availability.",
     },
     {
       title: "We find an option that works",
       description:
-        "Depending on available resources, support may be fully funded, partially funded, offered at a temporary reduced New Parent Harmony rate, or provided through free or reduced-cost community programming.",
+        "Support may be fully funded, partially funded, offered at a temporary reduced rate, or provided through free or reduced-cost community programming.",
     },
     {
       title: "Support begins",
@@ -126,8 +124,7 @@ export const howItWorksSection = {
     title:
       "No complicated paperwork. No competition over who needs help most.",
     paragraphs: [
-      "Families shouldn’t have to prove that their circumstances are harder than someone else’s to ask for support.",
-      "You can tell us when the regular cost of services creates a barrier. Financial documentation generally isn’t required unless a specific grant or funding program requires it.",
+      "The process is designed to be straightforward. You can tell us when the regular cost of services creates a barrier, and financial documentation generally isn’t required unless a specific grant or funding program requires it.",
       "What we can offer depends on available funding, resources and provider availability.",
     ],
   },
@@ -156,8 +153,7 @@ export type CollectivePartnerIcon = "sponsor" | "fund" | "partner";
 export const partnerSection = {
   title: "Help Expand Access",
   paragraphs: [
-    "When a community invests in families during the postpartum season, those families are stronger.",
-    "Grants, sponsorships and partnerships can help fund professional postpartum care, feeding support, educational programs and community initiatives. Families receive support, and the professionals providing that care are compensated for their work.",
+    "Businesses, organizations and neighbors can take part in a few ways.",
   ],
   cards: [
     {
@@ -184,8 +180,7 @@ export const partnerSection = {
 export const impactSection = {
   title: "Our Impact Is Just Beginning",
   paragraphs: [
-    "The Community Collective is new and being built. Support during the postpartum period shouldn’t be available only to families who can easily afford it.",
-    "As funding, partnerships and participation grow, we’ll share real results — families supported, care hours funded, workshops offered and community programs created. Until then, this work is just getting started.",
+    "As the Collective grows, we’ll share the families supported, care hours funded, workshops offered and community programs created.",
   ],
   /** Shown instead of metrics until real numbers are entered in Sanity. */
   emptyHeadline: "Our impact is just beginning.",

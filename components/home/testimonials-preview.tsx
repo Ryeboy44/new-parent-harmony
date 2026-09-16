@@ -5,7 +5,7 @@ import { SectionShell } from "@/components/ui/section-shell";
 import { getFeaturedTestimonials } from "@/lib/sanity/fetch";
 
 export async function TestimonialsPreview() {
-  const featuredTestimonials = await getFeaturedTestimonials();
+  const featuredTestimonials = (await getFeaturedTestimonials()).slice(0, 3);
   if (featuredTestimonials.length === 0) return null;
 
   return (
@@ -18,7 +18,7 @@ export async function TestimonialsPreview() {
       />
 
       <ul
-        className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:gap-8"
+        className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8"
         aria-label="Featured family testimonials"
       >
         {featuredTestimonials.map((testimonial) => (
@@ -29,7 +29,7 @@ export async function TestimonialsPreview() {
       </ul>
 
       <div className="mt-11 flex justify-center sm:mt-12">
-        <ButtonLink href="/testimonials" variant="secondary">
+        <ButtonLink href="/testimonials" variant="secondary" className="w-full sm:w-auto">
           Read More Kind Words
         </ButtonLink>
       </div>

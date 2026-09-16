@@ -4,20 +4,16 @@ import { surfaceCard } from "@/components/ui/surface-card";
 
 const reasons = [
   {
-    title: "I show up calm and grounded",
-    body: "When everything feels loud, I aim to be a steady presence—so you can breathe, ask questions, and decide next steps without pressure.",
+    title: "Calm, judgment-free support",
+    body: "When everything feels loud, I aim to be a steady presence—so you can ask questions and decide next steps without pressure.",
   },
   {
-    title: "I tailor plans to your real life",
-    body: "We work from your baby, your home, and your goals—not generic scripts or one-size-fits-all charts that ignore what you already know.",
+    title: "Care that fits your family",
+    body: "Plans start with your baby, your home, and your goals—not one-size-fits-all charts.",
   },
   {
-    title: "In-home or virtual—your call",
-    body: "I support families across Montgomery County, MD and surrounding areas—beside you in person or through the screen, depending on what fits.",
-  },
-  {
-    title: "Your values lead",
-    body: "I'm respectful of how you want to feed, soothe, and bond—collaborative care that never asks you to leave yourself behind.",
+    title: "Practical support for real life",
+    body: "Experienced, evidence-informed care that still feels human—paced for how families actually live.",
   },
 ];
 
@@ -27,10 +23,9 @@ export function WhyChooseSection() {
       <SectionHeading
         eyebrow="Why families work with me"
         title="What you can expect when we work together"
-        description="Parents reach out when they want care that's evidence-informed and still human—flexible, respectful, and paced for real life."
         align="center"
       />
-      <ul className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:gap-8">
+      <ul className="grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
         {reasons.map((item) => (
           <li key={item.title}>
             <article
