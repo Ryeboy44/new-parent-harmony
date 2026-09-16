@@ -5,7 +5,7 @@ import { surfaceCard } from "@/components/ui/surface-card";
 const reasons = [
   {
     title: "Calm, judgment-free support",
-    body: "When everything feels loud, I aim to be a steady presence—so you can ask questions and decide next steps without pressure.",
+    body: "When everything feels loud, Gemma aims to be a steady presence—so you can ask questions and decide next steps without pressure.",
   },
   {
     title: "Care that fits your family",
@@ -21,7 +21,7 @@ export function WhyChooseSection() {
   return (
     <SectionShell id="why-choose" background="subtle">
       <SectionHeading
-        eyebrow="Why families work with me"
+        eyebrow="Why families work with Gemma"
         title="What you can expect when we work together"
         align="center"
       />

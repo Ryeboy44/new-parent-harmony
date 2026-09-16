@@ -18,8 +18,8 @@ export function FinalCTASection() {
         <p className="mt-5 text-[0.9375rem] leading-relaxed text-muted sm:mt-6 sm:text-base">
           If you&apos;re pregnant or already in the postpartum season, you
           deserve calm, experienced support tailored to your family. In a free
-          discovery call, we&apos;ll talk through what you need and how I can
-          help—with no pressure to commit.
+          discovery call, we&apos;ll talk through what you need and how Gemma
+          can help—with no pressure to commit.
         </p>
         <div className="mt-9 flex justify-center sm:mt-10">
           <ButtonLink href={PRIMARY_CTA_HREF}>{PRIMARY_CTA_LABEL}</ButtonLink>

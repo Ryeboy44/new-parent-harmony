@@ -32,7 +32,7 @@ export function SiteFooter() {
             >
               contact form
             </Link>{" "}
-            and I&apos;ll get back to you as soon as I can.
+            and Gemma will get back to you as soon as she can.
           </p>
         </div>
 

@@ -26,8 +26,8 @@ export const servicesHero = {
 export const approachSection = {
   title: "A Whole-Family Approach to Support",
   paragraphs: [
-    "At New Parent Harmony, support is shaped around your baby, your recovery, and the way your household actually works. My role is to provide calm, practical, evidence-informed support that helps families feel less overwhelmed during one of the biggest transitions of life.",
-    "As a certified postpartum doula, certified lactation counselor, and pediatric sleep consultant with over 20 years of experience supporting families, I look at the full picture — because feeding, sleep, emotional wellbeing, recovery, and confidence are all deeply connected.",
+    "At New Parent Harmony, support is shaped around your baby, your recovery, and the way your household actually works. Gemma provides calm, practical, evidence-informed support that helps families feel less overwhelmed during one of the biggest transitions of life.",
+    "As a certified postpartum doula, certified lactation counselor, and pediatric sleep consultant with over 20 years of experience supporting families, she looks at the full picture — because feeding, sleep, emotional wellbeing, recovery, and confidence are all deeply connected.",
   ],
   credentials: [
     { label: "Postpartum Doula", description: "Certified care for recovery and early weeks" },
@@ -42,11 +42,11 @@ export const serviceDetails: ServiceDetail[] = [
     id: "postpartum-doula-care",
     title: "Postpartum Doula Care",
     introParagraphs: [
-      "The early days with a baby can feel beautiful, emotional, exhausting, and overwhelming all at once. My role as your postpartum doula is to step into that season with calm, practical, non-judgmental support so the days feel more manageable.",
-      "As a certified postpartum doula, certified lactation counselor, and pediatric sleep consultant with over 20 years of experience supporting families, I look at the full picture — not just the baby, but the wellbeing of the entire family.",
+      "The early days with a baby can feel beautiful, emotional, exhausting, and overwhelming all at once. Gemma’s role as your postpartum doula is to step into that season with calm, practical, non-judgmental support so the days feel more manageable.",
+      "As a certified postpartum doula, certified lactation counselor, and pediatric sleep consultant with over 20 years of experience supporting families, she looks at the full picture — not just the baby, but the wellbeing of the entire family.",
     ],
     closingParagraphs: [
-      "One of the biggest benefits of working with someone trained in postpartum recovery, lactation, and infant sleep is that these areas are deeply connected. Feeding struggles can affect sleep. Sleep deprivation can affect mental health. Recovery can affect confidence. Rather than looking at one challenge in isolation, I help families gently connect the pieces together in a way that feels realistic and supportive.",
+      "One of the biggest benefits of working with someone trained in postpartum recovery, lactation, and infant sleep is that these areas are deeply connected. Feeding struggles can affect sleep. Sleep deprivation can affect mental health. Recovery can affect confidence. Rather than looking at one challenge in isolation, Gemma helps families gently connect the pieces together in a way that feels realistic and supportive.",
     ],
     supportItems: [
       "newborn care guidance",
@@ -77,10 +77,10 @@ export const serviceDetails: ServiceDetail[] = [
     title: "Feeding/Lactation Support",
     introParagraphs: [
       "Feeding a baby is not always as instinctive or straightforward as many parents expect, and struggling does not mean you are failing.",
-      "Whether you are breastfeeding, combination feeding, pumping, bottle feeding, or still figuring out what works best for your family, my goal is to offer support without pressure or judgment.",
+      "Whether you are breastfeeding, combination feeding, pumping, bottle feeding, or still figuring out what works best for your family, Gemma’s goal is to offer support without pressure or judgment.",
     ],
     closingParagraphs: [
-      "What makes this support different is that I also bring postpartum and pediatric sleep knowledge into the conversation. Feeding challenges often affect sleep, stress levels, recovery, and family wellbeing. Together we create a realistic plan that supports both baby and parents.",
+      "What makes this support different is that she also brings postpartum and pediatric sleep knowledge into the conversation. Feeding challenges often affect sleep, stress levels, recovery, and family wellbeing. Together we create a realistic plan that supports both baby and parents.",
     ],
     supportItems: [
       "painful latch",
@@ -110,8 +110,8 @@ export const serviceDetails: ServiceDetail[] = [
       "Sleep deprivation affects every part of parenting — mental health, relationships, recovery, patience, confidence, and daily functioning. Many parents are not looking for perfection. They simply want more rest and more predictability for their family.",
     ],
     closingParagraphs: [
-      "As a pediatric sleep consultant with additional training in lactation and postpartum support, I understand that sleep challenges are rarely isolated. Feeding, temperament, development, parental exhaustion, and postpartum wellbeing all play a role. Some families need structured sleep support, while others simply need guidance, reassurance, and a plan.",
-      "I support both gentle parent-present approaches and more structured sleep methods depending on each family’s comfort level and goals.",
+      "As a pediatric sleep consultant with additional training in lactation and postpartum support, Gemma understands that sleep challenges are rarely isolated. Feeding, temperament, development, parental exhaustion, and postpartum wellbeing all play a role. Some families need structured sleep support, while others simply need guidance, reassurance, and a plan.",
+      "She supports both gentle parent-present approaches and more structured sleep methods depending on each family’s comfort level and goals.",
     ],
     supportItems: [
       "bedtime struggles",
@@ -174,7 +174,7 @@ export const notSureSection = {
   title: "Not Sure What Support You Need?",
   paragraphs: [
     "Many families reach out feeling unsure whether their challenges are related to feeding, sleep, postpartum recovery, or simply the overwhelm of adjusting to life with a baby.",
-    "That is exactly why I offer a free discovery chat.",
+    "That is exactly why Gemma offers a free discovery chat.",
     "Together we can talk through what is going on and decide what type of support would feel most helpful for your family — without pressure or obligation.",
   ],
   ctaLabel: "Book Your Free Discovery Call",

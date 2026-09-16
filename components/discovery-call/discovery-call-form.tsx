@@ -130,13 +130,13 @@ export function DiscoveryCallForm() {
             Thank you
           </h1>
           <p className="mt-5 text-[0.9375rem] leading-[1.65] text-foreground sm:mt-6 sm:text-base">
-            Your message is on its way. I&apos;ll be in touch soon—usually
+            Your message is on its way. Gemma will be in touch soon—usually
             within one business day.
           </p>
           <p className="mt-5 text-sm leading-relaxed text-muted sm:mt-6">
             If you don&apos;t see a reply within a business day, please check your
-            spam folder. Please reach out through the contact form and I&apos;ll get
-            back to you as soon as I can.
+            spam folder. Please reach out through the contact form and Gemma will get
+            back to you as soon as she can.
           </p>
           <Link
             href="/"
@@ -166,7 +166,7 @@ export function DiscoveryCallForm() {
           {PRIMARY_CTA_LABEL}
         </h1>
         <p className="mt-3 max-w-lg text-sm leading-[1.65] text-muted sm:mt-4 sm:text-[0.9375rem]">
-          I&apos;d love to learn more about how I can support your family.
+          Gemma would love to learn more about how she can support your family.
           Take your time—share what feels right below.
         </p>
       </div>
@@ -284,7 +284,7 @@ export function DiscoveryCallForm() {
               </span>
             </legend>
             <p className="mb-4 text-sm leading-relaxed text-muted sm:mb-5">
-              How would you like me to reach you first?
+              How would you like Gemma to reach you first?
             </p>
             <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3">
               {(
@@ -374,7 +374,7 @@ export function DiscoveryCallForm() {
 
           <div>
             <label htmlFor="dc-details" className={labelClass}>
-              Anything else you&apos;d like me to know?{" "}
+              Anything else you&apos;d like Gemma to know?{" "}
               <span className={optionalClass}>(optional)</span>
             </label>
             <textarea

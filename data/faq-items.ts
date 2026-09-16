@@ -29,12 +29,12 @@ export const faqItems: FaqItem[] = [
   {
     question: "Do you offer in-home support or virtual support?",
     answer:
-      "Both. I offer in-home daytime support for families in Montgomery County and surrounding areas, as well as virtual postpartum support for sleep, feeding, and postpartum guidance.",
+      "Both. Gemma offers in-home daytime support for families in Montgomery County and surrounding areas, as well as virtual postpartum support for sleep, feeding, and postpartum guidance.",
   },
   {
     question: "Do you provide overnight postpartum care?",
     answer:
-      "No. My in-home support is daytime postpartum care rather than overnight care, with a focus on practical help, feeding support, newborn care guidance, emotional check-ins, and helping the day-to-day rhythm at home feel more manageable.",
+      "No. Gemma’s in-home support is daytime postpartum care rather than overnight care, with a focus on practical help, feeding support, newborn care guidance, emotional check-ins, and helping the day-to-day rhythm at home feel more manageable.",
   },
   {
     question: "What is included in postpartum doula care?",
@@ -44,17 +44,17 @@ export const faqItems: FaqItem[] = [
   {
     question: "Do you support older siblings and pets too?",
     answer:
-      "Yes. Welcoming a baby affects the whole household. I can help families support older siblings through the adjustment, maintain connection and routines, and offer practical guidance for calmly and safely introducing your baby to family pets.",
+      "Yes. Welcoming a baby affects the whole household. Gemma can help families support older siblings through the adjustment, maintain connection and routines, and offer practical guidance for calmly and safely introducing your baby to family pets.",
   },
   {
     question: "Can you help prepare my older child for a new baby?",
     answer:
-      "Yes. I can guide you in helping an older sibling feel included, connected, and secure as your family grows, with practical ideas that fit your child’s age and temperament.",
+      "Yes. Gemma can guide you in helping an older sibling feel included, connected, and secure as your family grows, with practical ideas that fit your child’s age and temperament.",
   },
   {
     question: "Can you help with introducing our baby to our dog or other pet?",
     answer:
-      "Yes. I offer practical, safety-focused guidance to help families introduce a baby to a dog or other pet in a calm and thoughtful way.",
+      "Yes. Gemma offers practical, safety-focused guidance to help families introduce a baby to a dog or other pet in a calm and thoughtful way.",
   },
   {
     question: "What is included in a lactation consultation?",
@@ -64,12 +64,12 @@ export const faqItems: FaqItem[] = [
   {
     question: "Do you support breastfeeding, pumping, and bottle-feeding?",
     answer:
-      "Yes. I support breastfeeding, pumping, combination feeding, and bottle-feeding, without pressure or judgment.",
+      "Yes. Gemma supports breastfeeding, pumping, combination feeding, and bottle-feeding, without pressure or judgment.",
   },
   {
     question: "Can you help if my baby is struggling to latch?",
     answer:
-      "Yes. I offer feeding/lactation support for latch challenges, positioning, supply concerns, pumping questions, and feeding confidence, both in person for local families and virtually.",
+      "Yes. Gemma offers feeding/lactation support for latch challenges, positioning, supply concerns, pumping questions, and feeding confidence, both in person for local families and virtually.",
   },
   {
     question: "What is included in a sleep plan?",
@@ -84,7 +84,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Which sleep training methods do you use?",
     answer:
-      "I use a range of approaches, including both parent-present and non-parent-present methods. The approach we choose depends on your child’s age, temperament, your parenting style, your comfort level with different techniques, and what feels realistic for your family to follow through with consistently.",
+      "Gemma uses a range of approaches, including both parent-present and non-parent-present methods. The approach you choose together depends on your child’s age, temperament, your parenting style, your comfort level with different techniques, and what feels realistic for your family to follow through with consistently.",
   },
   {
     question: "How long does it take to see progress with a sleep plan?",
