@@ -16,7 +16,7 @@ export function CollectiveFinalCta({
 }: CollectiveFinalCtaProps) {
   return (
     <section
-      className="border-t border-border-soft/50 bg-green-wash/35 py-14 md:py-16 lg:py-20"
+      className="border-t border-clay/15 bg-clay-wash-deep/45 py-14 md:py-16 lg:py-20"
       aria-labelledby="collective-final-cta-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-10">

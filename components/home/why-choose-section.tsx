@@ -21,7 +21,6 @@ export function WhyChooseSection() {
   return (
     <SectionShell id="why-choose" background="subtle">
       <SectionHeading
-        eyebrow="Why families work with Gemma"
         title="What you can expect when we work together"
         align="center"
       />

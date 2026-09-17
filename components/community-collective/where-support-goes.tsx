@@ -17,7 +17,7 @@ export function WhereSupportGoes() {
         {whereSupportGoes.items.map((item) => (
           <li
             key={item}
-            className="border-l-2 border-harmony-green/25 pl-4 text-[0.9375rem] leading-snug text-foreground sm:text-base"
+            className="border-l-2 border-clay/30 pl-4 text-[0.9375rem] leading-snug text-foreground sm:text-base"
           >
             {item}
           </li>

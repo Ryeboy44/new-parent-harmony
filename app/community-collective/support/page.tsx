@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CollectivePageNav } from "@/components/community-collective/collective-page-nav";
+import { CollectiveScope } from "@/components/community-collective/collective-scope";
 import { SponsorRecognition } from "@/components/community-collective/sponsor-recognition";
 import { SupporterHero } from "@/components/community-collective/supporter-hero";
 import { SupporterImpact } from "@/components/community-collective/supporter-impact";
@@ -52,8 +53,9 @@ export default async function SupportTheCollectivePage({
   return (
     <>
       <SiteNavbar />
-      <CollectivePageNav />
-      <main id="main-content" className="flex flex-1 flex-col">
+      <CollectiveScope>
+        <CollectivePageNav />
+        <main id="main-content" className="flex flex-1 flex-col">
         <SupporterHero />
         <WhereSupportGoes />
         <WaysToSupport />
@@ -79,6 +81,7 @@ export default async function SupportTheCollectivePage({
           </div>
         </section>
       </main>
+      </CollectiveScope>
       <SiteFooter />
     </>
   );

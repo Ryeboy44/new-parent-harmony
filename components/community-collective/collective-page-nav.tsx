@@ -19,7 +19,7 @@ export function CollectivePageNav() {
 
   return (
     <nav
-      className="border-b border-border-soft/40 bg-cream"
+      className="border-b border-clay/15 bg-cream"
       aria-label="Community Collective pages"
     >
       <div className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-4 py-2.5 sm:px-6 lg:px-10">
@@ -32,8 +32,8 @@ export function CollectivePageNav() {
               aria-current={current ? "page" : undefined}
               className={`whitespace-nowrap rounded-full px-3 py-2 text-sm transition-colors ${
                 current
-                  ? "bg-green-wash/70 font-medium text-foreground"
-                  : "text-muted hover:bg-green-wash/35 hover:text-foreground"
+                  ? "bg-clay-wash-deep/80 font-medium text-foreground"
+                  : "text-muted hover:bg-clay-wash-deep/40 hover:text-foreground"
               }`}
             >
               {link.label}

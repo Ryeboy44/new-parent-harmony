@@ -1,19 +1,18 @@
 import Image from "next/image";
 import { ButtonLink } from "@/components/ui/button-link";
+import { CollectiveLabel } from "@/components/community-collective/collective-label";
 import { supporterPage } from "@/data/community-collective-content";
 import { supportCollectiveCommunityImage } from "@/data/site-images";
 
 export function SupporterHero() {
   return (
     <section
-      className="animate-fade-up-soft border-b border-border-soft/40 bg-cream"
+      className="animate-fade-up-soft border-b border-clay/15 bg-cream"
       aria-labelledby="supporter-hero-heading"
     >
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:gap-10 sm:px-6 sm:py-14 lg:grid-cols-[1fr_minmax(0,32rem)] lg:items-center lg:gap-14 lg:px-10 lg:py-20">
         <div className="min-w-0">
-          <p className="mb-4 text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-harmony-green-muted sm:mb-5 sm:text-xs">
-            {supporterPage.eyebrow}
-          </p>
+          <CollectiveLabel className="mb-4 sm:mb-5" />
           <h1
             id="supporter-hero-heading"
             className="max-w-[18ch] font-display text-[1.75rem] font-normal leading-[1.18] tracking-[-0.03em] text-foreground sm:text-4xl md:text-[2.5rem] md:leading-[1.14]"

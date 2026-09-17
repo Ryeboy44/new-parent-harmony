@@ -28,10 +28,10 @@ export default function Home() {
         <HeroSection />
         <ServicesOverview />
         <WhyChooseSection />
-        <CollectiveIntro />
         <TestimonialsPreview />
         <AboutGemmaPreview compact />
         <FinalCTASection />
+        <CollectiveIntro />
       </main>
       <SiteFooter />
     </>

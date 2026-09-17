@@ -13,6 +13,11 @@
   --green-wash: #ecf1ea;
   --border-soft: #e3e9e0;
   --text-muted: #5c6b5c;
+  --clay: #9c7a5c;
+  --clay-deep: #7d614a;
+  --clay-muted: #a8896e;
+  --clay-wash: #f5eee6;
+  --clay-wash-deep: #efe4d8;
 }
 
 @theme inline {
@@ -28,11 +33,24 @@
   --color-green-wash: var(--green-wash);
   --color-border-soft: var(--border-soft);
   --color-muted: var(--text-muted);
+  --color-clay: var(--clay);
+  --color-clay-deep: var(--clay-deep);
+  --color-clay-muted: var(--clay-muted);
+  --color-clay-wash: var(--clay-wash);
+  --color-clay-wash-deep: var(--clay-wash-deep);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
   --shadow-soft: 0 1px 2px rgb(44 52 44 / 0.04),
     0 12px 40px -16px rgb(44 52 44 / 0.09);
+}
+
+/* Warm Collective surfaces while keeping sage buttons and brand chrome. */
+.collective-scope {
+  --cream: var(--clay-wash);
+  --cream-deep: var(--clay-wash-deep);
+  --green-wash: var(--clay-wash-deep);
+  --green-muted: var(--clay-muted);
 }
 
 body {

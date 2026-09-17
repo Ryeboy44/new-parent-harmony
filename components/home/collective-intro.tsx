@@ -1,3 +1,4 @@
+import { CollectiveLabel } from "@/components/community-collective/collective-label";
 import { ButtonLink } from "@/components/ui/button-link";
 import { SectionShell } from "@/components/ui/section-shell";
 import { COLLECTIVE_HREF } from "@/data/community-collective-content";
@@ -6,15 +7,15 @@ export function CollectiveIntro() {
   return (
     <SectionShell
       id="community-collective"
-      background="cream"
+      background="collective"
       padding="tight"
-      className="border-y border-border-soft/40"
+      className="border-y border-clay/15"
     >
       <div className="mx-auto max-w-2xl text-center md:max-w-[44rem]">
-        <p className="text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-harmony-green-muted sm:text-xs">
-          Community Collective
-        </p>
-        <h2 className="mt-3 font-display text-[1.5rem] font-normal leading-[1.2] tracking-[-0.02em] text-foreground sm:text-[1.75rem] md:text-[1.875rem]">
+        <div className="flex justify-center">
+          <CollectiveLabel />
+        </div>
+        <h2 className="mt-4 font-display text-[1.5rem] font-normal leading-[1.2] tracking-[-0.02em] text-foreground sm:text-[1.75rem] md:text-[1.875rem]">
           Support should be within reach
         </h2>
         <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted sm:mt-5 sm:text-base">

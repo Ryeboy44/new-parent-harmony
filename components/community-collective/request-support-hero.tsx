@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/ui/button-link";
+import { CollectiveLabel } from "@/components/community-collective/collective-label";
 import {
   COLLECTIVE_HREF,
   requestSupportPage,
@@ -11,9 +12,7 @@ export function RequestSupportHero() {
       aria-labelledby="request-support-heading"
     >
       <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-12 lg:px-10 lg:py-14">
-        <p className="mb-4 text-[0.6875rem] font-medium uppercase tracking-[0.22em] text-harmony-green-muted sm:mb-5 sm:text-xs">
-          {requestSupportPage.eyebrow}
-        </p>
+        <CollectiveLabel className="mb-4 sm:mb-5" />
         <h1
           id="request-support-heading"
           className="font-display text-[1.75rem] font-normal leading-[1.18] tracking-[-0.03em] text-foreground sm:text-4xl md:text-[2.5rem] md:leading-[1.14]"
@@ -35,7 +34,7 @@ export function RequestSupportHero() {
         ))}
 
         <aside
-          className="mt-6 rounded-2xl border border-harmony-green/15 bg-green-wash/40 px-5 py-4 sm:mt-8 sm:px-6"
+          className="mt-6 rounded-2xl border border-clay/20 bg-clay-wash-deep/50 px-5 py-4 sm:mt-8 sm:px-6"
           aria-label="Reassurance"
         >
           <p className="text-[0.9375rem] font-medium leading-snug text-foreground sm:text-base">

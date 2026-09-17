@@ -80,7 +80,7 @@ export const partnerIcons: Record<CollectivePartnerIcon, ReactNode> = {
 /** Shared circular icon chip used across the Collective sections. */
 export function IconChip({ children }: { children: ReactNode }) {
   return (
-    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-green-wash/80 text-harmony-green-deep">
+    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-clay-wash-deep text-clay-deep">
       {children}
     </span>
   );

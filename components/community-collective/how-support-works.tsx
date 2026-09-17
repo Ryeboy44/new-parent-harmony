@@ -19,7 +19,7 @@ export function HowSupportWorks({ applicationsStatus }: HowSupportWorksProps) {
           <li key={step.title}>
             <article className={`${surfaceCard} flex h-full flex-col`}>
               <span
-                className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-green-wash/80 font-display text-base text-harmony-green-deep"
+                className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-clay-wash-deep font-display text-base text-clay-deep"
                 aria-hidden
               >
                 {index + 1}
@@ -36,7 +36,7 @@ export function HowSupportWorks({ applicationsStatus }: HowSupportWorksProps) {
         ))}
       </ol>
 
-      <div className="mt-7 rounded-2xl border border-harmony-green/25 bg-gradient-to-b from-green-wash/50 via-white to-white p-6 shadow-soft ring-1 ring-harmony-green/10 sm:mt-8 sm:p-7">
+      <div className="mt-7 rounded-2xl border border-clay/20 bg-gradient-to-b from-clay-wash-deep/70 via-white to-white p-6 shadow-soft ring-1 ring-clay/10 sm:mt-8 sm:p-7">
         <h3 className="font-display text-lg font-normal leading-snug text-foreground sm:text-xl">
           {howItWorksSection.callout.title}
         </h3>

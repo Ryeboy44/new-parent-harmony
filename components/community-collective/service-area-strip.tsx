@@ -22,8 +22,8 @@ export function ServiceAreaStrip({
     <section
       className={
         compact
-          ? "border-b border-border-soft/40 bg-green-wash/25 py-6 md:py-7"
-          : "border-b border-border-soft/40 bg-green-wash/25 py-7 md:py-8"
+          ? "border-b border-clay/15 bg-clay-wash-deep/40 py-6 md:py-7"
+          : "border-b border-clay/15 bg-clay-wash-deep/40 py-7 md:py-8"
       }
       aria-labelledby={headingId}
     >
@@ -34,7 +34,7 @@ export function ServiceAreaStrip({
         <dl className="grid gap-4 sm:grid-cols-2 sm:gap-8 lg:max-w-3xl">
           {places.map((place) => (
             <div key={place.label}>
-              <dt className="text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-harmony-green-muted sm:text-xs">
+              <dt className="text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-clay-muted sm:text-xs">
                 {place.label}
               </dt>
               <dd className="mt-1 text-[0.9375rem] text-foreground sm:text-base">

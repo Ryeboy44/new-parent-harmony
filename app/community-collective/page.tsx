@@ -4,6 +4,7 @@ import { CollectiveHero } from "@/components/community-collective/collective-her
 import { CollectiveImpact } from "@/components/community-collective/collective-impact";
 import { CollectiveModel } from "@/components/community-collective/collective-model";
 import { CollectivePageNav } from "@/components/community-collective/collective-page-nav";
+import { CollectiveScope } from "@/components/community-collective/collective-scope";
 import { CommunityEvents } from "@/components/community-collective/community-events";
 import { HowSupportWorks } from "@/components/community-collective/how-support-works";
 import { HowWeHelp } from "@/components/community-collective/how-we-help";
@@ -94,8 +95,9 @@ export default async function CommunityCollectivePage() {
   return (
     <>
       <SiteNavbar />
-      <CollectivePageNav />
-      <main id="main-content" className="flex flex-1 flex-col">
+      <CollectiveScope>
+        <CollectivePageNav />
+        <main id="main-content" className="flex flex-1 flex-col">
         <CollectiveHero applicationsStatus={settings.applicationsStatus} />
 
         {settings.applicationsStatus === "paused" && settings.statusMessage ? (
@@ -112,7 +114,8 @@ export default async function CommunityCollectivePage() {
         <PartnerSection />
         <CollectiveImpact settings={settings} />
         <CollectiveFinalCta applicationsStatus={settings.applicationsStatus} />
-      </main>
+        </main>
+      </CollectiveScope>
       <SiteFooter />
       {eventListSchema ? (
         <script

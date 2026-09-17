@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CollectivePageNav } from "@/components/community-collective/collective-page-nav";
+import { CollectiveScope } from "@/components/community-collective/collective-scope";
 import { RequestSupportForm } from "@/components/community-collective/request-support-form";
 import { RequestSupportHero } from "@/components/community-collective/request-support-hero";
 import { RequestSupportImage } from "@/components/community-collective/request-support-image";
@@ -38,8 +39,9 @@ export default async function RequestSupportPage() {
   return (
     <>
       <SiteNavbar />
-      <CollectivePageNav />
-      <main id="main-content" className="flex flex-1 flex-col">
+      <CollectiveScope>
+        <CollectivePageNav />
+        <main id="main-content" className="flex flex-1 flex-col">
         <RequestSupportHero />
         <RequestSupportImage />
         <ServiceAreaStrip
@@ -57,6 +59,7 @@ export default async function RequestSupportPage() {
           </div>
         </section>
       </main>
+      </CollectiveScope>
       <SiteFooter />
     </>
   );

@@ -6,7 +6,7 @@ type SectionShellProps = {
   className?: string;
   /** Vertical rhythm between major sections */
   padding?: "default" | "tight" | "loose" | "pageIntro" | "afterHero";
-  background?: "cream" | "white" | "subtle";
+  background?: "cream" | "white" | "subtle" | "collective";
 };
 
 const paddingMap = {
@@ -23,6 +23,7 @@ const bgMap = {
   cream: "bg-cream",
   white: "bg-surface",
   subtle: "bg-green-wash/25",
+  collective: "bg-clay-wash",
 };
 
 export function SectionShell({
